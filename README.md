@@ -229,4 +229,4 @@ Just in case you're wondering, here are some screenshots of the application runn
 
 and here are the search results for "ugly sweater":
 
-![Search Results for "ugly sweater"](https://github.com/kerrieclark831/search/blob/master/src/main/resources/static/images/search-bar.PNG)
+![Search Results for "ugly sweater"](https://github.com/kerrieclark831/search/blob/master/src/main/resources/static/images/search-results.PNG)
