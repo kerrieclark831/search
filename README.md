@@ -225,4 +225,8 @@ This is definitely an over-simplification, but developers should strive for maxi
 
 Just in case you're wondering, here are some screenshots of the application running on my laptop. Sorry you can't run the code yourself because the REST service is only available internally. First there is a page with a search bar:
 
-![Search Bar](
+![Search Bar](https://github.com/kerrieclark831/search/blob/master/src/main/resources/static/images/search-bar.PNG)
+
+and here are the search results for "ugly sweater":
+
+![Search Results for "ugly sweater"](https://github.com/kerrieclark831/search/blob/master/src/main/resources/static/images/search-bar.PNG)
