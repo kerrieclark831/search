@@ -86,7 +86,7 @@ A common pattern of service composition is to call a REST service that returns a
 
 ### The Magic Adapters
 
-The moment you've been waiting for! How the heck did we get the data returned from the back end search service into a manageable and meaningful object to populate the UI? I can say for a fact that the search payload is heavyweight, but our toy UI only needs an item's thumbnail image, caption, catalog name and price. We don't want the front end developers to worry about sifting through heaps of JSON to fish out the items to display on a page - the templates would be super-messy with stringy logic. the [Adapter Design Pattern](https://en.wikipedia.org/wiki/Adapter_pattern) to the rescue!
+The moment you've been waiting for! How the heck did we get the data returned from the back end search service into a manageable and meaningful object to populate the UI? I can say for a fact that the search payload is heavyweight, but our toy UI only needs an item's thumbnail image, caption, catalog name and price. We don't want the front end developers to worry about sifting through heaps of JSON to fish out the items to display on a page - the templates would be super-messy with stringy logic. The [Adapter Design Pattern](https://en.wikipedia.org/wiki/Adapter_pattern) to the rescue!
 
 In the API implementation mentioned above, we make a call like this when the REST service call returns:
 
