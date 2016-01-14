@@ -95,7 +95,7 @@ In the API implementation mentioned above, we make a call like this when the RES
     return new SearchResultJSONAdapter(response.getBody());
 ```
 
-The SearchResultJSONAdapter class is an implementation of an interface that uses language appropriate to the search application, and involves little to no logic in the front end templates for display. The interface looks like this:
+The SearchResultJSONAdapter class is an implementation of an interface that uses language appropriate to the search application, and requires little to no logic in the front end templates for display. The interface looks like this:
 
 ```
     public interface SearchResult {
