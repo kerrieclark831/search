@@ -1,6 +1,6 @@
 # Application Bulkheads at SHOP.COM
 
-The website on which I currently work (http://www.shop.com) is undergoing a major overhaul from an aging monolithic application to a more distributed SOA architecture. Part of this effort involves breaking out functional pieces of the front end application into separately managed and deployed web applications that together make up the SHOP.COM website. For example, we have applications for:
+The website on which we currently work (http://www.shop.com) is undergoing a major overhaul from an aging monolithic application to a more distributed SOA architecture. Part of this effort involves breaking out functional pieces of the front end application into separately managed and deployed web applications that together make up the SHOP.COM website. For example, we have applications for:
 
 * Searching
 * Product Catalog
@@ -77,7 +77,7 @@ The purpose of the API layer is also very simple. It puts together REST URLs to 
 
 That's it! There is a bit of magic going on in that JSONAdapter, which I will talk about in the next section.
 
-It's important to understand the difference between this API layer and the back end REST APIs. In a perfect world the back end APIs would return data exactly how it will be used. Unfortunately my world is not perfect. Quite often multiple REST calls are made and munged into a domain object used by the controller. In other words, the API layer performs **client-specific service composition**.
+It's important to understand the difference between this API layer and the back end REST APIs. In a perfect world the back end APIs would return data exactly how it will be used. Unfortunately our world is not perfect. Quite often multiple REST calls are made and munged into a domain object used by the controller. In other words, the API layer performs **client-specific service composition**.
 
 A common pattern of service composition is to call a REST service that returns a small amount of data along with HATEOAS links to find other related information. For example, a shopper service returns a shopper's email, name, and a few other things. The payload includes other REST URLs to locate the shopper's address book, wallet, orders, etc. The application may opt to use a library such as RxJava to set up an observable, and fire off the HATEOAS calls asynchronously. I will talk more about reducing the chattiness of our APIs in another article.
 
