@@ -1,0 +1,12 @@
+## Global velocity template macros
+
+## Draw a search result item (a product)
+#macro( drawItem $item )
+<div>
+    <img src="$item.getImageURL()">
+    <p>$item.getCaption()</p>
+    <p>from: $item.getCatalogName()</p>
+    <p>$item.getPrice()</p>
+    <input type="button" value="Add to Cart">
+</div>
+#end
