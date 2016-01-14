@@ -102,6 +102,7 @@ The SearchResultJSONAdapter class is an implementation of an interface that uses
     
         /**
          * Get the total number of items in the search result set
+         *
          * @return The number of items
          */
         public int getTotalItems();
