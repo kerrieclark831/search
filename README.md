@@ -1,8 +1,8 @@
 # Application Bulkheads at SHOP.COM
 
-The eCommerce platform on which we currently work (http://www.shop.com) is undergoing a major overhaul from an aging monolithic application to a more distributed SOA architecture. Part of this effort involves breaking out functional pieces of the front end application into separately managed and deployed web applications that together make up the SHOP.COM website. For example, we have applications for:
+The eCommerce platform on which we work (http://www.shop.com) is undergoing a major overhaul from an aging monolithic application to a more distributed SOA architecture. Part of this effort involves breaking out functional pieces of the front end application into separately managed and deployed web applications that together make up the SHOP.COM website. For example, we have applications for:
 
-* Searching
+* Search
 * Product Catalog
 * Shopping Cart
 * Checkout
