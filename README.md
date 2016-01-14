@@ -76,7 +76,7 @@ The purpose of the API layer is also very simple. It puts together REST URLs to 
     }
 ```
 
-That's it! There is a bit of magic going on in that JSONAdapter, which I will talk about in the next section.
+That's it! There is a bit of magic going on in that JSONAdapter, which we'll explore in the next section.
 
 It's important to understand the difference between this API layer and the back end REST APIs. In a perfect world the back end APIs would return data exactly how it will be used. Unfortunately our world is not perfect. Quite often multiple REST calls are made and munged into a domain object used by the controller. In other words, the API layer performs **client-specific service composition**.
 
