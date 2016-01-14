@@ -181,7 +181,7 @@ While the SHOP.COM REST services generally produce JSON, we could implement adap
 
 ### The User Interface
 
-So what impact does all this have on the UI? The SHOP.COM website is very concerned with SEO, and must provide server-generated pages in most cases. We use Apache Velocity templates, which provide simple access to Java objects and a bit of logic in the UI.
+So what impact does all this have on the UI? The SHOP.COM website is very concerned with SEO, and must provide server-generated pages in most cases. We use Apache Velocity templates, which provide simple access to Java objects and a bit of logic in the UI. Even though logic **can** be placed in the templates, it is a best practice to minimize it.
 
 In our example, once we execute a search we only want to display the image, caption, catalog name and price. The SearchResultItem interface succinctly exposes only the fields we want. Now in our template, populated with the adapted data, the markup is as simple as this:
 
