@@ -46,6 +46,7 @@ public interface SearchAPI {
 
     /**
      * Execute a search query with the given term
+     *
      * @param term The term to search for
      * @return The search result object nicely formatted for display
      */
