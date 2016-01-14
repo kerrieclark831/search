@@ -219,7 +219,7 @@ Unit testing is especially important in distributed systems - automation is key 
 	}
 ```
 
-This is definitely an over-simplification, but developers should strive for maximum coverage.
+I skimped here, but you can't. :) You should strive for maximum coverage.
 
 ### Wrapping it up
 
