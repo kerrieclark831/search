@@ -39,7 +39,7 @@ An incoming request enters the application through a Spring MVC controller. The 
 
 ### The API
 
-Each front end application contains an API (Java interface and implementation(s)) that defines the Domain Specific Language (DSL) for that application. The API method names are as expressive as possible in the context of the feature. In our small exmaple, all we need to do is execute a search:
+Each front end application contains an API (Java interface and implementation(s)) that defines the Domain Specific Language (DSL) for that application. The API method names are as expressive and fluent as possible in the context of the feature. In our small exmaple, all we need to do is execute a search:
 
 ```
 public interface SearchAPI {
