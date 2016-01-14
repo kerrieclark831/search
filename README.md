@@ -8,7 +8,7 @@ The eCommerce platform on which we work (http://www.shop.com) is undergoing a ma
 * Checkout
 * etc.
 
-This is known as the bulkhead pattern. Analagous to a bulkhead on a ship, its main purpose is to isolate failure to smaller areas of the system so if one piece fails the entire system doesn't go down. Decomposing the application has additional benefits - a smaller codebase for each application is easier to grok and is more manageable. Developers have less chance of stepping on each others' toes, and teams can form around the individual applications. Applications can be deployed independently. However, it also incurs some complexity in deployments and monitoring.
+This is known as a bulkhead pattern. Analagous to a bulkhead on a ship, its main purpose is to isolate failure to smaller areas of the system so if one piece fails the entire system doesn't go down. Decomposing the application has additional benefits - a smaller codebase for each application is easier to grok and is more manageable. Developers have less chance of stepping on each others' toes, and teams can form around the individual applications. Applications can be deployed independently. However, it also incurs some complexity in deployments and monitoring.
 
 ## About This Example
 
