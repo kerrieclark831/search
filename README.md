@@ -63,9 +63,9 @@ The purpose of the API layer is also very simple. It puts together REST URLs to 
         // Build service URL - sorry, this isn't a real URL
         String serviceURL = UriComponentsBuilder.newInstance()
                 .host("example.com")
-                .port(8089)
+                .port(9987)
                 .scheme("http")
-                .path("/Search/" + term)
+                .path("/search/" + term)
                 .toUriString();
 
         // Call the service
