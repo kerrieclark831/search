@@ -1,4 +1,4 @@
-# Application Bulkheads at SHOP.COM
+# Y-Axis Scaling and Bulkheads in FAMOS
 
 Our website is undergoing a major overhaul from an aging monolithic application to a more distributed SOA architecture. Part of this effort involves breaking out functional pieces of the front end application into separately managed and deployed web applications that together make up the SHOP.COM website. For example, we have applications for:
 
