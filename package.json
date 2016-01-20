@@ -1,0 +1,62 @@
+{
+  "name": "famos-assets",
+  "version": "0.0.1",
+  "description": "FAMOS assets",
+  "license": "unlicensed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopcom/famos.git"
+  },
+  "config": {
+    "url": "staging.shop.com/*",
+    "port": "8085"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "css-mqpacker": "^4.0.0",
+    "del": "^2.0.2",
+    "fs": "0.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "latest": "^0.2.0",
+    "mappy-breakpoints": "^0.2.1",
+    "node-sass": "^3.3.3",
+    "path": "^0.12.7",
+    "postcss": "^5.0.10",
+    "rimraf": "^2.4.4",
+    "susy": "^2.2.2-alpha.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "run-sequence": "^1.1.4",
+    "postcss-cssstats": "^1.0.0"
+  },
+  "info": {
+    "resources": "src/main/resources/static",
+    "paths": {
+      "css": "css/",
+      "scss": "sass/",
+      "min": "min/css/"
+    }
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "private": true,
+  "scripts": {
+    "test": "gulp test",
+    "prebuild": "npm install",
+    "build": "gulp"
+  }
+}

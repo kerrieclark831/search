@@ -1,0 +1,70 @@
+/** the breadcrumb/filter bar mobile/tablet/desktop */
+#search .breadcrumb ul {
+  margin: 5px 320px 0 20px;
+}
+#product .breadcrumb {
+  padding: .25em 0 0.4em 0;
+  margin-bottom: 1em;
+}
+
+
+.breadcrumb {
+  font-size: $smallText;
+  //  width: 100%; /* While Adobe tests are going on, comment out to make room for upper utility bar */
+  ul {
+    list-style: none;
+    padding: 0;
+    overflow-x: visible;
+    li {
+      display: inline-block;
+      color: #6C6D70;
+      white-space: nowrap;
+
+      padding: 4px 5px 4px 12px;
+      &:first-child {
+        padding-left: 0;
+        background: none; // Removes divider arrow from first li item, works better with Save Search, might for all
+      }
+    }
+    a {
+      // all
+      vertical-align: middle;
+      text-decoration: none;
+      color: #6C6D70;
+      &.close-sprite {
+        width: 15px;
+        height: 15px;
+        background: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/search-sprite-full.png") no-repeat scroll 0 -426px;
+        padding: 1px 20px 0 0;
+      }
+    }
+    li.save-search {
+      // d default, hidden on m/t
+      background: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/search-sprite-full.png") no-repeat 0 -29px;
+      padding-left: 13px;
+      padding-right: 0;
+      padding-bottom: 6px;
+      margin-left: 4px;
+      a {
+        background-color: #fff;
+        padding: 6px 4px 5px 2px;
+      }
+    }
+    li .separator{
+      background: url(//edge.shop.com/ccimg.shop.com/resources/images/separator-arrow.png) no-repeat left center;
+      color: transparent;
+      padding: 0 1px 2px;
+      margin: 5px -10px 0 5px;
+    }
+  }
+}
+/** end of breadcrumb **/
+
+@media screen and (max-width:660px){
+  #product .breadcrumb {
+    display: none;
+  }
+  .categories .breadcrumb {
+    margin: 0 rem(10);
+  }
+}

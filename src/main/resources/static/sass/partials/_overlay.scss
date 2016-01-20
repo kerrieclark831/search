@@ -1,0 +1,439 @@
+@import "modules/index";
+
+.close-sprite {
+  top: -24px;
+  right: -24px;
+  z-index: 989;
+}
+
+/********End AMOS #header/#footer*****/
+//#header, #footer {
+  /* new default overlay plugin -- used on quickview, alerts */
+.jt-overlay {
+  /* FKA jquerytools-overlay */
+  /* must be initially hidden */
+  display: none;
+  /* place overlay on top of other elements */
+  z-index: 10000;
+  /* styling */
+  background-color: #FFF;
+  margin: 0 5%; /* eliminating % width and setting % on margins centers overlay for dragging */
+  min-height: 200px;
+  min-width: 300px;
+  max-width: 1050px;
+  /* CSS3 styling for latest browsers */
+  box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.6);
+  @include border-radius(6px, 6px);
+  padding: 20px 20px 50px;
+
+  .product-image {
+    float: left;
+    margin: 0 10px 10px 0;
+  }
+
+  .wrapper {
+    width: auto;
+  }
+
+  .color-swatches li {
+    margin: 6px;
+
+    a {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .close-sprite {
+    float: right;
+    position: relative;
+    top: -35px;
+    right: -35px;
+  }
+}
+
+.overlay-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1000;
+
+  .overlay-mask {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay-body {
+    width: 580px;
+    height: auto;
+    margin: 42px auto;
+
+    .close-sprite {
+      float: right;
+      position: relative;
+    }
+  }
+}
+
+#showConfirmationOverlay.jt-overlay, #showMessageOverlay.jt-overlay {
+  height: auto;
+  min-height: 50px;
+  padding: 20px;
+}
+
+.gray-box {
+  background: $lightGray;
+  border-radius: rem(6);
+  border: $borderStyle;
+  padding: 10px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.overlay, .jt-overlay {
+  .ui-selectmenu-button {
+    width: 100%;
+    min-width: initial;
+  }
+}
+
+.overlay {
+  position: relative;
+  margin: 20px auto;
+  box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.6);
+  border-radius: rem(6);
+  background-color: #fff;
+  padding: 20px;
+
+  h2 {
+    font-size: $largeHeader;
+    color: $green;
+    margin: 0;
+  }
+  h3 {
+    font-size: $smallHeader;
+    color: $shopBlue;
+  }
+  .success {
+    margin: 0 auto 20px;
+    padding: 15px 10px;
+    width: 70%;
+    border: 1px solid;
+
+    @include p-el(before, 26px, 26px) {
+      position: relative;
+      top: 6px;
+      left: 0;
+      margin-right: 8px;
+      display: inline-block;
+    }
+  }
+  p.message {
+    width: 90%;
+    margin: 0 0 10px 0;
+  }
+
+  .gray-box {
+    margin: 10px 0 20px;
+
+    .control-group {
+      margin: 5px 0;
+    }
+
+    input {
+      font-size: .875rem;
+    }
+
+    .left-column {
+      width: 40%;
+      clear: left;
+      margin: 8px 10px 20px 5px;
+    }
+
+    .right-column {
+      width: 55%;
+      height: 30px;
+      clear: right;
+      margin-bottom: 5px;
+    }
+
+    .ui-selectmenu-button span.ui-selectmenu-text {
+      font-size: 0.875rem;
+      /* trying to bring back arrow with long list name */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      padding: 0 2.1em 0.4em 0.1em;
+    }
+
+    label {
+      font-size: $mainText;
+      line-height: 20px;
+    }
+
+    label.disabled {
+      color: #cccccc;
+    }
+
+    a {
+      word-break: break-all;
+    }
+
+    ul {
+      font-size: $smallText;
+    }
+  }
+}
+
+#create-account.overlay {
+  label {
+    font-size: $mainText;
+    margin: 5px 10px 3px 0px;
+  }
+  .bottom-stripe {
+    margin: 0;
+  }
+  .checkbox {
+    border: none;
+    margin: 0;
+  }
+  .refer-friend label {
+    padding: 5px;
+  }
+  .email-sign-up {
+    margin: 10px 0;
+  }
+  &.my-account hr {
+    margin: 0;
+  }
+  .button-primary {
+    margin: 0;
+  }
+}
+
+#login-popup, #popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10002;
+
+  .mask {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+  }
+
+  .popUpContent {
+    position: absolute;
+
+    .overlay {
+      max-width: 750px !important;
+      width: auto;
+      margin: 0 auto;
+      height: 100% !important;
+      min-height: 400px;
+      overflow: auto;
+      &.gen-error {
+        min-height: 90px;
+      }
+    }
+
+    .close-sprite {
+      position: absolute;
+    }
+  }
+}
+
+/* desktop for quickview overlay */
+@media (max-width: 1030px) {
+  /* 1085px */
+  .jt-overlay {
+    .two-thirds-col {
+      //      float: left;
+      margin: 0 0 1.5em 0;
+      width: 660px;
+    }
+    .purchase-options {
+      float: right;
+      width: 50%;
+      clear: right;
+    }
+    .option-info {
+      clear: both;
+    }
+    .bg-shadow {
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    #product .one-third-col, #quickview .one-third-col {
+      position: relative;
+      float: left;
+      display: block;
+      margin: .625em 0;
+      width: 300px;
+      padding: 0;
+    }
+    .spacer {
+      float: left;
+      width: 325px;
+      position: relative;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .jt-overlay {
+    .two-thirds-col {
+      width: auto;
+    }
+
+    .single-column-float {
+      width: 100%;
+      margin-right: 0;
+      float: left;
+    }
+    h1.product-title {
+      float: none;
+      width: 95%;
+      font-size: $medHeader;
+      color: $shopBlue;
+      margin: 10px 0 5px;
+    }
+    .purchase-options {
+      float: left;
+      margin: 0 auto;
+      width: 100%;
+      min-height: 0;
+      clear: both;
+    }
+    #product .one-third-col, #quickview .one-third-col {
+      float: left;
+      width: 95%;
+      margin: 0 auto 5px;
+      margin-left: 10px;
+      padding: 0;
+    }
+  }
+}
+//}/********End AMOS #header/#footer*****/
+
+
+/******* New email acquisition promos responsive overlay *******/
+.overlay-wrapper.promotion {
+  text-align: center;
+  overflow-y: auto;
+  display: block;
+  padding-top: 55px;
+  z-index: 500;
+
+  /* needed to keep rt. 10px margin for mobile/small tablet*/
+  @media screen and (max-width: 700px) {
+    .margin-both {
+      margin-right: 20px;
+    }
+  }
+
+  * {
+    line-height: 1.1em;
+  }
+
+  .overlay { /* not using plugin */ /*.overlay-body, */
+    background-color: #fff;
+    width: auto; /* need for responsive */
+    min-width: 280px;
+    padding: 20px 20px 50px;
+
+    @media screen and (max-width: 660px) {
+      padding: 20px;
+    }
+
+    h1 {
+     margin: 20px 0;
+     color: #77AC57;
+    }
+
+    .close-sprite {
+     top: -35px;
+     right: -35px;
+     float: right;
+     position: relative;
+    }
+  }
+
+  img {
+    margin-right: -35px; /* corrects for close-sprite pushing over */
+
+    @media screen and (max-width: 480px) {
+      width: 100%; /* responsive re-size - logo shrinks */
+    }
+  }
+
+  h3 {
+    font-size: $largeHeader;
+    color: $medGray;
+  }
+
+  a:hover {
+    color: $hover;
+  }
+
+  .cashback {
+    position: relative;
+    padding-left: 52px;
+    font-size: inherit;
+    color: inherit;
+
+    @include p-el(before, 52px, 37px) {
+      @include full-sprite;
+      position: absolute; /* to NOT allow line break between cashback img and text */
+      left: 0;
+      top: -2px;
+      background-position: -420px -262px;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+  }
+  form {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  input {
+    font-size: $mainText;
+  }
+  input[name="email"] {
+    width: 60%;
+    margin: 7px 6px 0 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    @media screen and (max-width: 660px) {
+      width: 100%;
+    }
+  }
+  input[name="birthdate"] {
+    width: 75px;
+  }
+  label {
+    clear: both;
+  }
+  label input {
+    display: block;
+  }
+  .button {
+    width: auto;
+    display: inline-block;
+  }
+}

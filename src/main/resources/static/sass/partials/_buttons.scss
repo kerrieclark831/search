@@ -1,0 +1,243 @@
+/********End AMOS #header/#footer*****/
+//#header, #footer {
+/***** Button Styles ***********************/
+.button, .button:hover, .button:focus, .button:visited, .button:active {
+  @include border-radius(6px, 6px);
+  cursor: pointer;
+  display: inline-block;
+  font-size: $mainText;
+  font-weight: bold;
+  line-height: 1em;
+  padding: 0.65em 1.85em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.button.primary {
+  color: $white;
+  text-decoration: none;
+  border: solid thin $orange;
+  background-color: $orange;
+  background: linear-gradient(to bottom, #fd8500 0%, $orange 100%);
+
+  &:hover {
+    background-color: #fd8e0a;
+    border: solid thin #fd8e0a;
+    background: linear-gradient(to bottom, #fea624 0%, #fd8e0a 100%);
+  }
+
+  &:active {
+    background-color: #e26b00;
+    background: linear-gradient(to bottom, #e26b00 0%, #e26b00 100%);
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:active {
+    cursor: default;
+    background-color: #b8b8b9;
+    border: $borderStyle;
+    background: linear-gradient(to bottom, #d8d8db, #b8b8b9);
+    box-shadow: none !important;
+  }
+}
+
+.button.secondary {
+  color: $white;
+  text-decoration: none;
+  border: solid thin #0395B4; /* #059FC0 */
+  background-color: #00A8CA;
+  background: #00A8CA linear-gradient(to bottom, #00A8CA, #0C637A); /* proposed W3C markup */
+
+  &:hover {
+    color: $white;
+    background-color: #8CD2E8;
+    background: #8CD2E8 linear-gradient(to bottom, #8CD2E8, #00A8CA); /* proposed W3C markup */
+  }
+
+  &:active {
+    color: $white;
+    background-color: #0C637A;
+    background: #0C637A linear-gradient(to bottom, #0C637A, #074252); /* proposed W3C markup */
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:active {
+    cursor: default;
+    background-color: #86ABB7;
+    background: #97BEC8 linear-gradient(to bottom, #97BEC8, #86ABB7); /* proposed W3C markup */
+  }
+}
+
+.button.tertiary {
+  text-decoration: none;
+  color: $shopBlue;
+  border: 1px solid #1082A0;
+  background-color: #FFFFFF;
+  background: #FFFFFF linear-gradient(to bottom, #FFFFFF, #E2E2E2); /* proposed W3C markup */
+
+  &:hover {
+    border: 1px solid #1082A0;
+    color: $shopBlue;
+    background-color: #B2DEF3;
+    background: #FFFFFF linear-gradient(to bottom, #FFFFFF, #B2DEF3); /* proposed W3C markup */
+  }
+
+  &:active {
+    border-color: #1082A0;
+    color: $white;
+    background-color: #36B5D7;
+    background: #95E0F9 linear-gradient(to bottom, #95E0F9, #36B5D7); /* proposed W3C markup */
+  }
+
+  &.disabled,
+  &.disabled:hover,
+  &.disabled:active {
+    cursor: default;
+    background-color: #F0F0F0;
+    background: #FFFFFF linear-gradient(to bottom, #FFFFFF, #F0F0F0); /* proposed W3C markup */
+    border: solid 1px #95B6C1;
+    color: #97BEC8;
+  }
+}
+
+/** quadrary button used in email sign up  **/
+.button.quadrary {
+  font-size: $smallText;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: auto;
+  text-align: center;
+  margin: 0 15px;
+  @include border-radius(0 6px 6px 0);
+
+  &.quadrary:link, &:hover, &:active, &:focus {
+    color: #fff;
+    background-color: $brightGreen;
+  }
+}
+
+.filter-bar .button, .filter-bar .button-no-drop {
+  background-color: #01a4c7;
+  background: #01a4c7 linear-gradient(to bottom, #01a4c7, #1ab8d3);
+  padding: 7px 7px;
+  margin: 0;
+}
+
+.filter-bar .button-no-drop:hover, .filter-bar .button.hover {
+  color: $white;
+  background-color: #1ab8d3;
+  background: #1ab8d3 linear-gradient(to bottom, rgb(26, 184, 211), #01a4c7);
+}
+
+.filter-bar .dropped {
+  padding-bottom: 9px;
+  color: $white;
+  background-color: #308196;
+  background: #308196 linear-gradient(to bottom, #3ba7c1, #308196);
+}
+
+form .button.primary, form .button.secondary {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a.button.full-width, a.button.full-width:hover {
+  display: block;
+  margin: 20px 0px;
+  width: auto;
+}
+
+button.full-width, .button.full-width, .button.full-width:hover {
+  width: 100%;
+}
+
+/*Twitter/ Facebook Social Buttons*/
+a button.btn-facebook, a button.btn-twitter {
+  text-align: center;
+  font-weight: bold;
+  width: 140px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+a button.btn-facebook {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background: #133783; /* Old browsers */
+  background: linear-gradient(to bottom, #fff 0%, #758ab6 8%, #3b5998 50%, #2f4779 55%, #133783 98%); /* W3C */
+  border-width: 1px;
+  border-color: #133783 #2b4b90 #091b40;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+
+  @include p-el(before, 20px, 15px) {
+    background: url(//edge.shop.com/resources/images/FB-fLogo-white_alone.png) no-repeat;
+    background-size: 8px;
+    position: relative;
+    left: -20px;
+    margin: 0 0 0 6px;
+    text-align: center;
+    padding-left: 15px;
+    border-right: solid thin rgba(255, 255, 255, .5);
+  }
+}
+
+a button.btn-facebook span, a button.btn-twitter span {
+  font-size: $smallHeader;
+  color: transparent;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  padding: 2px;
+  margin: -2px 15px 0 0;
+  float: left;
+}
+
+a button.btn-facebook:hover,
+a button.btn-facebook:visited {
+  text-decoration: none;
+  color: white;
+  background-color: #2b4b90;
+  *background-color: #133783;
+  background: rgb(167, 207, 223); /* Old browsers */
+  background: #133783; /* Old browsers */
+  background: linear-gradient(to bottom, #aab7d2 0%, #6a81b1 8%, #405d9b 50%, #2b4b90 55%, #091b40 98%); /* W3C */
+  border-width: 1px;
+  border-color: #2b4b90 #2b4b90 #091b40;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff133783', GradientType=0); /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+a button.btn-twitter {
+  color: #1c95d0;
+  text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+  background: #fff; /* Old browsers */
+  background: linear-gradient(to bottom, #fff 0%, #F3F3F3 50%, #EDEDED 50%, #d5d5d5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0); /* IE6-9 */
+  border-width: 1px;
+  border-color: #d5d5d5;
+
+  @include p-el(before, 20px, 15px) {
+    background: url(//edge.shop.com/resources/images/Twitter_logo_blue.png) no-repeat;
+    background-size: 18px;
+    position: relative;
+    left: -15px;
+    text-align: center;
+    padding-left: 22px;
+    border-right: solid thin rgba(0, 0, 0, 0.1);
+  }
+}
+
+a button.btn-twitter:hover,
+a button.btn-twitter:focus {
+  text-decoration: none;
+  color: #1c95d0;
+  background: rgb(255, 255, 255); /* Old browsers */
+  background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0); /* IE6-9 */
+}
+
+//}/********End AMOS #header/#footer*****/

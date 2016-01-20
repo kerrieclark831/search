@@ -1,0 +1,441 @@
+/****************Main Button List styles*************/
+.button-list {
+  list-style-type: none;
+  margin: 5px 10px 10px;
+  padding: 0;
+  max-width: 100%;
+}
+
+.button-list li {
+  border-bottom: $borderStyleLight; /* need to put borders on li so that when you hover, the change in bg color doesn't wipe out the rounded corners */
+  border-right: $borderStyleLight;
+  border-left: $borderStyleLight;
+  background: #FBFBFB;
+  padding-left: 10px;
+}
+
+.button-list.no-action li a, /* for button lists where the entire button is NOT an action (hide the arrow) */
+.button-list.no-arrow li a,
+.button-list.no-action li a:after,
+.button-list.no-arrow li a:after {
+  /* for button lists where the button is an action, but no arrow (i.e. counts instead) */
+  background-image: none;
+  content: "";
+}
+
+.button-list li:first-child {
+  border-top: 1px solid $medLightGray;
+  -webkit-border-top-left-radius: .6em;
+  -webkit-border-top-right-radius: .6em;
+  -moz-border-radius-topleft: .6em;
+  -moz-border-radius-topright: .6em;
+  border-top-left-radius: .6em;
+  border-top-right-radius: .6em;
+}
+
+.button-list li:last-child {
+  -webkit-border-bottom-left-radius: .6em;
+  -webkit-border-bottom-right-radius: .6em;
+  -moz-border-radius-bottomleft: .6em;
+  -moz-border-radius-bottomright: .6em;
+  border-bottom-left-radius: .6em;
+  border-bottom-right-radius: .6em;
+}
+
+.button-list li:hover,
+.button-list li:active {
+  background-color: $gradientLightGray;
+}
+
+.button-list.no-action li:hover, /* do not change the color on hover if there is no action */
+.button-list.no-action li:active {
+  background-color: #FBFBFB;
+}
+
+.button-list li {
+  font-size: 0.9em; /* was 0.95em */
+  margin: 0;
+}
+
+.button-list li > a, .button-list li > a:hover,
+.button-list li > span {
+  text-decoration: none;
+  color: #6C6B70;
+  font-weight: normal;
+  display: block; /* want the a tag to span the whole "button" so user can click anywhere */
+  padding: 0.7em 0.7em .7em 0;
+}
+
+#search.show-detail-view .button-list li a{
+  @include p-el(after, 8px, 13px) {
+    right: 10px;
+    top: 50%;
+    left: 95%;
+  }
+}
+/**************End Main Button List Styles*******/
+/*** drop down list and pick list for mobile
+** drop down list spans the whole phone
+** pick-list is 10px in on edges and has rounded corners
+ ** pick-list also does not contain a <a> in the whole item */
+
+.m-drop-down-list {
+  width: 100%;
+}
+
+.pick-list {
+  width: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.m-drop-down-list ul,
+.pick-list ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.m-drop-down-list li,
+.pick-list li {
+  border-bottom: 1px solid #cccccc;
+  background: #fafafa url(//edge.shop.com/ccimg.shop.com/resources/images/drop-down-list-no-check.png) 8px center no-repeat;
+  color: #6C6D70;
+  font-size: $mainText;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pick-list li {
+  font-weight: normal;
+}
+
+.m-drop-down-list li:hover,
+.m-drop-down-list li:active,
+.pick-list li:hover,
+.pick-list li:active {
+  background-color: #D7EDF7;
+}
+
+.m-drop-down-list li.disabled,
+.pick-list li.disabled {
+  cursor: default;
+}
+
+.m-drop-down-list li.disabled a,
+.pick-list li.disabled {
+  color: #cccccc;
+}
+
+.m-drop-down-list li.disabled:hover,
+.m-drop-down-list li.disabled:active,
+.pick-list li.disabled:hover,
+.pick-list li.disabled:active {
+  background-color: #fafafa;
+}
+
+.m-drop-down-list li.selected,
+.pick-list li.selected {
+  background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/drop-down-list-check.png");
+  background-color: #eff8e7;
+}
+
+.m-drop-down-list a,
+.pick-list li {
+  color: #6C6D70;
+  padding: 10px 0 10px 40px;
+  text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.pick-list li a {
+  float: right;
+  margin-right: 10px;
+}
+
+.cart-options .m-drop-down-list li,
+.pick-list li {
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+}
+
+.cart-options .m-drop-down-list li:last-child,
+.pick-list li:last-child {
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-bottom-right-radius: 10px;
+  -moz-border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.pick-list li:first-child {
+  border-top: 1px solid #cccccc;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-top-right-radius: 10px;
+  -moz-border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.cart-options .m-drop-down-list a,
+.pick-list li {
+  padding-left: 40px;
+  padding-top: 5px;
+  width: 80%;
+  /*for those that do not understand calc*/
+//  width: calc(100% - 50px); /*40px is the padding-left*/
+  @include calc(width, "100% - 50px");
+}
+
+.pick-list .pick-list-form {
+  margin-right: 10px;
+}
+/**************Start Mobile Search**************/
+#type-ahead.button-list {
+  display: none;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+#type-ahead.button-list li a {
+  max-width: 95%;
+}
+
+#type-ahead.button-list li a:after {
+  content: "";
+  width: 8px;
+  height: 13px;
+  margin: 0px -5% 0 0;
+}
+
+ul#type-ahead-store-desktop {
+
+  li.selected {
+    background-color: $gradientLightGray;
+  }
+
+  &.button-list li > a {
+    min-height: 0;
+    padding: 0;
+  }
+
+  &.button-list li > a:after{
+    position:absolute;
+    right:0;
+  }
+}
+
+/***** grid view formatting ******/
+.show-grid-view .button-list li {
+  float: left;
+  list-style: none outside none;
+  margin: 5px;
+  /* space outside the border */
+  padding: 0;
+  width: 30%;
+  /* helps keep all the same height */
+  max-width: 205px;
+  min-width: 145px;
+  height: 390px; /* adjust for points and BV with 3-line title */
+  position: relative;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: $white;
+}
+
+.show-grid-view .button-list li a {
+  position: relative;
+  padding: 0.7em 0;
+}
+
+.show-grid-view .button-list li a:after {
+  content: "";
+  display: none;
+}
+
+/***** end grid view formatting ******/
+/****************End Mobile Search ****************/
+
+/******** Start Departments page *********/
+.button-list li.heading,
+.button-list li.heading:hover,
+.button-list li.heading:active {
+  color: $white;
+  font-weight: bold;
+  font-size: 0.9em;
+  background: #1082A0;
+  padding: 0.5em 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.button-list li.heading a {
+  float: right;
+  font-size: 0.7em;
+  color: $white;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.button-list li.heading a:hover,
+.button-list li.heading a:active {
+  text-decoration: none;
+}
+
+.button-list .list-label {
+  /* the label that goes with the count-icon */
+  display: inline-block;
+  width: 80%;
+}
+
+.button-list .count-icon {
+  background: #00a8ca;
+  font-size: 0.75em;
+  font-weight: bold;
+  line-height: 1.45em;
+  color: $white;
+  float: right;
+  border-radius: 2em;
+  border: 1px solid #bcbcbc;
+  padding: 3px 5px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.button-list .level2 {
+  display: none;
+}
+
+/********* End Departments page********/
+
+/**********Start A to Z, Search and Shopping advisor pages **********/
+#store-results .button-list {
+  margin: 10px 0 0 -5px;
+}
+
+#search .button-list, #shop-advisor .button-list {
+  margin: 10px 0;
+  li {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    &:last-child {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}
+
+#search .button-list li, #store-results .button-list li, #shop-advisor .button-list li {
+  background-color: white;
+  /* otherwise the product image backgrounds look weird */
+  padding: 0 10px 10px;
+  margin-top: 10px;
+}
+
+.show-detail-view .button-list li > a {
+  position: relative; /* needed to position the arrow absolutely */
+  padding: 0 30px 0 0px;
+  min-height: 95px;
+  /* the height of the image */
+}
+
+#shop-advisor.sas-search.show-detail-view .button-list li > a {
+  min-height: 0;
+}
+
+#shop-advisor.show-detail-view .button-list li a:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 13px;
+  right: 10px;
+  top: 50%;
+  left: 95%;
+}
+
+#shop-advisor.show-grid-view .button-list li {
+  width: 35%;
+  max-width: 225px;
+  min-width: 190px;
+  height: 490px; /* 490 for buttons to line up */
+  border-bottom: $borderStyleLight;
+}
+
+#store-results {
+  .button-list li {
+   font-size: 0.9em;
+   margin: 0;
+   border-bottom: $borderStyle;
+   /* need to put borders on li so that when you hover, the change in bg color doesn't wipe out the rounded corners */
+   border-right: none;
+   border-left: none;
+   background: #FBFBFB;
+   padding-left: 10px;
+   color: #6C6B70;
+   font-weight: normal;
+  
+   &:first-child {
+     border-top: none;
+     border-bottom: $borderStyle;
+     -webkit-border-top-left-radius: 0;
+     -webkit-border-top-right-radius: 0;
+     -moz-border-radius-topleft: 0;
+     -moz-border-radius-topright: 0;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+   }
+    &:last-child {
+      -webkit-border-bottom-left-radius: 0;
+      -webkit-border-bottom-right-radius: 0;
+      -moz-border-radius-bottomleft: 0;
+      -moz-border-radius-bottomright: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .button-list li a .store-info {
+    position: relative;
+    min-height: 50%;
+    height: 100%;
+  }
+
+  #content.button-list {
+    margin: 0;
+  }
+}
+
+/********** End A to Z page ********************/
+
+/********** Cart Items ********************/
+.cart-items .button-list {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.cart-items .button-list li,
+.cart-items .button-list li:hover,
+.cart-items .button-list li:active {
+  background-color: white;
+  /* otherwise the product image backgrounds look weird */
+}
+
+/********** End Cart Items ********************/
+
+/****** Button Arrow*******/
+.button-arrow {
+  background: white url(//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow.png) no-repeat 97% center;
+  background-position: right 10px center;
+  background-position: calc(100% - 10px) center;
+  background-position: -moz-calc(100% - 10px) center;
+  background-position: -webkit-calc(100% - 10px) center;
+}
+/***** Ref queries.scss max-width:660px for A to Z button-list *******/

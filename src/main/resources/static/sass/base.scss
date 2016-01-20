@@ -1,0 +1,398 @@
+@import "modules/index";
+@import "modules/extend";
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;/*Remove for AMOS*/
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: "";
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+/*****************Add for AMOS #header/#footer *******************/
+//#header, #footer, #horiz-menu {
+  html {
+    padding: 0;
+    font-size: 100%;
+    text-size-adjust: 100%;
+    tap-highlight-color: transparent; /* For some Androids */
+    box-sizing: border-box;
+  }
+
+  /* apply a natural box layout model to all elements */
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+//}
+
+/****************************End for AMOS************************/
+
+/****************************Add for AMOS************************/
+//table, table:before, table:after {
+//  min-height:500px;
+//  box-sizing: content-box;
+//}
+
+html, button, input, select, textarea {
+  color: #666;
+  overflow-x:hidden;
+}
+
+body {
+  font-family: $baseFontStyle;
+  color: $shopGray;
+  font-size: $largeText;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0;
+  -moz-overflow: hidden;
+  -ms-overflow-style:scroll;
+
+}
+
+
+* html .group {
+  zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .group {
+  zoom: 1;
+}
+
+/* IE7 */
+b, strong {
+  font-weight: bold;
+}
+
+/* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the content editable attribute is included anywhere else in the document.
+* Otherwise it causes space to appear at the top and bottom of elementsn that are clearfixed.                                                                                                                            0
+* 2. The use of `table` rather than `block` is only necessary if using `:before` to contain the top-margins of child elements.
+*/
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+:focus {
+  outline: none;
+}
+
+.search-result-message {
+  color: #77ac57;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0.625rem 0;
+}
+
+/***************************Add for AMOS***********************/
+//#header, #footer, #horiz-menu {
+  h1 {
+    font-size: $largeHeader;
+    color: $green;
+    font-weight: bold;
+    line-height: 1em;
+    margin: rem(10) 0;
+
+    &.blue {
+      color: $shopBlue;
+    }
+
+    &.product-title {
+      font-size: $medHeader;
+      color: $shopBlue;
+      margin: 10px 0 5px 0;
+    }
+  }
+
+  h2 {
+    font-size: $medHeader; /* todo: revisit the size */
+    font-weight: bold;
+    color: $shopBlue;
+    margin: rem(10) rem(0);
+  }
+
+  h3 {
+    color: $shopGray;
+    font-weight: bold;
+    font-size: $smallHeader;
+    margin: rem(10) rem(0);
+  }
+
+  h3.stripe {
+    padding: 10px;
+    color: #ffffff;
+    background-color: $shopGray;
+  }
+
+  h4 {
+    color: $shopGray;
+    font-weight: bold;
+    font-size: $mainText;
+    margin: 0px 10px;
+  }
+
+  p {
+    font-size: $mainText;
+    margin: 10px 0;
+  }
+
+  p, pre {
+    line-height: rem(18);
+  }
+
+  a, a:link, a:visited {
+    color: $shopBlue;
+    //    text-decoration: underline;
+    text-decoration: none;
+  }
+
+  a:hover, a:active, a:hover p, a:active p {
+    text-decoration: none;
+  }
+
+  a.plain, a.plain:link, a.plain:visited {
+    text-decoration: none;
+  }
+
+  img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+  }
+
+  fieldset {
+    border: 0 none;
+    padding: 0;
+    margin: 0 0 .5em;
+  }
+
+  label {
+    font-size: $mainText;
+    display: block;
+    margin: 15px 0 6px 0;
+  }
+
+  /**********************Comment for AMOS***********************/
+    input, textarea {
+      font: normal 1em Arial, Helvetica, sans-serif;
+      color: #6C6D70;
+      border: $borderStyle;
+      border-radius: 4px;
+      padding: 0.5em;
+      width: 100%;
+      margin: 5px 0;
+    }
+  /********************************End AMOS Comment**************************/
+
+  /* to get rid of the select drop down arrow in Firefox */
+  select {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+  }
+
+  ///*********************************Comment out all input for AMOS*******************************/
+    input[type="radio"], input[type="checkbox"] {
+      float: left;
+      color: #b6b6b7;
+      font-size: 20px;
+      height: 1em;
+      width: 1em;
+      border: none;
+      padding: 0;
+    }
+
+    input[type="checkbox"] {
+      margin: 0 10px 0 0;
+    }
+
+    input[type="radio"] {
+      display: inline-block;
+      font-size: 15px;
+      margin: 2px 3px 0 -.2em;
+    }
+
+  /********************************End AMOS Comment section**************************/
+
+  select {
+    border: $borderStyle;
+    vertical-align: middle;
+    @include border-radius(4px, 4px);
+    background-color: $white;
+    height: 2em;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+
+    &:focus {
+      outline: none;
+    }
+    &:-moz-focus-inner {
+      border: 0;
+    }
+  }
+
+  //  WebKit browsers, Mozilla Firefox 4 to 18,  Mozilla Firefox 19+, Internet Explorer 10+
+  ::-webkit-input-placeholder {
+    color: $shopGray;
+    font-style: italic;
+  }
+
+  :-moz-placeholder {
+    color: $shopGray;
+    font-style: italic;
+  }
+
+  ::-moz-placeholder {
+    color: $shopGray;
+    font-style: italic;
+  }
+
+  :-ms-input-placeholder {
+    color: $shopGray;
+    font-style: italic;
+  }
+
+  .textarea::-webkit-input-placeholder {
+    color: $medLightGray;
+  }
+
+  .textarea:-moz-placeholder {
+    color: $shopGray;
+  }
+
+  .textarea::-moz-placeholder {
+    color: $shopGray;
+  }
+
+  .textarea:-ms-input-placeholder {
+    color: $shopGray;
+  }
+
+  hr {
+    margin: 10px 0px;
+    width: 100%;
+    height: 0;
+    border-bottom: none;
+    border-top: $borderStyle;
+  }
+
+  hr.vertical {
+    width: 0;
+    height: 100%;
+    min-height: 150px;
+    float: left;
+    display: inline-block;
+    margin-left: 6px;
+    border-left: $borderStyle;
+    border-top: 0 none;
+  }
+
+  /* fixes parent child float relationships. use instead of overflow:hidden */
+  .group:after,
+  .wrapper:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
+
+  sup {
+    vertical-align: text-top;
+  }
+
+  sub {
+    vertical-align: text-bottom;
+  }
+
+//}/********End AMOS #header/#footer*****/
+
+/****************************End #header/#footer for AMOS******************************/
+/*******************************Add for AMOS Header/Footer******************************/
+
+/**********************Include Layout for AMOS Header - not FAMOS*********************/
+//@import "layout";
+@import "partials/searchbar";
+/*******************************Add for AMOS Header/Footer******************************/
+@import "partials/overlay";
+@import "partials/buttons";
+@import "partials/images";
+@import "partials/drop-down";
+@import "partials/menu-list";
+@import "partials/tooltip";
+/********************************Not needed for AMOS Header/Footer**************************/
+@import "partials/breadcrumb";
+@import "partials/heros";
+@import "partials/button-list";
+@import "partials/reviews";
+@import "partials/carousel";
+
+/*******************Files to update for AMOS ********************************/
+//base.scss - if changes to partials
+//layout.scss - if changes to partials
+//header.scss - if changes
+//footer.scss - if changes
+
+/*if changes to partials*/
+//@import "partials/overlay";
+//@import "partials/buttons";
+//@import "partials/images";
+//@import "partials/searchbar";
+//@import "partials/drop-down";
+//@import "partials/menu-list";
+//@import "partials/tooltip";
+
+/*****************Files to Copy over to AMOS*************************/
+//base.css - renamed to responsive-base.css
+//header.css - renamed to responsive-header.css
+//footer.css - renamed to responsive-footer.css
+
+
+
+

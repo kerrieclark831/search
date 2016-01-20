@@ -1,0 +1,16 @@
+@import "../modules/index";
+
+.price, .product-price .final-price, .product-info .price, .product-info .final-price{
+  color: $red;
+}
+
+.price-range, .price-slash{
+  color:#000;
+}
+
+@media screen and (min-width: 800px) {
+  /*  loading big images for larger screens only */
+  #shop-advisor #usage-categories {
+    background: transparent url("https://edge.shop.com/ccimg.shop.com/resources/images/sa-hk-sg-tw-family.jpg") no-repeat right -10px;
+  }
+}

@@ -1,0 +1,122 @@
+@import "defaults";
+
+//margins
+@mixin margin($key){
+  @if $key == "margin-both"{
+    margin-left:$margin;
+    margin-right:$margin;
+  }@else{
+    #{$key}: $margin;
+  }
+}
+
+//pseudo element before or after
+//IE.@include p-el(before, 10px, 15px) {}
+@mixin p-el($el, $el-width, $el-height) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+      content: '';
+      position: absolute;
+      width: $el-width;
+      height: $el-height;
+      @content;
+    }
+  } @else {
+    @warn "'#{$el}' is not a valid pseudo-element.";
+  }
+}
+
+//border-radius
+@mixin border-radius($args...) {
+  border-radius: $args;
+}
+$vert: top, bottom;
+$horz: left, right;
+
+//border corner radius
+@mixin border-corner-radius($vert, $horz, $radius: $default-border-radius){
+  border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin mobile-sprite() {
+  background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/mobile-sprite.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+@mixin full-sprite() {
+  background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+@mixin shop-points {
+  background: url("//edge.shop.com/ccimg.shop.com/resources/images/shop-tracker-icon.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0; /* only one size, so can include here */
+  display: inline-block;
+}
+
+@mixin rewards() {
+  font-weight: bold;
+  font-size: $smallText;
+  color: $shopGray;
+  margin: 0;
+}
+
+@mixin rewards-icon() {
+  @include p-el(before, .65em, .875em) {
+    content: '+';
+    position: relative;
+    font-size: $mainText;
+  }
+}
+
+/*Keeping as reference example -- move to wiki*/
+//position map example - set list
+//$flyup: 200, 241, 200, 200, 321, 225;
+//@each $position in $flyup {
+//  $i: index($flyup, $position);
+//  .left:nth-child(#{$i}) .fly-up {
+//    margin: -#{$position}px 0 0 -1px;
+//  }
+//}
+
+// turn pixel width in percent
+//ex: @include flexible-width(630, 315);
+@mixin flexible-width($context, $target) {
+  width: (($target / $context) * 100%);
+}
+
+// create flexible widths while using floats
+//ex:
+//width: calc(100% - #{$bannerad});
+//@include calc(width, "100% - #{$bannerad}");
+@mixin calc($key, $value) {
+  #{$key}: calc(#{$value});
+  #{$key}: -webkit-calc(#{$value});
+  #{$key}: -moz-calc(#{$value});
+}
+
+// this flex width mixin will do all the calculation here, must pass 4
+// Example:
+// width: 60%; /* should have a fallback for older browsers */
+// @include calc-multivar(width, 95%, #{$thumbnail}, #{$cartActionsBtnBox});
+// If have 3 vars, can add 2 in one, such as:
+// @include calc-multivar(width, 95%, #{$thumbnail}, #{$cartAmountsBox} + #{$cartActionsBtnBox});
+@mixin calc-multivar($key, $fullwidth, $var1, $var2) {
+  #{$key}: calc(#{$fullwidth} - (#{$var1} + #{$var2}));
+  #{$key}: -webkit-calc(#{$fullwidth} - (#{$var1} + #{$var2}));
+  #{$key}: -moz-calc(#{$fullwidth} - (#{$var1} + #{$var2}));
+}

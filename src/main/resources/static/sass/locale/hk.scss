@@ -1,0 +1,37 @@
+@import "../modules/index";
+
+.price, .product-price .final-price, .product-info .price, .product-info .final-price{
+  color: $red;
+}
+
+.price-range, .price-slash{
+  color:#000;
+}
+
+.recommended img {
+  width: 70px
+}
+.recommended li .product-info p, .recommended li .product-info h3{
+  width: 120px
+}
+.owl-carousel.stacked .stacked-item .item, .owl-carousel.stacked-sm .item {
+  min-height: 110px;
+}
+.owl-carousel h3.title {
+  height: 2.5em;
+  line-height: 18px;
+}
+#search .featured-prod {
+  background-position: -169px 0;
+}
+
+#hotdeals .ad.featured{
+   background: url("//edge.shop.com/ccimg.shop.com/hotdeals/featured-store-tall-hk.png") no-repeat scroll 0 0 #e0f5fa;
+ }
+
+@media screen and (min-width: 800px) {
+  /*  loading big images for larger screens only */
+  #shop-advisor #usage-categories {
+    background: transparent url("https://edge.shop.com/ccimg.shop.com/resources/images/sa-hk-sg-tw-family.jpg") no-repeat right -10px;
+  }
+}

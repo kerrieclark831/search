@@ -1,0 +1,119 @@
+@import "../modules/index";
+
+#header .inner-width {width: 980px;}
+#header #super-header .item {padding: 0 5px;}
+#header .mini-cart-items figure p{
+  line-height:1.25em;
+  max-height:2.5em;
+}
+
+.cashback, .cashback-large-text, .product-module .cashback, .price, .product-module .bv, .product-info .bv, .product-price .final-price, .product-info .price, .product-info .final-price, .recommended.price, .bv, .list-toggle p.cashback-toggle a, .list-toggle p.ibv-toggle a, #store-results .ibv-toggle, #hotdeals .ad .cashback-wrapper, #hotdeals .cashback-wrapper, #store-results .store-info p.cashback, .owl-carousel.hotdeals-module p.cashback{
+  color: $red;
+}
+
+.price-range, .price-slash{
+  color:#000;
+}
+.sprite.cashback-icon, #store-results .sprite.cashback.small, #sub-header #cashback .sprite.cashback-icon{
+  background-image: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/theme-twn.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 162px 80px;
+  background-size: 162px 80px;
+}
+.sprite.cashback-icon.lg, .sprite.cashback-icon.med, .sprite.cashback-icon.sm, .cashback img, #sub-header #cashback .sprite.cashback-icon.med{
+  background-position: -108px -54px;
+  height: 17px;
+  width: 26px;
+  margin: 0 3px;
+}
+
+#sub-header #cashback a.cashback-button, #sub-header #cashback a.cashback-button:hover, #sub-header #cashback a.cashback-button:active {
+  color: $red;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 20px;
+  margin-right: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: $lightRed;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#hotdeals .ad.featured{
+  background: url("//edge.shop.com/ccimg.shop.com/hotdeals/featured-store-twn.png") no-repeat scroll 0 0 #e0f5fa;
+}
+
+#header #main-tabs .tabs .tab {
+    padding: 12px 10px 12px 10px;  /* first guess at full header tab padding for twn is lower as their words are longer */
+}
+
+.question:before{
+  content:"問：";
+  display:inline-block;
+  padding-right:5px;
+  color:#E66500;
+  font-weight:bold;
+}
+.answer:before{
+  content:"答：";
+  display:inline-block;
+  color: #00A8CA;
+  font-size:.9em;
+  font-weight:bold;
+  padding-right:5px;
+}
+
+.cashback-extra-lg:after{
+  background: none;
+  width:0;
+}
+
+#store-results .store-contest{
+  display:inline-block;
+}
+.recommended li p{
+  .cashback{
+    font-size:.7em;
+  }
+}
+#search .featured-prod {
+    background-position: -169px 0;
+}
+.owl-carousel h3.title {
+  height: 3em;
+  line-height: 21px;
+}
+
+.subhero a img{
+  height: 85px;
+  margin: -12px;
+}
+@media (max-width: 880px) {
+  .bottom .recommended {
+    display: block;
+  }
+}
+@media screen and (min-width: 960px) {
+  #homepage .subhero-container.lg .sub-hero{
+    height: 60px;
+    overflow: hidden;
+  }
+  #homepage{
+    .sub-hero a.sub-hero-content {
+      height: 79px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  /*  loading big images for larger screens only */
+  #shop-advisor #usage-categories {
+    background: transparent url("https://edge.shop.com/ccimg.shop.com/resources/images/sa-hk-sg-tw-family.jpg") no-repeat right -10px;
+  }
+}

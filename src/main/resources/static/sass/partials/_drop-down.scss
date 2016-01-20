@@ -1,0 +1,324 @@
+@import "../external/jquery-ui";
+@import "../modules/index";
+
+/********End AMOS #header/#footer*****/
+//#header {
+  /**** Drop Down List styles *******************/
+  .drop-down-arrow {
+    margin-top: 4px;
+    float: right;
+    cursor: pointer;
+  }
+
+  /***Drop-down used by Search, Product, Cart pages****/
+  .drop-down-list-button {
+    font-size: $mainText;
+    line-height: 2.2em;
+    /*centers it vertically*/
+    height: 39px;
+    /* same as display by*/
+    padding: 10px 5px 0 10px;
+    color: #6C6D70;
+    min-width: 10em;
+    cursor: pointer;
+    white-space: nowrap;
+    /* to keep Chrome from treating new lines to make code readable as spaces in html*/
+    background-color: #FDFDFD;
+  }
+
+  .drop-down-list-button.dropped {
+    background-color: #fafafa;
+  }
+
+  .drop-down-list-button .label {
+    margin-right: 0;
+    float: left;
+  }
+
+  .drop-down-list-button .selected-item-container {
+    float: left;
+    overflow: hidden;
+  }
+
+  .drop-down-list-button .selected-item {
+    float: left;
+    width: auto;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .option-info .drop-down-list-button {
+    @include p-el(after, 14px, 28px) {
+      right: 0;
+      background-position: right center;
+      background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-down.png"); /* in case calc does not work in the browser */
+      background-repeat: no-repeat;
+      margin: 0 10px 0 6px;
+    }
+  }
+
+  .option-info .drop-down-list-button.dropped:after {
+    background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-up.png"); /* in case calc does not work in the browser */
+  }
+
+  .drop-down-list-button .arrow {
+    float: right;
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-down.png") no-repeat 97% center; /* in case calc does not work in the browser*/
+    width: 14px;
+    height: 28px;
+    display: inline-block;
+    margin: 0 10px 0 6px;
+  }
+
+  .drop-down-list-button.dropped .arrow {
+    background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-up.png"); /*in case calc does not work in the browser*/
+  }
+
+  .drop-down-select, .ui-selectmenu-button {
+    border: $borderStyle;
+    @include border-radius(4px, 4px);
+    font-size: $smallText;
+    height: 30px;
+    position: relative;
+    line-height: 1.6em;
+    padding: .6em .5em 0 .5em;
+    margin: 5px 0 0 0;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: $lightGray;
+    background: linear-gradient(to bottom, $white 0%, $gradientLightGray 100%);
+
+    .selected-item {
+      float: left;
+      max-width: 86%;
+      font-size: $smallText;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 1.4em;
+      margin: -0.2em 0;
+    }
+    .label {
+      margin: 0 5px;
+      font-size: $smallText;
+    }
+    @include p-el(after, 21px, 22px) {
+      position: relative;
+      float: right;
+      background-position: right center;
+      background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-down.png);
+      background-repeat: no-repeat;
+      margin: -5px 0 0 0;
+      border-left: $borderStyle;
+    }
+    &.dropped {
+      @include border-corner-radius(bottom, left, 0px);
+      @include border-corner-radius(bottom, right, 0px);
+      &:after {
+        background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-up.png);
+      }
+    }
+    &.disabled {
+      cursor: default;
+      color: #cccccc;
+    }
+  }
+
+  .ui-selectmenu-disabled.ui-selectmenu-button span.ui-selectmenu-text {
+    cursor: default;
+    color: #cccccc;
+  }
+
+  @-moz-document url-prefix() {
+    .ui-selectmenu-button span.ui-selectmenu-text:after {
+      content: "";
+      margin: -17px 0 0 0;
+    }
+  }
+
+  .drop-down-list {
+    position: absolute;
+    display: none;
+    z-index: 510;
+  }
+
+  .drop-down-list ul, ul.ui-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: $smallText;
+    line-height: 1.2em;
+    cursor: pointer;
+  }
+
+  .drop-down-list li, .ui-menu-item {
+    border-right: $borderStyle;
+    border-left: $borderStyle;
+    padding: 10px 10px 10px 0px;
+    border-bottom: $borderStyle;
+    background-color: $lightGray;
+
+    a, a:active, a:hover {
+      color: $shopGray;
+      text-decoration: none;
+    }
+
+    &:before {
+      content: "";
+      background-repeat: no-repeat;
+      background-position: 8px center;
+      background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/drop-down-list-no-check.png");
+      padding: 10px 30px 7px 0px;
+    }
+
+    &.selected, &.ui-state-focus {
+      background-color: #eff8e7;
+    }
+
+    &.selected:before{
+      content: "";
+      background-repeat: no-repeat;
+      background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/drop-down-list-check.png");
+      background-position: 8px center;
+      padding: 10px 30px 7px 0px;
+    }
+
+    &:hover {
+      background-color: $hover;
+    }
+    &:last-child {
+      @include border-corner-radius(bottom, left, 4px);
+      @include border-corner-radius(bottom, right, 4px);
+    }
+    &:after {
+      display: none;
+    }
+    .drop-down-list a, a:link, a:hover, a:active {
+      color: $shopGray !important;
+      text-decoration: none;
+      font-size: 12px;
+    }
+  }
+  .purchase-options .drop-down-list li {
+    /* solution for drop-downs for text wrap */
+    position: relative;
+    a {
+      display: block;
+      padding-left: 30px;
+    }
+    &:before {
+      height: 20px;
+      position: absolute;
+      top: 8px;
+      left: 0px;
+    }
+  }
+
+  .ui-selectmenu-button {
+    height: 30px;
+    padding: .4em;
+
+    @include p-el(after, 21px, 22px) {
+      position: absolute; /* override */
+      right: 8px;
+      top: 8px;
+      float: none; /* override */
+    }
+
+    &[aria-expanded='true']:after {
+      right: 0px;
+      transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+    }
+  }
+
+  //.one-third-col .drop-down-select {
+  //  padding: .5em .4em 0 .3em;
+  //  height: 1.75em;
+  //}
+
+  .one-third-col .drop-down-select, .one-third-col .drop-down-list, .product-reviews .drop-down-select, .ui-selectmenu-button, .ui-selectmenu-ui-menu {
+    min-width: 200px;
+  }
+
+  .ui-selectmenu-button span.ui-selectmenu-text, .ui-selectmenu-ui-menu {
+    font-size: $smallText;
+  }
+
+  .option-info .drop-down-select, .option-info .drop-down-list {
+    position:relative;
+    max-width: 300px;
+  }
+
+  .selector {
+    font-size: 0.9em;
+    margin-top: 10px;
+
+    select, a {
+      position: relative;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      box-shadow: 0 0 0;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      background-color: #EDEDED;
+      border: 1px solid #ccc;
+      color: #6C6D70;
+      font-size: .9em;
+
+      &:hover {
+        height: auto;
+        padding: 10px;
+        background-color: #EDEDED;
+      }
+    }
+  }
+
+  .overlay .drop-down-select {
+    margin-top: 0;
+    height: 30px;
+    width: auto;
+  }
+
+  .overlay .drop-down-list {
+    width: 49.2%;
+    height: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    border-bottom: $borderStyle;
+    @include border-corner-radius(bottom, left, 10px);
+    @include border-corner-radius(bottom, right, 10px);
+  }
+//}
+/********End AMOS #header/#footer*****/
+
+#trendsSelect-menu, #myListsSelect, #egiftsSelect, #giftRegistrySelect, #shopboxSelect {
+  &.ui-menu {
+    max-width: 286px;
+
+    .ui-menu-item {
+      max-width: 286px;
+    }
+  }
+}
+
+.ui-menu .ui-state-focus, .ui-menu .ui-state-active {
+  margin: 0;
+}
+
+.ui-menu .ui-menu-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 660px) {
+/* css dropdown using ul/li */
+  #addThisSelect-button.ui-selectmenu-button {
+    display: none;
+  }
+}

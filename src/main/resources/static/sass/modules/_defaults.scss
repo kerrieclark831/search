@@ -1,0 +1,71 @@
+/* Variables */
+// fonts
+$rembase: 16;
+//Default
+$baseLineHeight: rem(24);
+//Default
+
+$baseFontStyle: Arial, Helvetica, sans-serif;
+$exExLargeHeader: rem(38);
+$exLargeHeader: rem(33);
+$largeHeader: rem(28);
+$medHeader: rem(22);
+$smallHeader: rem(16);
+$largeText: rem(16);
+$mainText: rem(14);
+$smallText: rem(12);
+$exSmallText: rem(11);
+$tinyText: rem(8);
+
+$baseFontStyle: Arial, Helvetica, sans-serif;
+$text-3xl: rem(38);
+$text-2xl: rem(33);
+$text-xl: rem(28);
+$text-lg: rem(22);
+$text-med: rem(16);
+$text-default: rem(14);
+$text-sm: rem(12);
+$text-xs: rem(11);
+$tinyText: rem(8);
+
+// generic styles
+$italic: italic;
+$bold: bold;
+
+//standard margin
+$margin: 10px;
+// padding
+////($blockPadding/2)
+
+//left nav widths
+$search-leftnav: 200px;
+$shopadv-iconnav: 80px;
+
+// misc. widths
+$cartActionsBtnBox: 240px;  /* old-190 width for cart/checkout 2 btns used in calc-2vars mixin */
+$cartAmountsBox: 180px;
+
+// for use with styles
+$borderStyle: 1px solid $medLightGray;
+$borderStyleLight: 1px solid $lightBorderGray;
+
+//tabs
+$navHeight: rem(35);
+
+//standard image size
+$bannerad: 335px;
+$thumbnail: 100px;
+$medImage: 185px; // 175px plus 10px rt margin
+
+//images
+$icon-mylists: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-mylists.png") no-repeat center;
+$icon-trend: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-trends.png") no-repeat center;
+$icon-pricealert: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-price-alerts.png") no-repeat center;
+$icon-egift: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-egifts.png") no-repeat center;
+$icon-registry: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-gift-registry.png") no-repeat center;
+$icon-savelater: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-save-for-later.png") no-repeat center;
+$icon-shopbox: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-shopbox.png") no-repeat center;
+$icon-review: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/add-review.png") no-repeat center;
+
+$stars-med: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/stars.gif") no-repeat 0 0;
+$stars-sm: transparent url(//edge.shop.com/ccimg.shop.com/resources/images/stars_small.gif) no-repeat 0 100%;

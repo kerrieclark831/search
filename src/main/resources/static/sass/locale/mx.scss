@@ -1,0 +1,23 @@
+@import "../modules/index";
+
+/* for Spanish translation featured product image */
+#search .featured-prod {
+  background-position: -110px 0;
+}
+.one-third-col{
+  padding:0 10px;
+}
+.one-third-col input.button, .one-third-col .message{
+  padding:10px 0;
+}
+
+#hotdeals .ad.featured{
+  background: url("//edge.shop.com/ccimg.shop.com/hotdeals/featured-store-tall-mx-esp.png") no-repeat scroll 0 0 #e0f5fa;
+}
+
+/**email sign up module**/
+#homepage .email-social {
+  .sign-up-container {
+    width: 63%;
+  }
+}

@@ -1,0 +1,17 @@
+//extend the %clearfix in other classes to have it added or reference clear directly within the template.
+%clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after { clear: both; }
+}
+
+%hide {
+  display: none;
+}
+
+%show {
+  display: block;
+}

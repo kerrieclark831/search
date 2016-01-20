@@ -1,0 +1,1019 @@
+@import "modules/index";
+@import "modules/extend";
+
+.egifts {
+  max-width: 960px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+.egifts-nav {
+  background: #e8f6fa; /* Old browsers */
+  background: linear-gradient(to bottom, #e8f6fa 0%, #ffffff 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f6fa', endColorstr='#ffffff', GradientType=0); /* IE6-9 */
+  margin-top: 40px;
+  border-top: 1px solid #ECECFB;
+  max-width: 960px;
+  width: 100%;
+  height: 1%;
+}
+
+.egifts-nav:after {
+  /*instead of overflow: hidden; */
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.egifts-nav img {
+  margin: -20px 0 10px 30px;
+  float: left;
+}
+
+//.egifts h1 span { font-size: .5em; font-weight: normal; }
+.egifts-nav ul {
+  float: right;
+  padding: 8px 40px 0 0;
+}
+
+.egifts-nav li {
+  display: inline-block;
+}
+
+.egifts-nav ul a {
+  display: block;
+  padding: 10px 15px 7px; /*color: #888;*/
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 4px solid transparent;
+}
+
+.egifts-nav ul a:hover {
+  color: $darkestGray;
+  border-bottom: 4px solid $medGray;
+}
+
+.egifts-nav ul a.selected {
+  color: $darkestGray;
+  border-bottom: 4px solid $gold;
+}
+
+.egifts p {
+  margin-bottom: 1em;
+}
+
+.egifts p.sold-by {
+  margin-bottom: 0;
+}
+
+.egifts h1 {
+  margin: .2em 0 .75em 0;
+}
+
+.egifts #basketTitle {
+  max-width: 75%;
+  overflow: hidden;
+}
+
+.egifts .basket-links {
+  float: left;
+  margin: 15px 0 0 15px;
+  width: 20%;
+}
+
+.egifts p.label {
+  margin: 0;
+}
+
+.egifts label {
+  font-size: $mainText;
+}
+
+.egifts textarea {
+  max-width: 35em;
+}
+
+/* used below */
+%egifts-box {
+  /* previously .egifts .box, added .box to layout, use later */
+  background-color: $lightGray;
+  border: $borderStyle;
+  @include border-radius(6px);
+}
+
+.egifts-tools {
+  height: 1%;
+  border-top: 1px solid #ccc;
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.egifts-tools:after {
+  /*instead of overflow: hidden; */
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.egifts-tools .select-all {
+  float: left;
+  margin: 0;
+}
+
+.egifts-tools #copy-button {
+  margin-right: 10px;
+}
+
+.egifts-tools .copy-existing-select {
+  margin-left: 20px;
+}
+
+.egifts-prod {
+  padding: 1em 0;
+  height: 1%;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+}
+
+.egifts-prod:after {
+  /*instead of overflow: hidden; */
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+#egift-redeem #egift-redeem-summary .egifts-prod {
+  border: none;
+}
+
+.egifts-prod-select label {
+  width: 20px;
+  float: left;
+  margin-top: 30px;
+}
+
+.egifts-prod-image {
+  width: 100px;
+  float: left;
+  margin: 10px 20px 0 0;
+}
+
+#egift-redeem .egifts-prod-image img {
+  float: left;
+  margin: 0 .5em .5em 6px;
+  max-width: 100px;
+  max-height: 100px;
+}
+//.egifts-prod-image img {
+//  float: left;
+//  margin: 0 .5em .5em 6px;
+//}
+
+.egifts-prod-details {
+  max-width: 700px;
+  width: 100%;
+  //  width: calc(100% - (#{$thumbnail} + #{40px}));
+  @include calc-multivar(width, 100%, #{$thumbnail}, 40px);
+  float: right;
+}
+
+.egifts .menu-icon, .egifts .open .menu-icon.expand {
+  float: left;
+  line-height: 1.125rem;
+  margin-right: 5px;
+  color: #00a8ca;
+}
+
+.egifts .expandable {
+  font-size: $mainText;
+  cursor: pointer;
+}
+
+.egifts-content #sent .expandable {
+  color: #E66500;
+}
+
+.egifts-content #sent .list-row .menu-icon {
+  float: left;
+  color: #E66500;
+}
+
+#egift-redeem .egifts-prod-details {
+  max-width: 800px;
+  width: 100%;
+  float: right;
+  padding-left: 10px;
+}
+
+#egift-redeem .egifts-prod-details .expandable {
+  color: #00A8CA;
+  text-decoration: underline;
+}
+
+.egifts-content .second-left{
+  margin: 0 10px;
+}
+
+#egift-redeem .egifts-prod-details .second-level {
+  padding: 0 15px;
+}
+
+#egift-redeem .egifts-prod-select {
+  float: right;
+  //  padding: 0 10px 0 0;
+}
+
+.egifts-viewed {
+  color: $green;
+}
+
+.egifts-title {
+  overflow: hidden;
+  max-width: 65%;
+  float: left;
+}
+
+#egift-redeem .egifts-title {
+  width: 75%;
+}
+
+.egifts-title h2 {
+  font-size: 1em;
+  height: 2em;
+  overflow: hidden;
+}
+
+.egifts h3 span {
+  font-size: .75em;
+  font-weight: normal;
+  color: #999;
+}
+
+.egifts-prod-message {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.egifts-prod-message span {
+  font-weight: normal;
+  font-size: .8em;
+}
+
+#egift-redeem .egifts-prod-message {
+  float: left;
+  clear: left;
+}
+
+.egifts-qty {
+  width: auto;
+  float: right;
+  padding: .5em 0 0 0;
+  margin: 0;
+  text-align: right;
+  display: inline-block;
+}
+
+.egifts-qty label {
+  margin: 0;
+  display: inline;
+}
+
+.egifts-qty p {
+  font-size: .8em;
+}
+
+.egifts-qty .quantity {
+  -moz-appearance: textfield;
+  width: 35px;
+  margin: .3em 0 0;
+}
+
+.egifts .price {
+  font-size: 1em;
+  margin: .25em 0;
+  font-weight: bold;
+}
+
+.egifts-prod-options {
+  border: 1px solid #ccc;
+  padding: .1em 1.25em 1em .5em;
+  margin: .2em 0 1em 0;
+  clear: both;
+}
+
+#egift-redeem .egifts-prod-options {
+  width: 75%;
+  float: left;
+  padding: 0.5em 1em 1em;
+  //  margin: .5em 0 0 0;
+}
+
+#egift-redeem .egifts-prod-options-selected {
+  border: none;
+  padding: 0;
+  margin: 0;
+  clear: both;
+  width: 75%;
+  float: left;
+}
+
+.egifts label strong {
+  display: inline-block;
+  margin-bottom: .3em;
+  width: 100%;
+}
+
+.egifts input[type="text"], .egifts input[type="number"] {
+  max-width: 35em;
+}
+
+.egifts .half-width input[type="number"] {
+  width: 10em;
+}
+
+.egifts .up-arrow, .egifts .top-arrow, .egifts .down-arrow, .egifts .bottom-arrow {
+  padding: 1px 0 2px 21px;
+}
+
+.egifts .top-arrow {
+  background: url("//edge.shop.com/ccimg.shop.com/resources/images/egifts-arrows-tudb.png") no-repeat 0 1px;
+}
+
+.egifts .up-arrow {
+  background: url("//edge.shop.com/ccimg.shop.com/resources/images/egifts-arrows-tudb.png") no-repeat 0 -23px;
+}
+
+.egifts .down-arrow {
+  background: url("//edge.shop.com/ccimg.shop.com/resources/images/egifts-arrows-tudb.png") no-repeat 0 -47px;
+}
+
+.egifts .bottom-arrow {
+  background: url("//edge.shop.com/ccimg.shop.com/resources/images/egifts-arrows-tudb.png") no-repeat 0 -71px;
+}
+
+.egifts-summary {
+  margin: 0 0 1em;
+  border-top: 1px solid #ccc;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.egifts-summary h3 {
+  font-size: 1.3em;
+}
+
+.egifts-zip {
+  width: 120px;
+  float: left;
+  margin: 0 1em 1.5em 0;
+}
+
+.egifts-zip input[type="number"] {
+  width: 80px;
+}
+
+.egifts-summary p.shipping-button {
+  margin: 0 0 1.5em 0;
+}
+
+.egifts-summary .drop-down-select {
+  width: 200px;
+  float: left;
+  margin: 0 1em 1.5em 0;
+}
+
+.egifts-summary .drop-down-list {
+  width: 173px;
+  top: 72px;
+}
+
+#egift-redeem .egifts-summary {
+  padding: 10px 0;
+  clear: both;
+  font-weight: bold;
+}
+
+#egift-redeem #egift-redeem-summary .drop-down-select, #egift-redeem #egift-redeem-summary .drop-down-list {
+  width: inherit;
+}
+
+#egift-redeem .action-row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+
+.egifts .drop-down-select {
+  position: relative;
+}
+
+.egifts .one-third-col .drop-down-select, .egifts .one-third-col .drop-down-list {
+  max-width: 250px;
+
+  li {
+    width: 100%;
+
+    a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 80%;
+      height: 15px;
+      text-align: left;
+      float: right;
+    }
+  }
+}
+
+//.drop-down-select.egifts-select { width: 13em; float: right; z-index: 400}
+.egifts .shipping-button {
+  float: left;
+}
+
+.egifts .shipping-button a.tertiary.button {
+  font-size: .8em;
+}
+
+.egifts .shipping {
+  clear: both;
+}
+
+.egifts-total {
+  font-size: 1.2em;
+}
+
+.egifts-content {
+  margin: 0 1.5em;
+}
+
+.egifts-content .two-thirds-col {
+  width: 100%;
+}
+
+.egifts-content textarea {
+  display: block;
+}
+
+.egifts-content ol {
+  margin: 1.5em 0 1.75em 2.5em;
+  list-style: outside decimal;
+  font-weight: bold;
+}
+
+.egifts-content .tabs li {
+  margin: 0;
+}
+
+.egifts-content ol li {
+  color: $shopBlue;
+  margin: 0 0 19px;
+}
+
+.egifts-content ol li span {
+  font-weight: normal;
+  color: $shopGray;
+  font-size: 1rem;
+  display: block;
+  line-height: 1.25rem;
+}
+
+.egifts-content .egifts-summary .message {
+  width: 80%;
+  height: 100px;
+  font-size: $smallText;
+  overflow-y: scroll;
+  background-color: white;
+  line-height: 16px;
+  font-style: italic;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+}
+
+.egifts-content .message.info {
+  width: 60%;
+  font-size: 0.9rem;
+  height: inherit;
+  overflow-y: visible;
+  background-color: $lightBlue;
+  font-style: normal;
+  line-height: 130%;
+  margin: 0;
+}
+
+.egifts-content .add-contacts, .egifts-content {
+  border-top: 1px solid #ccc;
+  padding: 1em;
+  margin: .75em 0;
+}
+
+#egift-redeem .egifts-content li {
+  margin: 0 .25em;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.egifts-shopper {
+  float: right;
+  margin: -2em 0 1em 1em;
+  width: 320px;
+  height: auto;
+}
+
+.egifts .block-heading {
+  padding: 5px 10px;
+  background-color: #00A8CA;
+  color: #fff;
+}
+
+#egift-redeem .heading {
+  padding: 0.5em 0.5em 0 1em;
+  margin-bottom: 0;
+}
+
+#egift-redeem .heading h1 {
+  margin: .2em 0 .5em 0;
+}
+
+.egifts .checkbox span {
+  float: none;
+}
+
+.egifts .checkbox span:first-of-type {
+  margin: 0 0 0 1em;
+}
+
+.egifts .copy-to-egift {
+  @extend %egifts-box;
+  width: 100%;
+  float: left;
+  margin: 5px 0 10px;
+  padding: 0 8px 0 0;
+}
+
+.egifts .copy-controls-left .pick-list-section {
+  border: none;
+  background: transparent;
+  display: inline-block;
+
+  p {
+    float: left;
+  }
+
+  //  input[type="radio"] {
+  //    top: inherit;
+  //    margin: 2px 0 0;
+  //  }
+}
+
+.egifts .ui-selectmenu-button {
+  float: right;
+  max-width: 275px;
+  min-width: 50px;
+  margin: 5px 0 0 30px;
+}
+
+.ui-selectmenu-menu #egift-copy-menu.ui-menu {
+  max-width: 275px;
+}
+
+.egifts .intro-suggestions {
+  width: 100%;
+  background-color: #e4f2f9;
+  font-size: 1.375em;
+  font-weight: bold;
+  padding: 0.375em;
+  margin-bottom: 0;
+}
+
+/* recipient addressing page */
+.egifts .recipient-detail {
+  margin: 15px 0
+}
+
+.egifts .recipient-name {
+  font-weight: bold;
+  padding-right: 15px;
+  display: inline-block;
+}
+
+.egifts .recipient-email {
+  padding-right: 15px;
+  display: inline-block;
+}
+
+.egifts .recipient-message-label {
+  display: inline-block;
+}
+
+.egifts .recipient-message {
+  padding-left: 5px;
+  line-height: 25px;
+  font-style: italic;
+  display: inline-block;
+}
+
+.egifts .sender-label {
+  display: inline-block;
+}
+
+.egifts .sender-detail {
+  padding-left: 5px;
+  font-style: italic;
+  display: inline-block;
+}
+
+.egifts .add-recipient {
+  @extend %egifts-box;
+  padding: 1em;
+  margin: .75em 0;
+}
+
+.egifts .add-recipient #save-recipient {
+  margin-right: 20px;
+}
+
+.egifts #sent .add-recipient {
+  margin: 4.0em 0 .75em;
+}
+
+.egifts .add-recipient-link {
+  cursor: pointer;
+}
+
+.egifts .half-column {
+  width: 48%;
+  float: left;
+  padding: 0 1em 1em 0;
+  display: inline-block;
+}
+
+.egifts .half-column span {
+  font-size: .9em;
+}
+
+.egifts .half-column strong {
+  font-size: 1.1em;
+}
+
+/* suggestions page */
+.egifts .suggestions {
+  overflow: hidden;
+}
+
+.egifts .category {
+  display: inline-block;
+  margin: 10px 15px;
+  vertical-align: top;
+  width: 175px;
+}
+
+.egifts .faq-anchor {
+  width: 48%;
+  float: left;
+  margin: .1em;
+}
+
+/* view eGifts page */
+.egifts a:hover {
+  color: #8cd2e8;
+}
+
+.egifts .title {
+  //  width: 30%;
+  //  float: left;
+  font-weight: bold;
+  //  font-size: .9em;
+  overflow: visible;
+  padding: .4em .3em .1em 0;
+}
+
+.egifts .sent-egifts .title, .egifts #unsent .title {
+  width: 30%;
+  float: left;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.egifts .title a {
+  text-decoration: none;
+}
+
+.egifts .title span {
+  font-size: .9em;
+  font-weight: normal;
+}
+
+.egifts .title .subtext {
+  color: $medGray;
+  font-size: $smallText;
+  display: block;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+.egifts .add-recipient .title {
+  width: 100%
+}
+
+.egifts .info {
+  width: 40%;
+  float: left;
+  font-size: .8em;
+  padding: .6em .1em;
+}
+
+.egifts .controls {
+  width: 60%;
+  float: right;
+  font-size: .8em;
+  text-align: right;
+  padding: .6em .1em;
+}
+
+.egifts .list-row {
+  border-top: 1px #ccc solid;
+  padding: .75em 0 .5em 0;
+  margin: .3em auto .1em auto;
+  clear: both;
+  overflow: hidden;
+}
+
+.egifts .toggle {
+  clear: both;
+  font-size: .8em;
+  font-weight: bold;
+  padding: .5em 0 0 0;
+}
+
+.egifts .toggle a {
+  color: #E66500;
+}
+
+.egifts .accordion {
+  clear: both;
+}
+
+.egifts .info-container {
+  float: right;
+  width: 68%;
+}
+
+.egifts .info-container:hover {
+  background-color: #DBEEFF;
+}
+
+.egifts .info .alert {
+  color: red;
+  background-color: #FF6;
+  white-space: nowrap;
+}
+
+.egifts .accordion .info-container {
+  margin: 0 0 .1em 0;
+}
+
+#egift-redeem .egifts-content .message {
+  width: 100%;
+}
+
+#egift-redeem .accordion {
+  padding-top: 1em;
+}
+
+#egift-redeem .egifts-qty {
+  padding: 0;
+}
+
+#egift-redeem .half-column .egifts-qty {
+  clear: both;
+  float: left;
+  font-size: .86em;
+  padding: 0;
+}
+
+#egift-redeem #egift-redeem-summary .half-column {
+  overflow: visible;
+  height: auto;
+}
+
+#egift-redeem #egift-redeem-summary .half-column .egifts-prod-image {
+  width: 100px;
+}
+
+#egift-redeem #egift-redeem-summary .option-info {
+  clear: both;
+}
+
+#egift-redeem #egift-redeem-summary .label {
+  padding-top: 1em;
+  line-height: 1.4em;
+}
+
+#egift-redeem #egift-redeem-summary .label h4 {
+  margin: 0;
+}
+
+@media(max-width: 960px) {
+  .egifts-nav ul a {
+    font-size: .8em;
+  }
+  .egifts-prod-image {
+    //    width: 20em;
+  }
+  .egifts-prod-image p {
+    margin: .3em 0;
+  }
+  .egifts-prod-image p a {
+    margin-left: 5px;
+  }
+  .egifts .reorder-controls {
+    float: left;
+  }
+}
+
+@media(max-width: 880px) {
+  .egifts .one-third-col {
+    float: left;
+    margin: 0 .625em .75em;
+  }
+  .egifts .pick-list-section p {
+    float: none;
+    margin: 0;
+    display: block;
+    width: 100%;
+  }
+  .egifts .pick-list-section input[type="text"], .egifts .pick-list-section input[type="number"] {
+    margin-left: 0 !important;
+    margin-top: 10px !important;
+  }
+  .egifts #egift-copy-button.ui-selectmenu-button, .egifts #egift-copy-menu.ui-selectmenu-ui-menu {
+    margin: 10px 0;
+    float: left;
+  }
+  .egifts .copy-controls-right {
+    text-align: right;
+  }
+  .egifts-prod-details {
+    width: calc(100% - (#{$thumbnail} + #{60px}));
+    @include calc-multivar(width, 100%, $thumbnail, 60px);
+  }
+  .egifts .info-container {
+    width: 100%;
+    float: none;
+  }
+  .egifts .info {
+    width: 100%;
+    margin-bottom: .5em;
+  }
+  .egifts .controls {
+    width: 100%;
+    float: none;
+    text-align: left;
+  }
+}
+
+@media(max-width: 660px) {
+  .egifts-nav img {
+    float: none;
+    margin-bottom: 0;
+  }
+  .egifts-nav ul {
+    margin-top: .3em;
+    padding-right: 0;
+    float: none;
+    font-size: .9em;
+  }
+  .egifts-nav ul a {
+    background: #e8f6fa;
+    margin-bottom: 5px;
+    padding: .7em .4em;
+  }
+  .egifts-prod-image {
+    float: none;
+  }
+  .egifts-prod-details {
+    width: 100%;
+  }
+  .egifts-qty {
+    float: none;
+    text-align: left;
+    margin: 1em 0;
+    padding: 0;
+    display: block;
+  }
+  .egifts-title {
+    max-width: 100%;
+  }
+  .egifts-zip {
+    width: 100%;
+    float: none;
+    margin: 0 0 .75em 0;
+  }
+  .egifts .drop-down-select {
+    position: relative;
+    max-width:250px;
+  }
+  .egifts .option-info .drop-down-list{
+    position:relative;
+  }
+  .egifts .one-third-col .drop-down-list {
+    li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 35px;
+      text-align: left;
+
+      a {
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80%;
+        height: 15px;
+        text-align: left;
+      }
+    }
+  }
+  .egifts #basketTitle {
+    max-width: 100%;
+    margin: 0;
+    font-size: $medHeader;
+    float: none;
+  }
+  .egifts .basket-links {
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+  }
+  .egifts-tools .button.primary, .egifts-summary .button.primary {
+    float: left;
+    margin: .625em 0;
+    clear: both;
+  }
+  .egifts .shipping-button {
+    float: none;
+    margin: 0 0.75em 0;
+    font-size: .9em;
+  }
+  .egifts-content {
+    margin: 0 .5em;
+  }
+  .egifts-content .message {
+    width: 100%;
+  }
+  .egifts-content iframe {
+    display: none;
+  }
+  .egifts-content .tabs {
+    display: block;
+  }
+  .egifts-shopper {
+    display: none;
+  }
+  .egifts .faq-anchor {
+    width: 100%;
+    float: none;
+  }
+  .egifts .half-column {
+    width: 100%;
+    height: auto;
+    float: none;
+  }
+  .egifts .title {
+    width: 100%;
+    margin-bottom: .3em;
+  }
+  .egifts .sent-egifts .title, .egifts #unsent .title{
+    width:100%;
+  }
+  .egifts .toggle {
+    margin-bottom: .5em;
+  }
+  .egifts .pick-list-section input[type="radio"] {
+    top: 20px;
+  }
+  .egifts-content .button.tertiary{
+    margin: 0 10px 10px 0;
+  }
+
+  .egifts .copy-controls-right{
+    float: none;
+    width: 100%;
+    margin: 0 0 5px;
+    display: inline-block;
+  }
+  #egift-redeem .egifts-prod-options {
+    width: 99%;
+  }
+}

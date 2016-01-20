@@ -1,0 +1,2296 @@
+@import "modules/index";
+@import "modules/extend";
+
+// For future development loading only certain styles on specific pages.
+//@import "partials/scrollable";
+//@import "partials/button-list";
+
+#search {
+  position: relative; /* added for no tabs test, absolute postn of utility-bar */
+}
+
+/* Start Search Header with messaging*/
+.search-header {
+  margin: 4px 320px 10px 20px;
+  line-height: 1.2em;
+  h1 {
+    display: inline;
+    font-size: 100%;
+  }
+  .scope {
+    font-size: $mainText;
+    white-space: nowrap; /* with narrower text, works. If elim is test adjustment for no tabs*/
+    //    @extend %show; /* test for no tabs, width issue*/
+  }
+}
+
+.related-searches {
+  width: 100%;
+  font-size: $smallText;
+  font-weight: bold;
+  margin-left: 10px;
+  //  white-space: nowrap; // If we want the related search to scroll
+  //  overflow: auto;  // " " "
+  a {
+    display: inline;
+    font-weight: normal;
+    border-left: 1px solid $medLightGray;
+    padding: 0 10px 0;
+    white-space: nowrap;
+  }
+  a:first-child {
+    border: none;
+  }
+}
+
+#search {
+  #onecart-vs-all {
+    float: left;
+    margin: 0 0 0 20px;
+  }
+  .onecart-conditions {
+    margin: 2px 0 0 4px;
+    font-size: $exSmallText;
+    display: inline-block;
+    a.hovertip {
+      font-size: $exSmallText;
+      padding-top: 2px;
+    }
+  }
+}
+
+// pick-list-section for both search page and quickview overlay
+#search .search-filter-menu .pick-list-section,
+.overlay .pick-list-section,
+#shop-advisor .search-filter-menu .pick-list-section {
+  border: none;
+  position: relative;
+  padding: 0 rem(7) 0 rem(18);
+  input[type="radio"], input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+// if the "show oneCart tab" flag is set, then hide the oneCart check box
+#refine-search .show-one-cart-tab .one-cart-check-box {
+  @extend %hide;
+}
+
+// unless it is the right pull out filter menu; then show it anyway
+#menu-filter .show-one-cart-tab .one-cart-check-box {
+  @extend %show;
+}
+
+.overlay .pick-list-section {
+  input[type="radio"], input[type="checkbox"] {
+    top: 10px;
+    margin: -.5em 0;
+  }
+}
+
+/* -----simple desktop pagination----- */
+#search {
+  .per-page, #snippet {
+    margin: 5px 10px 10px 10px;
+    padding: 5px 0;
+  }
+  .per-page {
+    float: right;
+    font-size: $smallText;
+    font-weight: $bold;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  #snippet {
+    float: left;
+    h1, p {
+      margin: 0;
+      font-size: $smallText;
+      line-height: .8rem;
+    }
+  }
+}
+/* ----- End simple desktop pagination ----- */
+
+/* ----- search left nav for desktop/mid-view/tablet ----- */
+#refine-search {
+  border-right: $borderStyleLight;
+  float: left;
+  margin: 0 10px 0 20px;
+  width: 24%;
+  height: 100%;
+  max-width: 200px;
+
+  .search-input {
+    .input-container {
+      border: $borderStyle;
+    }
+    form {
+      margin: 0;
+    }
+  }
+  .search-within {
+    margin: 16px 0 3px 0;
+    input {
+      width: 100%;
+      font-size: 12px;
+      padding: 4px 7px;
+      margin: 2px 0;
+    }
+    .search-button {
+      top: 1px;
+    }
+  }
+  h2.divider {
+    cursor: pointer;
+  }
+  h2, .divider .label {
+    font-size: .95rem;
+    color: $shopGray;
+    background: none;
+    padding-right: 6px;
+  }
+
+  .menu-icon.expand {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: .95rem;
+    color: $shopGray;
+  }
+
+  h4 {
+    margin: 10px 0 10px;
+    color: $shopGray;
+  }
+
+  input {
+    font-size: $mainText;
+  }
+  .menu-list {
+    margin-top: 15px;
+    .divider {
+      line-height: 1.3em;
+      padding: .5em 0 .5em 10px;
+      margin: -1px 0 0 -10px;
+      border-top: $borderStyleLight;
+      border-bottom: none;
+    }
+    ul {
+      margin: 0 0 6px 0;
+    }
+    li {
+      font-weight: $bold;
+      line-height: 1.1em;
+      background: none;
+      cursor: default;
+      padding: .3em 0;
+      font-size: $smallText;
+
+      &:hover {
+        background-color: #fff;
+      }
+      a {
+        line-height: 1.3em;
+        border: none;
+        color: $shopBlue;
+        padding: 0;
+        width: auto;
+        margin-right: 8px;
+
+        input[type="checkbox"] {
+          margin: 0 10px 0 0;
+        }
+        .label {
+          padding: 0;
+          display: inline-block;
+          width: auto;
+        }
+        &:hover {
+          color: $hover;
+        }
+      }
+      ul {
+        margin: 0 0 6px;
+      }
+      ul li {
+        font-size: 100%;
+        padding-left: 0;
+      }
+    }
+
+    li.inactive a {
+      color: #999;
+      cursor: default;
+    }
+    li.inactive input {
+      cursor: default;
+    }
+    .second-level {
+      @extend %show; /* default filter menu as expanded */
+      font-size: $smallText;
+      li {
+        background-position: -9999px 0px; /* have to override */
+        font-size: 100%;
+
+        &.more {
+          margin: .8em 0 .3em 0;
+        }
+      }
+    }
+    // for arrows only on cross department headers
+    li.third-level-header > a > .label {
+      &:after {
+        content: '';
+        background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow.png') no-repeat 5px 1px;
+        background-size: 6px 9px;
+        display: inline-block;
+        width: 12px;
+        height: 10px;
+        white-space: nowrap;
+      }
+    }
+    li.third-level {
+      margin-left: 10px;
+      background: none;
+      font-weight: normal;
+      font-size: 100%;
+      //      padding-right: 6px;
+      padding: .3em 0;
+      a .label {
+        font-size: 100%;
+      }
+    }
+    .count {
+      font-weight: normal;
+      font-size: 12px;
+      color: $shopGray;
+      display: inline-block;
+    }
+    ul#alphabet  {
+      margin-left: 10px;
+      li {
+        display: inline-block;
+        background: none;
+        padding: 0 5px 0 0;
+      }
+    }
+  }
+
+  p {
+    color: $shopBlue;
+    font-size: $smallText;
+    font-weight: $bold;
+    margin: .4em 0;
+  }
+  a, a:link, a:visited {
+    text-decoration: none;
+  }
+  hr {
+    @include calc(width, "100% - 10px");
+    border-right: none;
+    border-left: none;
+    border-top: $borderStyleLight;
+  }
+}
+
+/*-------- feedback box --------*/
+#search .feedback.box {
+  margin: 20px 10px 10px 0;
+}
+
+.feedback.box {
+  h5 {
+    font-size: $mainText;
+    font-weight: $bold;
+  }
+  p {
+    font-size: $smallText;
+    font-weight: normal;
+    color: $shopGray;
+  }
+  .feedback-text {
+    @extend %hide;
+  }
+  textarea {
+    border-radius: 8px;
+    margin: 15px auto;
+    padding: 5px;
+    resize: vertical;
+    font-size: $mainText;
+  }
+  #submit-feedback {
+    margin: 15px auto;
+    text-align: center;
+    .button {
+      font-size: 14px;
+      padding: 10px 15px;
+      margin: 0;
+    }
+  }
+  a.primary.button:hover {
+    color: #fff;
+  }
+  #step2 {
+    @extend %hide;
+  }
+  #error-display {
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #8C868C;
+    color: red;
+    @extend %hide;
+    font: 16px Arial, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 0 0 10px;
+  }
+  .confirmation {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+  }
+  p.outro {
+    margin: 0 0 10px;
+  }
+}
+
+/* ----- End search left nav for desktop only ----- */
+
+/* --- search results multiple store matches --- */
+.multi-store-match {
+  padding: 10px 20px;
+
+  h3 {
+    font-size: rem(20);
+    display: inline-block;
+  }
+  h3 ~ p {
+    display: inline-block;
+    margin-left: 4px;
+  }
+}
+
+.stores-matched {
+  clear: both;
+  border-top: $borderStyleLight;
+  border-bottom: $borderStyleLight;
+  overflow-x: auto;
+  white-space: nowrap;
+  li {
+    display: inline-block;
+    border-right: $borderStyleLight;
+    margin: 10px 0;
+    padding: 10px 20px;
+    width: 19%;
+    min-width: 190px;
+    max-width: 230px;
+    &:last-child {
+      border-right: none;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: $bold;
+    }
+
+    p:not(.cashback) {
+      white-space: normal;
+    }
+
+    * {
+      margin: 0 0 6px 0;
+    }
+    .cashback, .bv {
+      margin-bottom: 0;
+      clear: both;
+    }
+  }
+}
+/* --- end search results multiple store matches --- */
+
+/* --- search results store match --- */
+.store-match {
+  border-top: $borderStyleLight;
+  border-bottom: $borderStyleLight; /* comment out for no-tabs testing */
+  padding-bottom: 10px;
+  p {
+    margin-left: 20px;
+    &.store-description {
+      clear: both;
+    }
+  }
+  .close-sprite {
+    cursor: pointer;
+    text-indent: -9999px;
+    z-index: 3001;
+    margin: 7px;
+  }
+  .store-logo {
+    float: left;
+    display: inline-block;
+    margin:  5px 10px 0 20px;
+  }
+  .cashback, .perk {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .perk {
+    font-size: $smallText;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  .buttons {
+    margin-top: 5px;
+  }
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+  }
+  .button.primary {
+    float: left;
+    margin-left: 10px;
+  }
+  .button.secondary {
+    float: left;
+    margin-left: 20px;
+    margin-right: 2px;
+  }
+}
+/** End search results store match **/
+
+/* --- No search results messaging --- */
+#no-results-message {
+  width: 100%;
+  max-width: 960px;
+  margin: 1.1em auto 0;
+
+  h1 {
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    color: #00A8CA;
+    margin: 0;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 0.9em;
+    text-align: center;
+    color: #77AC57;
+  }
+  h3 {
+    font-size: 0.9em;
+    margin-bottom: 1.3em;
+    text-align: center;
+  }
+}
+/* --- end no search results messaging --- */
+
+/* taken from search.css --edited */
+.tip-box.box {
+  /* IE9+ */
+  width: 95%;
+  max-width: 460px;
+  margin: 0 auto 20px auto;
+
+  .heading {
+    color: $shopGray;
+    font-size: $smallHeader;
+    padding: 10px 0 10px 5px;
+    display: inline-block;
+    &:before {
+      content: '';
+      background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/mobile-sprite.png') no-repeat -275px -457px;
+      margin: 0 10px 0 0;
+      height: 22px;
+      width: 20px;
+      display: inline-block;
+      background-size: 375px 478px;
+    }
+  }
+
+  ul {
+    margin: 0.8em 2% 1.1em 35px;
+    list-style: disc;
+  }
+
+  li {
+    font-weight: normal;
+    font-size: $mainText;
+    line-height: 1.4em;
+
+    a {
+      color: $shopBlue;
+      text-decoration: underline;
+
+      &:hover {
+        color: $hover;
+      }
+    }
+  }
+}
+
+/** search and A to Z pages**/
+/* utility bar - sort by, grid/detail view, filter button */
+#utility-bar {
+  margin: 0;
+  background: #fff;
+  .drop-down-list-button {
+    height: 50px;
+  }
+}
+
+#utility-bar .right-panel-menu-button {
+  @extend %hide;
+}
+
+#search #utility-bar .sort-container {
+  width: auto; /* for new translation widths */
+  float: left;
+}
+#search #utility-bar .sort-container .drop-down-list-button {
+  @include border-radius(6px);
+  border: $borderStyle;
+  margin: 6px 0 0 20px;
+  padding: 3px 0 0 10px;
+  height: 39px;
+}
+
+.m-drop-down-list ul {
+  position: absolute;
+  z-index: 500;
+  width: auto; /* adjust for wider translations */
+  min-width: 260px;
+  margin: -10px 0 0 20px;
+  @include border-radius(0 6px 6px 6px);
+  border: $borderStyle;
+}
+.m-drop-down-list li:first-child {
+  @include border-radius(0 6px 0 0);
+}
+.m-drop-down-list li:last-child {
+  @include border-radius(0 0 6px 6px);
+}
+
+/* special drop-down styles for No Tabs */
+.m-drop-down-list.notabs {
+//  position: relative; /* added for no tabs test, absolute postn of utility-bar */
+}
+.m-drop-down-list.notabs ul {
+  position: absolute;
+  right: 64px;
+  top: 41px;
+  margin: 0 0 0 10px;
+  @include border-radius(6px 0 6px 6px);
+  //  border: $borderStyle;
+}
+.m-drop-down-list.notabs li:first-child {
+  @include border-radius(6px 0 0 0);
+}
+
+.m-drop-down-list a/*, .pick-list li*/ {
+  margin-right: 10px;
+}
+
+.right-panel-menu-button {
+  float: right;
+  margin: .6em .6em 0 0;
+  text-decoration: none;
+}
+
+/*** display by detail or grid view ***/
+#utility-bar a.display-by {
+  background-image: url('//edge.shop.com/ccimg.shop.com/resources/images/search-sprite.png');
+  background-repeat: no-repeat;
+  width: 54px;
+  height: 50px;
+  /* adjust to make the side borders go the entire height */
+  text-indent: -999em;
+  @extend %show;
+  float: left;
+  padding-top: 10px;
+  /* same as top margin of sort container */
+}
+#utility-bar a.display-by {
+  float: right;
+  border: none;
+  margin-right: 10px;
+}
+
+#search #utility-bar {
+  border: none;
+  //  border-bottom: $borderStyleLight;
+}
+
+/** utility-bar top for no tabs **/
+#search #utility-bar.notabs {
+  float: right; /* need while Adobe tests for tabs no tabs */
+  margin-top: -25px; /* need while Adobe tests for tabs no tabs, adjusted with no-touch project */
+  position: relative; /* need while Adobe Tests for tabs no tabs */
+}
+
+/** end utility bar**/
+
+/** search views (grid or list) **/
+#search.show-detail-view a.display-by, #shop-advisor.sas-search.show-detail-view a.display-by {
+  background-position: 12px 10px;
+  /* second number is the same as padding-top */
+}
+
+#search.show-grid-view a.display-by, #shop-advisor.sas-search.show-grid-view a.display-by {
+  background-position: 12px -38px;
+}
+
+#search .message {
+  margin-top: 10px;
+}
+
+#search ul#content {
+  float: left;
+  width: 70%; /* fallback for old browsers */
+  @include calc(width, "96% - #{$search-leftnav}");
+}
+#search, #shop-advisor {
+  .button-list li > a:after {
+    background: none;  /* hides the arrow for desktop */
+  }
+  .show-detail-view .button-list li > a {
+    padding: 0;
+  }
+}
+
+#search .button-list .review, #shop-advisor .button-list .review {
+  height: 15px;
+  float: none;
+}
+#search .button-list .review a, #shop-advisor .button-list .review a {
+  padding: 0;
+  margin-right: 3px;
+}
+
+#search .product {
+  position: relative;
+  @extend %show;
+  clear: both;
+}
+
+#search {
+  #featured-banner {
+    @include calc(width, "96% - #{$search-leftnav}");
+    float: left;
+    margin-bottom: 30px;
+
+    div {
+      max-width: 709px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  /* overrides for this in HK, TW, MX, and ES scss files */
+  .featured-prod {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 56px;
+    width: 56px;
+    background-image: url('//edge.shop.com/ccimg.shop.com/resources/images/search-sprite-full.png');
+    background-repeat: no-repeat;
+    background-position: -50px 0;
+    z-index: 490;
+  }
+}
+
+#shop-advisor, #search {
+  &.show-detail-view {
+    .quickview-btn-box { /* search only */
+      height: 80%;
+    }
+    .button-list li {         /* search & sas */
+      position: relative;
+    }
+    .product-image {          /* search & sas */
+      float: left;
+      position: relative;
+      display: inline-block; // is this needed
+      padding: 0 0 15px 0;
+      margin: 0 20px 0 0;
+      width: 175px;
+      img {                   /* search & sas */
+        width: 175px;
+        height: auto;
+      }
+    }
+    .product-info {          /* search & sas */
+      float: left;
+      @include calc(width, "97% - #{$medImage}");
+
+      .prod-description {    /* search & sas */
+        clear: both;
+      }
+      .shipfree-icon {       /* search & sas */
+        text-indent: 9999px;
+      }
+      .more-options {
+        width: 185px;
+        display: inline-block;
+      }
+    }
+    .button-box {
+      float: left;
+      @include calc(width, "97% - #{$medImage}");
+    }
+
+    .product-header {         /* search & sas */
+      float: left;
+      width: 55%;
+    }
+    .financials {             /* search & sas */
+      width: 40%;
+      min-width: 130px; // keep for shipfree width
+      float: right;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.product-info {
+  padding: 10px 0;
+  clear: none;
+}
+
+/* search & sas */
+.product-info h3.title {
+  color: #00A8CA;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.25em;
+  white-space: normal;
+  margin: 0 0 2px;
+  width: auto;
+  overflow: hidden;
+  position: relative;
+  max-height: 3.8em;
+}
+
+/* show a faded ellipse when cutting off the product caption */
+.product-info h3.title.overflow:after {
+  content: '\02026';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  position: absolute;
+  top: 2.5em;  /* 2.5em is 3 lines */
+  /* product caption line height */
+  right: 0;
+  width: 3em;
+  padding: 0 5px 0 0;
+  text-align: right;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%, #ffffff);
+}
+
+.product-info h3.title a {
+  font-size: 1em;
+}
+
+.product-info h4.title {
+  font-size: 1.5em;
+}
+
+.product-info .price {
+  color: #ec600b;
+  font-size: 1em;
+  margin: 0 0 3px;
+  line-height: normal;
+}
+
+.product-info .final-price {
+  font-size: $smallHeader;
+  color: #E66500;
+  font-weight: bold; // mobile default weight
+}
+
+.product-info .was-price {
+  font-size: 0.8em;
+  color: #4b4c4e;
+  text-decoration: line-through;
+}
+
+#search .product-info .was-price {
+  display: inline-block;
+}
+
+.product-info .savings-price {
+  font-size: 0.8em;
+  font-weight: normal;
+  margin: 0 0 5px;
+}
+
+.product-info .cashback-icon {
+  margin-top: -2px;
+}
+
+.product-info {
+  .bv, .ibv, .cashback, .shipfree-qualify, .from, .more-options {
+    font-size: rem(12);
+    color: $shopGray;
+    margin: 0 0 2px;
+    float: none; /* override for .bv float:left in another file */
+    line-height: .9rem;
+  }
+}
+
+.product-info .more-options {
+  padding: 2px 10px;
+  border: $borderStyle;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.product-info .from {
+  margin: 0 0 5px;
+}
+
+.cashback, .bv, .ibv {
+  font-weight: $bold;
+}
+
+.product-info .shipfree-icon {
+  display: inline-block;
+  width: 54px;
+  height: 16px;
+  outline: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+/***** grid view formatting ******/
+.show-grid-view .shipfree-qualify,
+.show-grid-view .prod-description,
+.show-grid-view .ui-icon.arrow-right {
+  @extend %hide;
+}
+
+.show-grid-view .product-image {
+  position: relative;
+  max-width: 175px;
+  min-width: 140px;
+  margin: 0 auto;
+}
+
+.show-grid-view .product-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* if want grid-view buttons to line up */
+.show-grid-view .product-info {
+   height: 158px;
+ }
+
+.show-grid-view .sale {
+  display: inline;
+}
+
+.show-grid-view .product-info .final-price {
+  max-width: 75%;
+}
+
+.show-grid-view .product-info .more-options {
+  max-width: 180px;
+}
+
+.show-grid-view .button-list li a {
+  position: inherit;
+}
+/** end views **/
+
+.notification {
+  position: relative;
+  margin: 10px auto;
+  width: 300px;
+  min-height: 150px;
+  background: $white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border-top: solid 30px $shopBlue;
+  border-right: solid 1px $shopBlue;
+  border-left: solid 1px $shopBlue;
+  border-bottom: solid 1px $shopBlue;
+  color: $shopBlue;
+  font-weight: bold;
+  text-align: center;
+
+  /* the icon to the left/right of the menu that allows you to close it */
+  .close-notify {
+    position: absolute;
+    @extend %show;
+    top: -29px;
+    right: -7px;
+    cursor: pointer;
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/shop-close-single.png') no-repeat scroll 0% 0%;
+    height: 35px;
+    width: 35px;
+    text-indent: -9999px;
+    z-index: 3000;
+  }
+}
+/** hover/tool tip**/
+
+/********************Pagination**********************/
+#search .bottom-stripe, #shop-advisor .bottom-stripe {
+  margin-bottom: 30px;
+}
+#search .bottom-stripe, #shop-advisor .bottom-stripe, #search .result-count, #shop-advisor .result-count {
+  @extend %hide;
+}
+
+.result-count {
+  text-align: center;
+}
+
+/*--- desktop page count with pagination ---*/
+#search .page-count, #shop-advisor .page-count {
+  float: right;
+  width: 33%;
+  min-width: 270px;
+  max-width: 420px;
+  margin: 3px 10px 30px 10px; /* NEW part of 68810 */
+  a {
+    padding: 5px 8px;
+    margin: 0;
+    font-size: $smallText;
+    font-weight: $bold;
+  }
+  .pagination {
+    text-align: center;
+    padding: .6em 0;
+    font-size: $smallText;
+    width: 50%;
+    float: right;
+    li {
+      display: inline-block;
+      margin: 0 2px;
+      list-style: none;
+      font-weight: bold;
+    }
+  }
+  .pagination li a.current {
+    color: #fff;
+    background-color: #00a8ca;
+    cursor: default;
+  }
+  .pagination li a, .pagination li a:active {
+    padding: .6em 2px;
+    text-decoration: none;
+    line-height: 1.2em;
+  }
+  .pagination li a:hover { /* all */
+    background-color: #56b2ce;
+    color: #fff;
+  }
+  a.button.tertiary.disabled, a.button.tertiary.disabled, a.button.tertiary.right, a.button.tertiary.left {
+    border: none;
+    background: none;
+    font-size: $smallText;
+    width: 25%;
+    white-space: nowrap;
+    padding: .65em 0;
+  }
+  a.button.tertiary.left {
+    text-align: left;
+  }
+  a.button.tertiary.right {
+    text-align: right;
+  }
+  a.button.tertiary:active {
+    color: $hover;
+  }
+}
+
+/** the "save search bar" at the top of the page that shows up once you click on "save this search" **/
+#save-search-outer {  /* outer div that opens and closes */
+  position: relative;
+  @extend %hide;
+  zoom: 1; /* for IE7 so you can see it after it slides down */
+}
+#save-search {
+  width: 100%;
+  background-color: $exLightGreen;
+  border-bottom: $borderStyle;
+  padding: 10px 0;
+}
+#save-search-inner {
+  margin: 0 20px;
+  position: relative;
+}
+#save-search .text {
+  margin-top: 7px;
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  float: left;
+}
+#save-search .text.with-input {
+  margin-top: 0;
+}
+#save-search .info {
+  font-size: 14px;
+  font-weight: bold;
+  clear: both;
+  float: left;
+  margin-top: 15px;
+}
+#save-search input {
+  width: 285px;
+  font-size: 14px;
+  margin: 5px 17px;
+  padding: 7px 6px 7px 5px; /* space between word and box outline */
+  border: $borderStyle;
+}
+#save-search input:focus {
+  outline: none;
+}
+#save-search .button-box {
+  float: left;
+}
+#save-search .button {
+  font-size: 14px;
+  margin: 4px 17px 0 0;
+}
+#save-search .cancel {
+  color: $shopBlue;
+  font-weight: $bold;
+  margin: 13px 35px 0 0;
+
+  .close-sprite {
+    top: 0px;
+    right: 0px;
+    position: absolute;
+  }
+}
+
+#save-search .saved-search-row {
+  clear: both;
+}
+
+#save-search .saved-search-text {
+  float: left;
+  font-size: 12px;
+  margin-right: 18px;
+  margin-bottom: 10px;
+
+  a {
+    font-weight: $bold;
+    margin-right: 15px;
+  }
+}
+#save-search .delete {
+  float: left;
+  margin-top: -2px;
+}
+#save-search .delete a {
+  font-size: $smallText;
+  padding: 5px 6px;
+  margin-top: 0;
+}
+/*********** end of save this search *****************/
+
+/*--- Quickview button ---*/
+#search {
+  .quickview-btn-box {
+    text-align: center;
+    position: absolute;
+    margin: 0 15px 0 15px;
+    width: 90%;
+    height: 48%;
+    max-width: 175px;
+    min-width: 140px;
+    z-index: 497;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0) url('//edge.shop.com/ccimg.shop.com/resources/images/spacer.gif') repeat 0 0; // BOTH transparent color and img required for ie9-10 quickview btn hover issue
+  }
+  .quickview-button.button.secondary {
+    position: absolute;
+    top: 60px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 175px;
+    min-width: 140px;
+    z-index: 498;
+    @extend %hide;
+    font-size: 12px;
+    padding: 10px 34px;
+    border: 2px solid #fff;
+  }
+
+  .show-detail-view .quickview-btn-box .secondary {
+    padding: 8px 28px;
+  }
+
+  .quickview-btn-box:hover .quickview-button.button.secondary {
+    @extend %show;
+  }
+}
+
+
+/******************* Shopping Advisor styles ********************/
+/* general width for all SA */
+#shop-advisor {
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* Shopping Advisor intro selection pages */
+#shop-advisor #content {
+  border-top: 1px solid #ccc;
+}
+
+#shop-advisor #usage-categories {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  // background image is in min-width to avoid mobile download
+}
+
+#shop-advisor #landing, #shop-advisor #welcome-back {
+  width: 100%;
+  max-width: 960px;
+  min-height: 500px;
+  margin: 0 auto;
+  // background image is in min-width to avoid mobile download
+}
+
+#shop-advisor #usage-categories #usage-categories-content,
+#shop-advisor #landing-content,
+#shop-advisor #welcome-back-content {
+  padding: 15px 10px 20px;
+  max-width: 450px;
+  width: 100%;
+}
+
+#shop-advisor .category-selections {
+  margin-bottom: 20px;
+
+  label{
+    padding:10px 5px;
+    margin: 0;
+    line-height: 1.5em;
+  }
+}
+
+#shop-advisor .input-left-half, #shop-advisor .input-right-half {
+  width: 45%;
+}
+
+#shop-advisor p.warning {
+  margin: 25px 0;
+  font-size: rem(14);
+}
+
+#shop-advisor .footnote {
+  font-size: rem(12);
+  font-style: italic;
+  margin: 20px 0;
+}
+
+#shop-advisor #welcome-back input.button, #shop-advisor #usage-categories input.button {
+  clear: both;
+  width: auto;
+  display: block;
+  margin: 10px 0;
+}
+
+#shop-advisor .drop-down-list {
+  display: block;
+}
+/* END Shopping Advisor intro selection pages */
+
+/* Shopping Advisor search full width override */
+#shop-advisor.sas-search {
+  width: 100%;
+  max-width: none;
+}
+
+#shop-advisor h1 {
+  font-size: rem(32);
+  color: #82BD5F;
+  text-transform: uppercase;
+  font-weight: normal;
+  float: left;
+  margin: 10px;
+}
+
+#shop-advisor.sas-search h1 {
+  margin: 10px 0 0 20px;
+  width: 50%;
+}
+
+#shop-advisor h2 {
+  font-size: rem(36);
+  font-weight: normal;
+  color: $shopBlue;
+
+  &.strong {
+    font-weight: $bold;
+  }
+}
+
+#shop-advisor #landing h3,
+#shop-advisor #welcome-back h3,
+#shop-advisor #usage-categories h3,
+#shop-advisor #refine-search .menu-list h3,
+#shop-advisor.sas-summary h3,
+#shop-advisor #no-results-message h3 {
+  color: $green;
+  font-size: rem(18);
+  line-height: 1.4em;
+}
+#shop-advisor #refine-search .menu-list h3 {
+  margin: 0 5px;
+}
+#shop-advisor.sas-summary h3.no-results { /* used to show empty list message */
+  margin-top: 50px;
+}
+#shop-advisor h4 {
+  margin: 10px 0;
+}
+
+#shop-advisor #landing p,
+#shop-advisor #welcome-back p,
+#shop-advisor #usage-categories p,
+#shop-advisor #summary p,
+#shop-advisor #landing li {
+  line-height: 1.5em;
+}
+
+#shop-advisor #landing {
+  ul {
+    font-size: rem(14);
+    margin: 0 0 20px;
+    list-style: disc inside;
+  }
+  form .button {
+    width: auto;
+  }
+}
+
+/********* Shopping Advisor Summary ********/
+#shop-advisor.sas-summary {
+  #content {
+    border: none;
+    float: left;
+    width: 75%;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: rem(30);
+  }
+  .sas-summary-recap {
+    width: 100%;
+    margin-top: 20px;
+
+    .col-left, .col-right {
+      width: 40%;
+    }
+    .col-left {
+      float: left;
+      text-align: left;
+      clear: left;
+      color: $shopBlue;
+      font-weight: $bold;
+    }
+    .col-right {
+      float: left;
+      text-align: left;
+      font-weight: bold;
+      margin-left: 10px;
+      color: $shopGray;
+    }
+    p {
+      font-size: rem(15);
+    }
+  }
+  .view-list, .view-cart {
+    display: inline;
+    margin-right: 30px;
+  }
+}
+/******** END Shopping Advisor summary *********/
+
+#shop-advisor.sas-search #utility-bar {
+  border-top: $borderStyleLight;
+}
+
+/* top sas-totals bar */
+#shop-advisor .sas-totals {
+  float: right;
+  margin: 10px 10px 0 0;
+  height: auto;
+  width: 45%;
+  text-align: right;
+  font-size: rem(13);
+}
+
+#shop-advisor .sas-totals .totals-title {
+  font-weight: bold;
+  font-size: rem(15);
+}
+
+#shop-advisor .bv-total {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 6px 0 0 4px;
+  height: 30px;
+}
+
+#shop-advisor .bv-title {
+  border-radius: 7px 0 0 7px;
+  background-color: #888;
+  color: #fff;
+  padding: 7px 1px 7px 10px;
+}
+
+#shop-advisor .bv-amt {
+  border-radius: 0 7px 7px 0;
+  background-color: #ccc;
+  padding: 7px 10px 7px 4px;
+  color: #fff;
+}
+
+#shop-advisor .ibv-total {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 6px 0 0 4px;
+  height: 30px;
+}
+
+#shop-advisor .ibv-title {
+  border-radius: 7px 0 0 7px;
+  background-color: #fff;
+  color: #666;
+  padding: 6px 1px 6px 10px;
+  border: 1px solid #ccc;
+}
+
+#shop-advisor .ibv-amt {
+  border-radius: 0 7px 7px 0;
+  background-color: #ccc;
+  padding: 7px 10px 7px 4px;
+  color: #fff;
+}
+
+#shop-advisor .cashback-total {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 6px 0 0 4px;
+  height: 30px;
+}
+
+#shop-advisor .cashback-title {
+  border-radius: 7px 0 0 7px;
+  background-color: #8bcd67;
+  color: #fff;
+  padding: 7px 1px 7px 10px;
+}
+
+#shop-advisor .cashback-amt,
+#shop-advisor .item-count {
+  border-radius: 0 7px 7px 0;
+  background-color: #4dab58;
+  padding: 7px 10px 7px 4px;
+  color: #fff;
+}
+
+#shop-advisor .sas-savings {
+  height: 30px;
+  display: inline-block;
+  margin: 0 0 0 4px;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#shop-advisor .sas-savings div {
+  display: block;
+  font-size: rem(12);
+  line-height: rem(12);
+  font-weight: normal;
+}
+
+#shop-advisor .sas-totals .button {
+  float: right;
+  margin: 0 0 10px 4px;
+  padding: .65em 1.1em;
+}
+/* end top sas-totals bar */
+
+#shop-advisor.sas-search #refine-search {
+  max-width: 290px;
+  width: 35%;
+}
+
+#shop-advisor.sas-summary #refine-search {
+  width: 100px;
+  border: none;
+}
+
+#shop-advisor section#refine-search-narrow {
+  display: none;
+}
+#refine-search-panel {
+  display: none;
+}
+
+#shop-advisor #refine-search hr {
+  width: auto;
+}
+
+/* overrides to add padding-- align with sub-nav selected highlight */
+#shop-advisor .search-filter-menu .pick-list-section {
+  padding-left: rem(23);
+  input[type="radio"], input[type="checkbox"] {
+    left: 5px;
+  }
+}
+
+/* vertical tabs unique to SA */
+.icon-nav {
+  float: left;
+  clear: left;
+  width: $shopadv-iconnav;
+  margin: 15px 6px 10px 0;
+
+  ul {
+    border: 1px solid $shopBlue;
+    border-right: none;
+  }
+
+  li {
+    position: relative;
+  }
+
+  a {
+    /* cannot have width with *extended tab* */
+    padding: 50px 10px 8px 6px;
+    background-color: $lightBlue;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    border-right: 1px solid $shopBlue;
+
+    &:hover {
+      color: #666;
+    }
+  }
+
+  /*Create SA map*/
+  a:before {
+    content: '';
+    width: 30px;
+    height: 35px;
+    top: 10px;
+    left: 23px;
+    position: absolute;
+    display: inline-block;
+  }
+
+  a:hover, .tab.selected a {
+    background-color: #fff;
+  }
+
+  a:hover {
+    color: $shopGray;
+  }
+
+  .selected {
+    margin: -1px 0 0 -3px;
+  }
+
+  .tab.selected a {
+    color: $shopGray;
+    background-color: #fff;
+    border: 1px solid $shopBlue;
+    border-right: none;
+    margin: -1px 0 0 -2px; /* for fixing borders */
+    padding: 50px 10px 8px 8px;
+  }
+
+  .finish a {
+    color: #E66500;
+  }
+
+  .finish a:hover, .finish.selected a {
+    background-color: #fff;
+    color: #E66500;
+  }
+
+  .finish.selected a {
+    margin-bottom: -1px; /* fix for unwanted double border */
+  }
+
+  /* room tabs */
+  .kitchen a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-kitchen.png') no-repeat -40px 0; /* 0 0 */
+  }
+
+  .laundry a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-laundry.png') no-repeat -40px 0;
+  }
+
+  .pantry a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-pantry.png') no-repeat -40px 0;
+  }
+
+  .bathroom a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-bath.png') no-repeat -40px 0;
+  }
+
+  .office a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-office.png') no-repeat -40px 0;
+  }
+
+  .garage a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-garage.png') no-repeat -40px 0;
+  }
+
+  .outdoor a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-outdoor.png') no-repeat -40px 0;
+  }
+
+  .bedroom a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-bedroom.png') no-repeat -40px 0;
+  }
+
+  .kidsroom a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-child.png') no-repeat -40px 0;
+  }
+
+  .finish a:before {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/nav-page.png') no-repeat 0 0;
+  }
+
+  .kitchen a:hover::before,
+  .kitchen.selected a:before,
+  .pantry a:hover::before,
+  .pantry.selected a:before,
+  .office a:hover::before,
+  .office.selected a:before,
+  .garage a:hover::before,
+  .garage.selected a:before,
+  .laundry a:hover::before,
+  .laundry.selected a:before,
+  .outdoor a:hover::before,
+  .outdoor.selected a:before,
+  .bathroom a:hover::before,
+  .bathroom.selected a:before,
+  .bedroom a:hover::before,
+  .bedroom.selected a:before,
+  .kidsroom a:hover::before,
+  .kidsroom.selected a:before,
+  .finish a:hover::before,
+  .finish.selected a:before {
+    background-position: 0 0;
+  }
+}
+/* end nav tabs */
+
+/* sub-nav list--- desktop */
+#shop-advisor #refine-search .menu-list {
+  @include calc(width, "97% - #{$shopadv-iconnav}");
+  float: left;
+}
+.menu-list .sub-nav a {
+  font-size: rem(15);
+}
+#refine-search .menu-list .sub-nav li:first-child {
+  padding-top: 0;
+}
+
+#shop-advisor #refine-search .menu-list li.selected {
+  font-size: rem(15);
+  color: #666;
+  padding-left: 5px;
+  background-color: $gradientLightGray;
+}
+
+#shop-advisor #refine-search .menu-list .sub-nav a {
+  padding-left: 5px;
+}
+
+#shop-advisor ul#content {
+  float: left;
+  border: 0;
+}
+
+#shop-advisor .product {
+  position: relative;
+  clear: both;
+}
+
+#shop-advisor.show-grid-view {
+  .product-image {
+    margin: 0;
+  }
+  .product-info {
+    height: 192px;
+
+    .more-options {
+      width: 180px;
+    }
+  }
+  .button-box {
+    clear: both;
+  }
+}
+
+.quickview-box .quickview-link {  /* just SA */
+  display: block;
+  font-size: 12px;
+  color: #888;
+  padding: 4px 10px;
+  border-bottom: $borderStyleLight;
+  text-decoration: none;
+  text-align: center;
+}
+.button-list li a.quickview-link {
+  padding: 3px 0 5px;
+  cursor: pointer;
+}
+
+.show-detail-view .quickview-box .quickview-link {
+  border-bottom: none;
+}
+
+.quickview-box .quickview-link:hover {  /* just SA */
+  color: #333;
+  text-decoration: underline;
+  background-color: #f3f3f3;
+}
+
+#shop-advisor .review {
+  margin-bottom: 3px;
+}
+
+ul#content .button {
+  padding: 5px 10px;
+  margin: 3px 0;
+  width: 180px;
+}
+
+ul#content .button:hover {
+  padding: 5px 10px;
+}
+
+/********** min-widths for Shopping Advisor ***************/
+@media (min-width: 660px) {
+  #shop-advisor.sas-search ul#content {
+    width: 60%; /* fallback for old browsers */
+    @include calc(width, "96% - 290px");
+  }
+  #shop-advisor #refine-search .menu-list {
+    width: 60%; /* fallback */
+    @include calc(width, "97% - #{$shopadv-iconnav}");
+  }
+}
+
+@media (min-width: 800px) {
+  /*  loading big images for larger screens only */
+  #shop-advisor #usage-categories {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/homeadvisor/HA-bg-family.jpg') no-repeat right -10px;
+    min-height: 385px;
+  }
+  #shop-advisor #landing, #shop-advisor #welcome-back {
+    background: transparent url('//edge.shop.com/ccimg.shop.com/homeadvisor/HA-bg-landing.jpg') no-repeat 0 -2px;
+  }
+  #shop-advisor #refine-search .menu-list {
+    width: 68%; /* fallback */
+    @include calc(width, "97% - #{$shopadv-iconnav}");
+  }
+}
+
+@media (min-width: 1024px) {
+  #shop-advisor.sas-search .sas-totals {
+    margin-right: 30px;
+  }
+  #shop-advisor.sas-search .display-by {
+    margin-right: 20px;
+  }
+  #shop-advisor.sas-search ul#content {
+    width: 67%; /* fallback for old browsers */
+    @include calc(width, "96% - 290px");
+  }
+}
+
+/***************** mid-small desktop break-point fixes *****************/
+@media screen and (max-width: 950px) {
+  #search.show-detail-view, #shop-advisor.show-detail-view {
+    .quickview-btn-box { /* search */
+      height: 45%;
+    }
+    .product-info, .button-box {
+      width: 100%;
+    }
+  }
+  .show-detail-view .quickview-box .quickview-link {  /* just SAS*/
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+/****************** smallest/ phone width AND narrow desktop **************/
+@media screen and (max-width: 660px) {
+  #search {
+    .search-header, .breadcrumb li.save-search,
+    .store-description,
+    .tab-box,
+    #refine-search,
+    .search-filter-menu,
+    #featured-banner,
+    .prod-description,
+    .related-searches,
+    .quickview-btn-box,
+    .quickview-button,
+    .per-page, #snippet,
+    .more, .alphabet-soup-more {
+      display: none;
+    }
+  }
+
+  #search {
+    .search-header, .breadcrumb li.save-search {
+      display: none;
+    }
+
+    .breadcrumb { /* test */
+      font-size: 0.85rem;
+      margin: 0; /* need while Adobe tests for tabs no tabs */
+      ul {
+        margin: 5px 10px;
+        width: 100%;
+        height: 35px;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        li {
+          padding: 11px 5px 10px 12px;
+          &:first-child {
+            padding-left: 0;
+          }
+        }
+      }
+
+      a.close-sprite {
+        width: 35px;
+        height: 35px;
+        background: transparent url('//edge.shop.com/ccimg.shop.com/resources/images/shop-close-single.png') no-repeat scroll 0% 0%;
+        padding: 12px 35px 10px 0;
+      }
+    }
+
+    .multi-store-match {
+      padding: 10px 10px 0;
+
+      h3 {
+        font-size: rem(18);
+        margin: 4px 0;
+      }
+      h3 ~ p {
+        display: none;
+      }
+    }
+    .stores-matched {
+      border: none;
+
+      li {
+        margin: 10px 0;
+        padding: 0 10px;
+        width: auto;
+        min-width: 140px;
+        max-width: 180px;
+        &:first-child {
+          padding-left: 0;
+        }
+        * {
+          margin: 0 0 3px 0;
+        }
+        img {
+          display: none;
+        }
+      }
+    }
+    .store-match {
+      border-bottom: none;
+    }
+    a.hovertip {
+      display: inline-block;
+    }
+    #featured-banner {
+      width: 100%;
+      float: none;
+    }
+    ul#content {
+      float: none;
+      width: 100%;
+    }
+    .button-list .review {
+      float: none;
+      clear: none;
+    }
+    .store-match .button.primary {
+      float: right;
+      margin-right: 10px;
+    }
+    #utility-bar {
+      border-top: $borderStyleLight;
+//      border-bottom: $borderStyleLight; /* testing fix for adobe no-tabs, tabs AND store match */
+      min-width: 316px;
+
+      .right-panel-menu-button {
+        display: inline-block;
+      }
+
+      a.display-by {
+        position: relative;
+        border-left: 1px solid #e2e2e2;
+        border-right: 1px solid #e2e2e2;
+        float: left;
+      }
+      .sort-container {
+        float: left;
+        position: relative;
+        margin: 0;
+        padding: 10px 5px 0 10px;
+        .drop-down-list-button {
+          background: none;
+          border: none;
+          margin: 0;
+          padding: 0;
+          height: auto;
+        }
+      }
+    }
+    /** utility-bar top for no tabs **/
+    #utility-bar.notabs {
+      position: relative;
+      margin: 0;
+      border-bottom: $borderStyleLight;
+      float: none; /* Need this while Adobe tests are going on to override upper utility bar float */
+    }
+    .m-drop-down-list ul {
+      margin: -1px 0 0;
+    }
+    .m-drop-down-list.notabs ul {
+      left: 0;
+      top: 50px;
+      right: inherit;
+      margin: 0 0 0 -1px;
+    }
+    .m-drop-down-list li:first-child {
+      @include border-radius(0 6px 0 0);
+    }
+  }
+
+  #search {
+    .drop-down-list-button .selected-item {
+      width: 77px;
+    }
+  }
+
+  /* search specific detail view for mobile */
+  #search.show-detail-view {
+    .product-image {
+      width: auto; // m
+      max-width: none; // m
+      min-width: inherit; // m
+      img {
+        width: $thumbnail;
+      }
+    }
+    .financials {
+      margin: 0;
+    }
+    .product-info {
+      // mobile below
+      float: none;
+      width: auto;
+      margin-left: 120px; /* thumbnail plus its 20px margin  */
+
+      .shipfree-icon {
+        text-indent: -9999px;
+      }
+    }
+  }
+  /* End search detail view for mobile */
+
+
+  #search, #shop-advisor {
+    &.show-detail-view {
+      .product-header { /* overrides might not be needed*/
+        float: none;
+        width: auto;
+      }
+      .financials {
+        width: auto;
+        min-width: inherit; /* keep for shipfree width */
+        float: none;
+        text-align: left;
+        .cashback {
+          float: none;
+        }
+      }
+      .product-info { /* narrow d below */
+        .prod-description {
+          clear: none;
+        }
+
+        .more-options {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  #search .bottom-stripe, #shop-advisor .bottom-stripe {
+    display: block;
+    margin-bottom: 20px;
+  }
+  #search .result-count, #shop-advisor .result-count {
+    display: block;
+  }
+  /* --- mobile pagination --- */
+  #search .page-count, #shop-advisor .page-count {
+    float: none;
+    width: 100%;
+    margin: 0 auto;
+    max-width: initial;
+
+    .pagination {
+      clear: both;
+      width: 100%;
+      margin: 1em auto;
+    }
+    .pagination li {
+      margin: 0 0.4em;
+    }
+    .pagination li a, .pagination li a:active {
+      padding: .4em;
+    }
+    .pagination li a.current {
+      color: #fff;
+      background-color: #00a8ca;
+      cursor: default;
+    }
+
+    .button.tertiary {
+      margin: 0 10px;
+    }
+  }
+
+  /********Shopping Advisor ******/
+  #shop-advisor.sas-search h1 {
+    margin: 10px;
+    width: 100%;
+  }
+  /* Shopping Advisor totals bar */
+  #shop-advisor .sas-totals {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    margin: 0px;
+    display: block;
+    position: relative;
+    font-size: 12px;
+    text-align: left;
+  }
+  #shop-advisor .sas-totals .totals-title {
+    font-size: 12px;
+    height: auto;
+    padding: 10px 5px 10px 10px;
+    float: left;
+  }
+  #shop-advisor .bv-total {
+    white-space: nowrap;
+    margin: 0;
+    height: auto;
+    float: left;
+    padding: 10px 0;
+  }
+  #shop-advisor .bv-title {
+    border-radius: 0;
+    background-color: #888;
+    color: #fff;
+    padding: 10px 0 10px 5px;
+  }
+  #shop-advisor .bv-amt {
+    border-radius: 0;
+    background-color: #888;
+    padding: 10px 5px 10px 0;
+    color: #fff;
+  }
+  #shop-advisor .ibv-total {
+    white-space: nowrap;
+    margin: 0;
+    height: auto;
+    float: left;
+    padding: 10px 0;
+  }
+  #shop-advisor .ibv-title {
+    border-radius: 0;
+    background-color: #ccc;
+    color: #fff;
+    padding: 10px 0 10px 5px;
+    border: none;
+  }
+  #shop-advisor .ibv-amt {
+    border-radius: 0;
+    background-color: #ccc;
+    padding: 10px 5px 10px 0;
+    color: #fff;
+  }
+  #shop-advisor .cashback-total {
+    white-space: nowrap;
+    margin: 0;
+    height: auto;
+    float: left;
+    padding: 10px 0;
+  }
+  #shop-advisor .cashback-title {
+    border-radius: 0;
+    background-color: #8bcd67;
+    color: #fff;
+    padding: 10px 2px 10px 7px;
+  }
+  #shop-advisor .cashback-amt,
+  #shop-advisor .item-count {
+    border-radius: 0;
+    background-color: #4dab58;
+    padding: 10px 7px 10px 5px;
+    color: #fff;
+  }
+  #shop-advisor .sas-savings {
+    height: auto;
+    width: 100%;
+    background-color: #666;
+    color: #fff;
+    padding: 10px 0;
+    margin: 0;
+    float: left;
+  }
+  #shop-advisor .distrib-costs, #shop-advisor .savings {
+    padding: 0 10px;
+  }
+  #shop-advisor .sas-savings div {
+    margin-left: 10px;
+  }
+  #shop-advisor .sas-totals .button {
+    display: none;
+  }
+  /* end hasa totals bar */
+
+  #shop-advisor #utility-bar .right-panel-menu-button {
+    display: inline-block;
+  }
+  #shop-advisor #utility-bar a.display-by {
+    position: relative;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    float: left;
+  }
+
+  #shop-advisor #refine-search, #shop-advisor .search-filter-menu {
+    display: none;
+  }
+
+  /* narrow nav tabs */
+  .sas-header {
+    clear: both;
+    height: auto;
+    overflow: hidden;
+  }
+  #shop-advisor section#refine-search-narrow {
+    display: block;
+    width: 100%;
+    clear: both;
+    background-color: #cdcdcd;
+  }
+
+  .icon-nav {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: 0;
+
+    ul {
+      position: relative;
+      border-right: 1px solid $shopBlue;
+    }
+
+    ul ul {
+      border: none;
+    }
+
+    .selected {
+      margin: 0;
+    }
+
+    .tab.selected a {
+      margin: -1px 0 0 -1px;
+    }
+
+    a {
+      background-color: #fff;
+      text-align: left;
+      display: block;
+      font-size: 13px;
+      padding: 15px 10px 15px 47px;
+      width: auto;
+      background-size: 50%;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+      border-right: none;
+    }
+
+    .selected a, .tab.selected a {
+      color: #666;
+      padding: 15px 10px 15px 47px;
+    }
+
+    a:before {
+      content: '';
+      width: 30px;
+      height: 35px;
+      top: 4px;
+      left: 10px;
+      position: absolute;
+      display: inline-block;
+    }
+
+    a:after {
+      background: url('//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow.png') no-repeat center;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      content: '';
+      float: right;
+      height: 15px;
+      position: relative;
+      width: 15px;
+    }
+
+    .selected.open a:after {
+      transform: rotate(-90deg);
+      content: '';
+    }
+
+    .finish a:after {
+      background: none;
+    }
+
+    /* arrow shows only in selected finish when expandable at top */
+    .finish.selected.expandable a:after {
+      background: url('//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow.png') no-repeat center;
+    }
+
+    .finish a:hover {
+      background-color: #fff;
+      color: #E66500;
+    }
+
+    /* menu-list is only embedded within icon-nav in narrow view */
+    .menu-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* override for menu-list li a narrow */
+    li a {
+      color: $shopBlue;
+      padding: 15px 10px 15px 47px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    li a:hover {
+      color: #666;
+    }
+
+    .second-level .second-level li a {
+      background-color: #efefef;
+      padding-left: 62px;
+    }
+
+    .second-level .second-level a:after {
+      background: none;
+    }
+  }
+  /* end narrow icon-nav tabs */
+
+  #shop-advisor.sas-search ul#content {
+    float: none;
+    width: 100%;
+  }
+  #quickview .tabs {
+    display: block;
+  }
+
+  /***** Shopping Advisor Summary ******/
+  #shop-advisor.sas-summary {
+    #content{
+      margin: 0 10px 10px 10px;
+      border: none;
+      width: auto;
+    }
+    .sas-summary-recap {
+      .gray-box {
+        width: 100%;
+      }
+      .col-left {
+        width: 55%;
+      }
+      .col-right {
+        width: 40%;
+      }
+    }
+  }
+
+  /******* END Shopping Advisor *******/
+
+  .overlay form .button.primary {
+    float: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #shop-advisor .input-left-half, #shop-advisor .input-right-half {
+    width: 48%;
+    float: left;
+    margin: 0;
+  }
+}
+
+/* test for adding margins to AdSense just in search to start */
+.ads_box {
+  clear: both;
+  margin: 0 10px;
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+  .padded_left_right_10 {
+    padding: 0 10px;
+  }
+}

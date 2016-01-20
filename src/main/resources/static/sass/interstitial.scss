@@ -1,0 +1,139 @@
+@import "modules/allmodules";
+@import "partials/tabs";
+
+/* EZ Reg interstitial page */
+
+.interstitial {
+  max-width: 700px;
+  margin: 10px auto 30px auto;
+
+  h2, h3 {
+    line-height: 1.2em;
+  }
+
+  hr + h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.4em;
+    margin: 10px 0 0;
+
+    &.no-top-margin {
+      margin-top: 0px;
+    }
+  }
+
+  .cashback, .shop-points {
+    position: relative;
+    font-size: inherit;
+    color: inherit;
+    &:before {
+      left: 0;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+  }
+  .cashback.lg {
+    padding-left: 52px;
+
+    @include p-el(before, 52px, 37px) {
+      @include full-sprite;
+      top: 3px;
+      background-position: -420px -266px;
+    }
+  }
+  .cashback.med {
+    padding-left: 30px;
+
+    @include p-el(before, 30px, 24px) {
+      @include mobile-sprite;
+      background-position: 0px -45px;
+    }
+  }
+  .shop-points {
+    padding-left: 21px;
+
+    @include p-el(before, 21px, 21px) {
+      @include shop-points;
+      top: 1px;
+    }
+  }
+
+  .site-logo {
+    float: left;
+    @media screen and (max-width: 480px) {
+      float: none;
+    }
+
+    /* SHOP logo */
+    img {
+      width: 200px;
+      margin: 10px 0;
+    }
+
+    /* blue dots gif */
+    + img {
+      float: right;
+      margin: 20px 50px 10px 0;
+
+      @media screen and (max-width: 480px) {
+        float: none;
+        margin: 10px 0 10px 25px;
+      }
+    }
+  }
+
+  .button.primary {
+    width: 100%;
+    margin: 27px 0 0;
+
+    @media screen and (max-width: 480px) {
+      margin: 10px 0 0;
+    }
+  }
+  .button.secondary {
+    width: auto;
+    margin: 10px 0 0;
+  }
+  label {
+    margin: 10px 0 0;
+  }
+
+  .store {
+    img {
+      display: inline-block;
+      width: 140px;
+      margin: 10px 10px -5px 0;
+
+      @media screen and (max-width: 660px) {
+        display: none;
+      }
+    }
+
+    h2 {
+      display: inline-block;
+
+      @media screen and (max-width: 480px) {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.ez-reg-promo {
+  h1 {
+    line-height: 1.2em;
+  }
+
+  input {
+    max-width: 350px;
+  }
+  .button.primary {
+    width: auto;
+    margin: 0;
+  }
+}

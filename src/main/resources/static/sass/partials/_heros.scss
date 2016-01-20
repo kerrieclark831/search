@@ -1,0 +1,289 @@
+@import "../modules/index";
+
+/** sub hero stuff **/
+.subhero-module {
+  background: #f4f6e9;
+  background: linear-gradient(to bottom, #fff, #f4f6e9);
+  height: 61px;
+  max-width: 960px; /* to keep it from getting too big */
+  width: 100%;
+  margin: 6px auto 0;
+  padding: 0;
+  position: relative;
+}
+
+.subhero-container {
+  width: 290px;
+}
+
+.subhero-container.lg {
+  display: none;
+}
+
+.subhero {
+  float: left;
+  width: 49%;
+  margin: 0;
+  background-color: white;
+  border-radius: 0 0 15px 15px;
+}
+
+.subhero a:link, .subhero a:visited {
+  overflow: hidden;
+}
+
+.owl-carousel .subhero {
+  width: 100%;
+  background: none repeat scroll 0% 0% white;
+  border-radius: 0 0 15px 15px;
+}
+
+.subhero-module .image-arrows {
+  margin: 20px 5px;
+}
+
+.subhero.last {
+  float: right;
+  margin-right: 0;
+}
+
+.subhero a:link, .subhero a:visited {
+  border-radius: 0 0 1em 1em;
+  box-shadow: 0 0 3px #e5e5e5;
+  height: 52px;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  padding: 0px;
+  //  background: $white;
+}
+
+.subhero-module .subhero .button-arrow {
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  z-index: 1000;
+  border: none;
+  box-shadow: none;
+}
+
+/* when the menu is open, you have to get rid of the box shadow as it bleeds into the menu */
+.menu-open .subhero a:link, .menu-open .subhero a:visited {
+  box-shadow: none;
+}
+
+.subhero a:hover, .subhero a:active {
+  text-decoration: underline;
+}
+
+.subhero-module span {
+  color: $green;
+  display: block;
+  font-size: 1.3em;
+  line-height: 1.2em;
+}
+
+.subhero-module span em {
+  font-size: 1.3em;
+  font-style: normal;
+}
+
+.subhero-module a .ui-icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin: -9px 0;
+  right: 10px;
+}
+
+#homepage .subhero-container.lg .sub-hero.daily-deal {
+  height: 186px;
+  position: relative;
+  height: 186px;
+  width: 200px;
+  background: url(//edge.shop.com/ccimg.shop.com/homepage/subhero-twn-product.png) no-repeat bottom left;
+
+  a.sub-hero-content {
+    height: auto;
+    h2 {
+      font-size: 16px;
+      text-align: center;
+      color: $white;
+      margin: 5px 0 10px;
+    }
+    img {
+      float: left;
+      width: 90px;
+      height: 90px;
+      margin-left: 7px;
+    }
+    figcaption {
+      float: right;
+      width: 45%;
+      margin: 0 5px;
+
+      .shop-blue {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 1.25em;
+        max-height: 3.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+      .shop-blue:after {
+        content: "\02026";
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        position: absolute;
+        top: 4.5em;
+        right: 0;
+        width: 3.5em;
+        padding: 0 5px 0 0;
+        text-align: right;
+        background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to($lightYellow), color-stop(50%, $lightYellow));
+        background: -moz-linear-gradient(to right, rgba(253, 248, 230, 0), $lightYellow 50%, $lightYellow);
+        background: -o-linear-gradient(to right, rgba(253, 248, 230, 0), $lightYellow 50%, $lightYellow);
+        background: -ms-linear-gradient(to right, rgba(253, 248, 230, 0), $lightYellow 50%, $lightYellow);
+        background: linear-gradient(to right, rgba(253, 248, 230, 0), $lightYellow 50%, $lightYellow);
+      }
+      .was-price {
+        font-size: 12px;
+        line-height: 1.2em;
+        font-size: .7em;
+        text-decoration: line-through;
+        color: $shopGray;
+      }
+      .price {
+        line-height: 1.25em;
+        font-size: .8em;
+      }
+      .cashback {
+        background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png) no-repeat -597px -311px;
+        display: inline-block;
+        padding: 0 0 0 24px;
+        font-size: 11px;
+        color: $darkestGray;
+        font-weight: normal;
+        line-height: normal;
+      }
+      .cashback:before {
+        display: none;
+      }
+    }
+  }
+  .see-more {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: .9em;
+    background-color: $orange;
+    color: #fff;
+    padding: 4px 10px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 15px;
+    left: 60px;
+  }
+}
+
+@media screen and (min-width: 660px) {
+  .hero-container .navigator-container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #homepage, .categories {
+    #hero {
+      height: 360px;
+    }
+    .subhero-module, .owl-carousel.subhero-module {
+      display: none;
+    }
+    .subhero-container.lg {
+      float: left;
+      padding: 15px 0 0 20px;
+      background: url(//edge.shop.com/ccimg.shop.com/homepage/bg-subhero-wrapper.jpg) no-repeat top left;
+      display: inline-block;
+      width: 20%;
+      height: 100%;
+
+      .sub-hero {
+        display: none;
+      }
+    }
+    .sub-hero {
+      width: 200px;
+      height: 100px;
+      margin-bottom: 16px;
+      -webkit-border-radius: 0px 8px 8px 0px;
+      border-radius: 0px 8px 8px 0px;
+      -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+      background-color: $white;
+
+      img {
+        width: 200px;
+        height: 100px;
+      }
+
+      a:link, a:visited {
+        box-shadow: none;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background: #e0f1f8;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMGYxZjgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: linear-gradient(to bottom, #fff 0, #e0f1f8 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0f1f8', GradientType=0);
+        -webkit-box-shadow: 0 0 20px 4px rgba(0, 165, 202, 0.3);
+        box-shadow: 0 0 20px 4px rgba(0, 165, 202, 0.3);
+      }
+    }
+
+    .sub-hero.last {
+      margin-bottom: 0;
+    }
+
+    .sub-hero a.sub-hero-content {
+      display: block;
+      width: 200px;
+      height: 100px;
+      -webkit-border-radius: 0 8px 8px 0;
+      border-radius: 0 8px 8px 0;
+      position: relative;
+      //      border: solid 1px #DFE1DC;
+      cursor: pointer;
+      box-sizing: content-box;
+      h2 {
+        margin: 0;
+      }
+      img {
+        width: auto;
+        height: auto;
+      }
+      .shop-green {
+        color: $green;
+      }
+      .shop-orange {
+        color: $orange;
+      }
+      .shop-blue {
+        color: $shopBlue;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .subhero-container.lg {
+    display: none;
+  }
+  .subhero-module, .owl-carousel.subhero-module {
+    display:block;
+  }
+}

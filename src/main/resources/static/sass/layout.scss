@@ -1,0 +1,1042 @@
+@import "modules/index";
+@import "modules/extend";
+
+
+/** Styles for generating a "spinner" while waiting for something to happen.
+    You need to nest two divs, the inner one with class="inner".
+    Ex: <div class="spinner medium"><div class="inner"></div></div>
+    If you want it to scroll with the page, change position:fixed for the .spinner div.
+    See below for styles if you know your background is white, or mostly white. **/
+
+.spinner {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-background-small.png) no-repeat scroll center transparent;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10005;
+}
+
+.spinner .inner {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-small.gif) no-repeat scroll center transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 10002;
+}
+
+.spinner.large {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-background-large.png) no-repeat scroll center transparent;
+}
+
+.spinner.large .inner {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-large.gif) no-repeat scroll center transparent;
+}
+
+.spinner.medium {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-background-medium.png) no-repeat scroll center transparent;
+}
+
+.spinner.medium .inner {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-medium.gif) no-repeat scroll center transparent;
+}
+
+.spinner.small {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-background-small.png) no-repeat scroll center transparent;
+}
+
+.spinner.small .inner {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-small.gif) no-repeat scroll center transparent;
+}
+
+/** if you know your background will be white, you can use this without the "inner" div
+    Ex: <div class="spinner white-bg large"></div>**/
+.spinner.white-bg {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-small.gif) no-repeat scroll center transparent;
+}
+
+.spinner.white-bg.large {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-large.gif) no-repeat scroll center transparent;
+}
+
+.spinner.white-bg.medium {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-medium.gif) no-repeat scroll center transparent;
+}
+
+.spinner.white-bg.small {
+  background: url(//edge.shop.com/ccimg.shop.com/resources/images/loader-spinner-small.gif) no-repeat scroll center transparent;
+}
+
+.close-icon {
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  color: white;
+  z-index: 3001;
+  text-indent: -9999px;
+}
+
+.email-message-error {
+  background-color: #FCEBE5; /* #FFD5DF;*/
+  border: 1px solid #BB4B57; /* #FF90AA;*/
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.25);
+  margin: -30px 0;
+  padding: 2px 5px;
+  z-index: 100000;
+}
+
+.email-message-error p {
+  color: #BB4B57; /* #ca1c45;*/
+  font-size: 11px;
+  font-weight: bold;
+}
+/*************************Add for AMOS***************************/
+//#header, #footer, #horiz-menu{
+
+  /*****Basic PageManager Styles*******/
+  .shop-blue {
+    color: $shopBlue;
+  }
+
+  .shop-gray {
+    color: $shopGray;
+  }
+
+  .green {
+    color: $green;
+  }
+
+  .orange {
+    color: $orange;
+  }
+
+  .white{
+    color:$white;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .strong, strong, .shop .strong {
+    font-weight: bold;
+  }
+
+  .exexlarge-header {
+    font-size: $exExLargeHeader;
+  }
+
+  .exlarge-header {
+    font-size: $exLargeHeader;
+  }
+
+  .large-header {
+    font-size: $largeHeader;
+  }
+
+  .med-header {
+    font-size: $medHeader;
+  }
+
+  .small-header {
+    font-size: $smallHeader;
+  }
+
+  .main-text {
+    font-size: $mainText;
+  }
+
+  .small-text {
+    font-size: $smallText;
+  }
+
+  .exsmall-text {
+    font-size: $exSmallText;
+  }
+  /*Make certain text stand out by increasing percent of the already defined font*/
+  .larger {
+    font-size: 120%;
+  }
+/**********************************Comment Section for AMOS*******************************/
+  .override p, .override div, .override li, .override b, .override span, .override font {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: $mainText !important;
+    line-height: 21px;
+  }
+
+  /**********************Layout styles ************************/
+  #page {
+    /* everything but the menu */
+    position: relative;
+    left: 0;
+    height: 100%;
+    /* so that the overlay covers the entire window when menu is open */
+  }
+
+  #page-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1001; /* needs to be higher than the #header z-index */
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #main-content {
+    /* keep content from exceeding full width on larger screens */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; /* need for responsive overlay*/
+  }
+/*************************End Comment section for AMOS*************************/
+
+  .wrapper {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .full-width {
+    width: 960px;
+  }
+
+  .max-750 {
+    max-width: 750px;
+  }
+
+  .max-660 {
+    max-width: 660px;
+  }
+
+  .max-400 {
+    max-width: 400px;
+  }
+/******************************Comment for AMOS**************************/
+  /*background image*/
+  .content-detail {
+    background: #fff url("//edge.shop.com/ccimg.shop.com/resources/images/content-bg.jpg") no-repeat 100% 0;
+    min-height: 265px;
+  }
+
+  hr.green {
+    border-top: $green solid thick;
+    border-bottom: $darkGreen solid thick;
+    border-right: none;
+    width: 100%;
+  }
+  /********************End Comment AMOS**************************/
+
+  .single-line {
+    border-bottom: $borderStyle;
+  }
+
+  .single-line-top {
+    border-top: $borderStyleLight;
+  }
+
+  .show {
+    @extend %show;
+  }
+
+  .hide {
+    @extend %hide;
+  }
+
+  /* assigned to span, prevents empty tag, adds meaningful text to BG image for screen readers and also hides it visually */
+  /* excellent for close-sprite */
+  .collapse-text {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .clear {
+    @extend %clearfix;
+  }
+
+  .clear-both {
+    clear: both;
+  }
+
+  .clear-left {
+    clear: left;
+  }
+
+  .clear-right {
+    clear: right;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .block-element {
+    display: block;
+  }
+
+  .middle {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .no-break {
+    display: inline-block;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .margin-both {
+    @include margin(margin-both);
+  }
+
+  .margin-left {
+    @include margin(margin-left);
+  }
+
+  .margin-right {
+    @include margin(margin-right);
+  }
+
+  .margin-top {
+    @include margin(margin-top);
+  }
+
+  .margin-bottom {
+    @include margin(margin-bottom);
+  }
+
+  .margin-bottom-extra {
+    margin-bottom: 30px;
+  }
+
+  .no-top-margin {
+    margin-top: 0px;
+  }
+
+  .no-side-margin {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .margin-none {
+    margin: 0px;
+  }
+
+  .padding {
+    padding: 10px;
+  }
+
+  /*************** Default Cashback styles **************/
+  .cashback, .bv, .ibv, .shop-points-container, .perk {
+    @include rewards;
+  }
+  .cashback .cashback-text {
+    white-space: nowrap;
+  }
+  .bv {
+    float: left;
+  }
+
+  .overlay .bv {
+    float: none;
+  }
+
+  .plus, figure .cashback,
+  figure .shop-points-container,
+  #search .cashback,
+  #search .shop-points-container,
+  .prod-single .cashback,
+  .prod-single .shop-points-container,
+  .prod-offers .cashback,
+  .prod-offers .shop-points-container,
+  .product-info .cashback,
+  .product-info .shop-points-container {
+    @include rewards-icon;
+  }
+
+  .cashback img {
+    /*exist still?*/
+    width: 16px;
+    height: 12px;
+    float: none;
+    vertical-align: middle;
+    display: inline-block;
+    background-position: -68px -47px;
+  }
+
+/***********************************Comment section for AMOS********************************/
+  /*********** Ordered List styles *********************/
+  .reset-section {
+    counter-reset: section;
+  }
+
+  .reset-section .count {
+    font-size: $smallHeader;
+    line-height: 21px;
+  }
+
+  .reset-section .count:before {
+    counter-increment: section;
+    content: counter(section) ". ";
+  }
+
+  ol.reset-list {
+    counter-reset: list;
+    padding: 0px;
+  }
+
+  ol.reset-list li, ol.shop-bullet li {
+    list-style: none outside none;
+    padding: 5px 0px 10px 35px;
+    line-height: 1.45em;
+    position: relative;
+  }
+
+  ol.reset-list li:before {
+    counter-increment: list;
+    content: counter(list);
+    color: #6C6D70;
+    position: absolute;
+    left:0;
+    width: 20px;
+  }
+
+  ol.shop-bullet li:before{
+    content: "";
+    background:url("//edge.shop.com/ccimg.shop.com/resources/images/bullet@1x.png") no-repeat center;
+    left: 10px;
+    position: absolute;
+    top: 5px;
+    width: 21px;
+    height: 21px;
+    list-style: decimal outside;
+    margin: 0 50px 0 0;
+  }
+
+  .number-list li {
+    margin: 10px 0 0 0;
+  }
+
+  .letter-list {
+    list-style: lower-alpha outside;
+    padding: 0 0 0 15px;
+  }
+
+  .letter-list li {
+    margin: 5px;
+  }
+
+  .roman-list {
+    list-style: lower-roman outside;
+    padding: 0 0 0 10px;
+  }
+
+  .bullet-list {
+    list-style: disc outside;
+    margin: 10px 10px 10px 20px;
+    line-height: 18px;
+  }
+
+/******************************End Comment section for AMOS*****************************/
+
+  /**************** Generic Form Styles ***************/
+  input.highlight, textarea.highlight {
+    border-color: #00a8ca !important;
+    box-shadow: 2px 2px 10px #d7edf7;
+  }
+/************************************Comment for AMOS******************************/
+  .radio, .checkbox {
+    background: none repeat scroll 0% 0% #FBFBFB;
+  }
+
+  .checkbox span {
+    float: left;
+    clear: right;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .checkbox .border {
+    border: $borderStyle;
+    @include border-radius(6px, 6px);
+    padding: 10px 5px 25px 5px;
+  }
+
+  .select-list {
+    background: #c3c6c5;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    margin-bottom: 5px;
+    margin-top: 2px;
+  }
+
+  .note {
+    font-size: 0.9em;
+    color: #999999;
+    margin: 0 0 10px 0;
+  }
+
+  /************************Webkit Browsers***********************************/
+  @media (-webkit-min-device-pixel-ratio: 0) {
+    //apply custom drop down arrow to webkit browsers only -- FF still uses native select button
+    .select-list {
+      @include p-el(after, 14px, 9px) {
+        display: block;
+        margin-top: -4px;
+        right: 12px;
+        top: 50%;
+        background: url(//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-down.png) no-repeat;
+        -moz-appearance: window;
+        text-indent: 0.01px;
+        text-overflow: '';
+      }
+    }
+  }
+
+  .select-list:hover {
+    background: #d0d2d1;
+  }
+
+  .select-list:active, .select-list:focus {
+    background: #b8b8b9;
+  }
+
+  .select-list select {
+    position: relative;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: inherit;
+    display: block;
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    outline: none;
+    width: 100%;
+    padding: 0.4em 2em 0.4em 0.4em;
+    z-index: 1;
+  }
+
+  .select-list select::-ms-expand {
+    display: none;
+  }
+
+  .select-list.primary {
+    background: #f3f3f3;
+    background: linear-gradient(to bottom, $white 15%, #e2e2e2 85%);
+    border: 1px solid #b6b6b7;
+    color: #6d6e70;
+  }
+
+  .select-list.primary:hover {
+    background: #f3f3f3;
+    background: linear-gradient(to bottom, $white 30%, #e2e2e2 100%);
+  }
+
+  .select-list.primary:active, .select-list.primary:focus {
+    background: #f3f3f3;
+    background: linear-gradient(to bottom, $white 0%, #e2e2e2 70%);
+  }
+
+  .select-list.mini {
+    font-size: 12px;
+  }
+
+  /** Generic control group/radio button styles, select lists **/
+  .control-group {
+    border: none;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .pick-list-section {
+    font-size: .9em;
+    background: #fff;
+    border: 1px solid #d6d7d7;
+    border-bottom-width: 0;
+    color: #6C6D70;
+    display: block;
+    margin: 0;
+    padding: 0.71429em 0.71429em 0.71429em 2.42857em;
+    position: relative;
+
+    label {
+      margin: 15px 15px 6px 10px;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      top: 50%;
+      left: 0.5em;
+      margin: -.5em 0;
+    }
+  }
+
+  .pick-list-section label {
+    margin: 0;
+  }
+
+  .add-item .left {
+    float: left;
+    margin-right: 20px;
+    display: inline-block;
+  }
+
+  .pick-list-section {
+    @include p-el(after, null, null) {
+      display: block;
+      left: 0.71429em;
+      margin-top: -.5em;
+      top: 50%;
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+  }
+
+  .pick-list-section:last-of-type {
+    border-bottom-width: 1px;
+  }
+
+  .wrapper-inverted.control-group li a, .wrapper-inverted.control-group .list-divider {
+    border-right: none;
+    border-left: none;
+  }
+
+  .pick-list-section:not(.show-one-cart-tab):first-of-type {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .pick-list-section:last-of-type {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  /** end generic radio button styles **/
+
+  /***** Quantity Input Styles *****/
+  /*Removes the native browser arrow buttons on the input container.*/
+  input[name=quantity]::-webkit-inner-spin-button,
+  input[name=quantity]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .input-left-half {
+    float: left;
+    width: 47%;
+  }
+
+  .input-right-half {
+    float: right;
+    width: 47%;
+  }
+/**************************************end comment section for AMOS*********************************/
+
+  /*************Close Icons************/
+.close-sprite, .close-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/shop-close-single.png") no-repeat scroll 0 0;
+}
+
+  .close-sprite {
+    cursor: pointer;
+  }
+  /**************************************Comment section for AMOS*********************************/
+  /***************** Generic messages *****************/
+  div.message {
+    background-color: #FFFACB;
+    padding: 10px;
+    color: #6C6D70;
+    font-size: $mainText;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    clear: both;
+  }
+
+  p.message {
+    border: none;
+    border-left: 46px solid transparent;
+    padding: 0.71em;
+    display: block;
+    border-radius: 0.4em;
+    position: relative;
+    font-size: $smallText;
+    font-weight: normal;
+      margin: 5px 10px;
+    width: 100%;
+
+    @include p-el(before, 26px, 26px) {
+      @include mobile-sprite;
+      display: block;
+      font-size: 25px;
+      top: 50%;
+      left: -36px;
+      margin: -.5em 0 0;
+    }
+  }
+
+  p.message.hide {
+    display: none;
+  }
+
+  p.message span.secondary {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  p.info {
+    color: $darkestBlue; /* #135097 */
+    background: $lightBlue;
+    #border-left: 46px solid #C9E5F2;
+  }
+
+  p.info:before {
+    background-position: -366px -614px;
+  }
+
+  p.warning {
+    border-color: #f8d4ae;
+    color: #4b4c4e;
+    background: #ffedd3;
+    border-left: 46px solid #F8D4AE;
+  }
+
+  p.warning:before {
+    background-position: -403px -577px;
+  }
+
+  p.error {
+    color: #9f2406;
+    background: #fae8e1;
+    box-shadow: none;
+    /* needed due to conflicts with validation class */
+  }
+
+  p.error:before {
+    background-position: -438px -538px;
+  }
+
+  p.success {
+    background: #E8FAC6;
+    border-color: #D3EDB1;
+    color: #1F5401;
+  }
+
+  p.success:before {
+    background-position: -474px -500px;
+  }
+
+  /***************** Validation Errors ***********************/
+  input.invalid {
+    box-shadow: 0 0px 5px rgba(128, 0, 0, 0.3);
+  }
+  .validation p {
+    margin: 0px;
+    padding: 0px;
+    display: run-in;
+    color: #8E2323;
+  }
+
+  input:focus {
+    background: #f8f8f8;
+    border-color: #ccc;
+    outline: none;
+  }
+
+  /* error message */
+  .validation {
+    /* supply height to ensure consistent positioning for every browser */
+    background-color: $lightRed;
+    font-size: $mainText;
+    color: #8E2323;
+    padding: 3px 10px;
+    margin-left: -2px;
+    display: none;
+    /* CSS3 spicing for mozilla and webkit */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Display error message on top of other panels*/
+    z-index: 501;
+  }
+
+  /* pure CSS arrow */
+  .validation em {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: transparent transparent #fae8e1;
+    /* positioning */
+    position: absolute;
+    top: -20px;
+    left: 10px;
+  }
+
+  .validation #info {
+    background-color: #163356;
+    color: #fff;
+    width: 400px;
+    padding: 20px;
+    margin: 5px auto;
+    border-radius: 5px;
+  }
+
+  /***********Back & Forward links to previous pages*********************/
+  a.back-link {
+    font-size: .9em;
+
+    @include p-el(before, 10px, 15px) {
+      @include mobile-sprite;
+      position: relative;
+      float: left;
+      display: inline-block;
+      margin: 2px 1px 0px;
+      padding: 0px;
+      background-position: -494px -160px;
+    }
+  }
+
+  a.forward-link {
+    float: right;
+    font-size: .9em;
+
+    @include p-el(after, 10px, 15px) {
+      @include mobile-sprite;
+      position: relative;
+      display: inline-block;
+      margin: 0px 10px 0px 5px;
+      padding: 0px;
+      background-position: -494px -185px;
+    }
+  }
+  /**************************************end comment section for AMOS*********************************/
+
+  /************* boxes ***************/
+  .box { /* replaces extend, is for .tip-box, .feedback.box*/
+//    color: $shopGray; /* test elim */
+    border-radius: 6px;
+    background-clip: padding-box;
+    padding: 10px;
+    border: $borderStyle;
+  }
+
+  .ltblue {
+    background-color: $lightBlue;
+  }
+
+  /* for adding in gray when we replace gray-box! Eventually for egifts */
+//  .ltgray {
+//    background-color: $lightGray;
+//  }
+
+  /********************Tooltip***************************/
+  .tooltip {
+    position: absolute;
+    z-index: 1030;
+    font-size: $smallText;
+    line-height: 1.26em;
+    display: block;
+
+    &.top {
+      padding: 5px 0;
+      margin-top: -3px;
+
+      .tooltip-arrow {
+        bottom: 0;
+        left: 50%;
+        margin-left: -5px;
+        border-top-color: #585555;
+        border-width: 5px 5px 0
+      }
+    }
+
+    .tooltip-inner {
+      max-width: 85px;
+      padding: 3px 6px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      background-color: #585555;
+      border: 2px solid #6e6f71;
+      border-radius: 4px;
+    }
+
+    .tooltip-arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+
+  /**************************************Comment section for AMOS*********************************/
+  /***********************Bottom Bar Results***********************/
+  /* the bar at the bottom showing the number of results */
+  .bottom-stripe {
+    color: #fff;
+    background: #1082a0;
+    line-height: 40px;
+    font-weight: 400;
+    /*margin: 0 -15px 20px; the -15px for left and right makes a white line appear on iPhone */
+    clear: both;
+  }
+
+  .bottom-stripe .grey {
+    background: grey;
+  }
+
+  .bottom-stripe .label {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  .bottom-stripe .option {
+    float: right;
+    margin: 10px 10px 0;
+  }
+
+  /*******************Rounded Corners from famos.css **************/
+  // need to revamp to work with SASS mixins currently in place //
+  .corner-small {
+    /* rounded corners on an element */
+    border-radius: 5px;
+    /* IE9+ */
+  }
+
+  .corner-top-small {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .corner-bottom-small {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  /**************************************end comment section for AMOS*********************************/
+
+  /*************** OVERLAYS **********************/
+  /**** generic overlay properties for new interface with rounded corners and drop shadow
+   To use:
+       <div id="email-sign-up-result" class="shop-overlay">
+          <div class="shop-overlay-inner">
+              ... put content here ...
+          </div>
+       </div>
+   ***/
+  .shop .shop-overlay {
+    display: none;
+    z-index: 10000;
+    border-radius: 6px; /* IE9+ */
+    box-shadow: 0 0 40px 3px rgba(5, 26, 33, .6);
+    border-collapse: separate; /* to make the drop-shadow appear in IE9 */
+    background-color: white;
+  }
+
+  .ie6-8 .shop-overlay {
+    border-color: blue;
+    border-style: solid;
+    border-width: 1px;
+    /* This 'works' but appears to negatively impact performance of the controls within the overlay - e.g. buttons are very sluggish to respond to mouse
+    filter: progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=0),
+            progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=90),
+            progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=180),
+            progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=15, Direction=270);  */
+    /* box-shadow for ie6 ie7 ie8*/
+  }
+
+  .shop .shop-overlay .shop-overlay-inner {
+    /* inner div to add padding */
+    padding: 25px;
+  }
+
+  .shop .shop-overlay .close {
+    background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png) no-repeat;
+    background-position: 0 -608px;
+    height: 34px;
+    width: 34px;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+  }
+
+  .shop .shop-overlay .close:hover {
+    background-position: -48px -608px;
+  }
+
+  .shop .shop-overlay .close:active {
+    background-position: -96px -608px;
+  }
+  /**************************************Comment section for AMOS*********************************/
+//  /***************Media Queries****************/
+  @media screen and (min-width: 750px) {
+    #login-popup, #popup {
+      .popUpContent .overlay {
+        min-width: 600px !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    #login-popup, #popup {
+      .popUpContent .overlay {
+        min-width: 725px !important;
+      }
+    }
+  }
+
+  @media (max-width: 749px) {
+    #login-popup, #popup {
+      .single-column a.primary.button {
+        width: 100%;
+        margin: 5px 0 0;
+      }
+    }
+  }
+
+  @media (max-width: 660px) {
+    #login-popup, #popup {
+      .popUpContent .overlay {
+        width: 550px !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .input-left-half, .input-right-half {
+      position: relative;
+      float: none;
+      width: 100%;
+      margin: 0px 10px 0px 0px;
+    }
+
+  }
+/**************************************end comment section for AMOS*********************************/
+//}
+/***************************Uncomment for AMOS - end #header/#footer********************************/

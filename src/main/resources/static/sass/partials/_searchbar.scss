@@ -1,0 +1,263 @@
+@import '../modules/index';
+
+/*** search bar **********/
+#quick-search {
+  //  display: none;
+//  position: relative;
+  //  background-color: #0C637A;
+  margin: 4px 0;
+  /* space above and below the input box */
+  margin: 0;
+}
+
+#search #quick-search {
+  position:relative;
+}
+
+.search-input form {
+  margin-left: 15px;
+  margin-right: 0;
+}
+
+.search-input .input-container{
+  position: relative;
+  border: $borderStyleLight;
+  background-color:white;
+  @include border-radius(6px);
+  display: block;
+  max-height: 32px;
+  height: 27px;
+  padding: 0;
+}
+
+#search, #store-results {
+  .search-input .input-container {
+    border-radius: 15px;
+    @include calc(width, "100% - 10px");
+    overflow: hidden;
+  }
+}
+
+#store-results{
+  .search-input .search-button{
+    top:1px;
+  }
+  .search-input .input-container input{
+    padding: 0 1em;
+  }
+}
+
+#header .search-input .input-container{
+  @include border-radius(6px);
+  width: 45%;
+  @include calc(width, "100% - 55%");
+  display: inline-block;
+  height: 35px;
+  max-height: 35px;
+  /* Added for AMOS*/
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+input[type="search"]{
+  -webkit-appearance: textfield;
+}
+.search-input .input-container input {
+  border-width: 0;
+  color: #6D6E70;
+  font-size: $mainText;
+  background-color:transparent;
+//  font-size: .9em;
+  /* space around the words in the input box, but also width of input */
+  padding: .25em 1em;
+  /* want padding-left 1em for space between text and input bar  */
+//  width: 90%;
+  /* in case a browser does not like the calc() */
+  //  width: calc(100% - 50px);
+  /* so that search term does not go under search icon */
+  //  width: -moz-calc(100% - 50px);
+  //  width: -webkit-calc(100% - 50px);
+  //  height: 18px;
+  margin-right: 0;
+}
+
+#header .search-input .input-container input{
+//  padding: .5em 1em; /* AMOS ONLY*/
+  font-size:15px;
+}
+
+.search-input input:focus {
+  outline: none;
+  background-color: inherit;
+}
+
+.search-input .search-button {
+  cursor: pointer;
+  border: none;
+  -webkit-border-radius: 0 50px 50px 0;
+  /* rounded on the right side */
+  -moz-border-radius: 0 50px 50px 0;
+  border-radius: 0 50px 50px 0;
+  height: 23px;
+  margin: 0;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 32px;
+  text-indent: -9999px;
+  /* to not have the text appear in the UI */
+  background: #4bb8d9;
+  background: linear-gradient(to bottom, #4bb8d9, #238eb2);
+}
+
+#header .search-input .ui-selectmenu-button {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  margin: 0 33px 0 0;
+  max-width: 35%;
+  min-width: 175px;
+  height: 27px;
+  padding: 6px 0 0 8px;
+  background: $shopBlue;
+  @include border-radius(0);
+  border: none;
+  color: white;
+  /*Added for AMOS*/
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  @include p-el(after, null, null) {
+    border-left: none;
+    background: url(//edge.shop.com/ccimg.shop.com/resources/images/icon-arrow-white.png) no-repeat;
+    top: 15px;
+    right: -3px;
+  }
+
+  &[aria-expanded='true']:after{
+    top: 1px;
+    right:5px;
+  }
+}
+
+#search-in-dept-menu.ui-menu {
+  background: $shopBlue;
+  height: 300px;
+  width: 250px !important;
+  overflow-y: scroll;
+  z-index: 5000;
+  .ui-menu-item, .ui-menu-item:hover, .ui-menu .ui-state-focus, .ui-menu .ui-state-active {
+    height: 25px;
+    background: $shopBlue;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+//    border-top: $darkBlue solid thin;
+    border-bottom:none;
+    margin: 0;
+    /*Added for AMOS*/
+    box-sizing: border-box;
+
+    &:before {
+      content: "";
+      background: none;
+      padding: 0;
+    }
+  }
+  .ui-menu-item.ui-state-focus {
+    background: $darkBlue;
+  }
+  .ui-menu-item.ui-state-disabled, #search-in-dept-menu .ui-menu-item.ui-state-disabled:hover {
+    background: $white;
+    padding: 0;
+    height: 1px;
+    border-top: none;
+  }
+}
+
+#header .search-input .search-button {
+  cursor: pointer;
+  border: none;
+  background: $brightGreen;
+  @include border-radius(0 4px 4px 0);
+  height: 27px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 30px;
+  text-indent: -9999px;
+}
+
+.search-store .search-input .search-button {
+  text-indent: 0;
+
+  p {
+    margin: 3px 0 3px 7px;
+    font-size: $smallText;
+  }
+}
+
+.input-quantity {
+  width: 10%;
+  margin-bottom: 10px;
+}
+
+/* search type ahead/search suggestions container */
+.suggestions-container {
+  display: none;
+  background: #fff;
+  -webkit-box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.17);
+  padding: 0;
+  position: absolute;
+  width: 50%;
+  z-index:10003;
+}
+//#header .suggestions-container{
+//  margin-top: -3px;
+//}
+
+.suggestions-container ul {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.suggestions-container li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align:left;
+}
+
+.suggestions-container li.selected {
+  background-color: transparent;
+}
+
+.suggestions-results-container {
+  /*float: left;*/
+}
+
+.suggestions-container li a {
+  display: block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 6px 15px;
+}
+
+.suggestions-container li:first-child a {
+  padding-top: 10px;
+}
+
+.suggestions-container li:last-child a {
+  padding-bottom: 10px;
+}
+
+ #header .suggestions-container li a:after{
+  content:none;
+}
+
+/******************** end new search bar formatting ****************/
+/*** end of search bar **********/

@@ -1,0 +1,310 @@
+@import "modules/index";
+
+/********AMOS #header/#footer*****/
+//#header {
+  .menu-list {
+    width: 100%;
+    //  display: inline-block;
+    margin-top: 7px;
+  }
+
+  .menu-list ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: hidden;
+  }
+
+  .menu-list li {
+    font-size: .9em;
+    color: #787a7c;
+    margin: 0;
+    //  padding-left: 10px;
+    cursor: pointer;
+    //  background: #FBFBFB url("//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow.png") no-repeat 97% center; /* in case calc does not work in the browser */
+    //  background-position: right 10px center;
+    //  background-position: calc(100% - 10px) center;
+    //  background-position: -moz-calc(100% - 10px) center;
+    //  background-position: -webkit-calc(100% - 10px) center;
+    //  border-bottom: $borderStyleLight;
+    display: block;
+  }
+
+  .menu-list li.third-level-header {
+    background-position: right 10px 12px;
+    background-position: calc(100% - 10px) 12px;
+    background-position: -moz-calc(100% - 10px) 12px;
+    background-position: -webkit-calc(100% - 10px) 12px;
+  }
+
+  .menu-list li ul li {
+    font-size: 100%;
+    padding-left: 0;
+  }
+
+  .menu-list .divider,
+  .menu-list .divider:hover,
+  .menu-list .divider:active,
+  .menu-list .active-link {
+    font-size: $mainText;
+    color: #666666;
+    font-weight: bold;
+    line-height: 2.3em;
+    cursor: default;
+    margin: 0;
+    padding: 2px 10px;
+    background: #EDEDED;
+    border-bottom: 1px solid #AEAEAE;
+  }
+
+  .menu-list .divider.open,
+  .menu-list .divider.open:hover,
+  .menu-list .divider.open:active {
+    background-color: #11A3CC;
+    color: #ffffff;
+  }
+
+  .menu-list .divider:first-of-type {
+    border-top: 1px solid #AEAEAE;
+  }
+
+  .menu-list .divider .label {
+    /* need these for menu items that span more than one line */
+    /*width: 210px; */
+    /* menu-filter width - 40px : to make room for + sign */
+    width: 80%;
+    /* menu-filter width - 40px : to make room for + sign */
+    display: inline-block;
+  }
+
+  .menu-list li.divider a {
+    display: inline;
+    color: #ffffff;
+    text-decoration: underline;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+  }
+
+  .menu-list li.divider .right {
+    font-weight: normal;
+    font-size: $mainText;
+  }
+
+  .menu-list li:hover,
+  .menu-list li:active {
+    background-color: #EDEDED;
+  }
+  .menu-list li.inactive:hover,
+  .menu-list li.inactive:active {
+    background-color: #FFFFFF;  /* don't change the background color if inactive */
+  }
+
+  .menu-list li a {
+    color: #787a7c;
+    text-decoration: none;
+    display: inline-block;
+    /** the next 3 make the a span the entire list item **/
+    width: 100%;
+    height: 100%;
+    padding: 2px 0 2px 10px;
+    border-bottom: $borderStyleLight;
+
+    input[type="checkbox"] {
+      margin: 6px 10px 0 0;
+    }
+  }
+
+  .menu-list li a .label {
+    display: block;
+    /*width: 210px; */
+    /* menu-filter width - 40px : to make room for > */
+    width: 80%;
+    /* default in case something doesn't know about calc */
+    //  width: calc(100% - 30px);
+    /* menu-filter width - 35px : to make room for > */
+    //  width: -moz-calc(100% - 30px);
+    //  width: -webkit-calc(100% - 30px);
+    @include calc(width, "100% - 30px");
+    padding-left: 5px;
+    /* use padding instead of margin so that <a> spans entire li */
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+  }
+
+  .menu-list li.third-level-header a .label, .menu-list li.third-level-header a .count {
+    display: inline-block;
+    width: auto;
+  }
+
+  .menu-list li.third-level a .label {
+    padding: .4em 20px .4em 15px;
+    font-size: 0.95em;
+  }
+
+  .menu-icon {
+    float: right;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #bbbbbb;
+  }
+
+  .menu-icon.expand {
+    /* the plus and minus signs */
+    color: #AEAEAE;
+    font-size: 1.6em;
+  }
+
+  .open .menu-icon.expand {
+    color: #CCE7F8;
+  }
+
+  .menu-list .second-level {
+    display: none;
+  }
+
+  .menu-list .sprite.cashback-icon {
+    margin-right: 1px;
+  }
+
+  .menu-list .pick-list-section li.inactive a,
+  .menu-list .pick-list-section li.inactive a:hover,
+  .menu-list .pick-list-section li.inactive a:active {
+    color: #D3D3D3;
+    cursor: default;
+  }
+
+  /****Country flags*****/
+  .menu-list.countries {
+    margin-top: 0;
+  }
+
+  .menu-list div.drop-down-list-button, .menu-list div.drop-down-list-button:hover, .menu-list div.drop-down-list-button:active {
+    line-height: $baseLineHeight;
+    background: #fff;
+    font-size: $mainText;
+    padding: 5px 0 2px 0;
+  }
+
+  .menu-list div.drop-down-list-button.open, .menu-list div.drop-down-list-button.open:hover, .menu-list div.drop-down-list-button.open:active {
+    background: $lightGray;
+    color: $shopGray;
+  }
+
+  /************* menu-filter styles for search and stores ************/
+  /* hide the scroll bar on the body if a panel menu is open */
+  html.menu-open {
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  #menu-filter {
+    display: none;
+    background-color: #005465;
+    width: 280px;
+    height: 100%;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0px);
+    /* attempt to get rid of the jerkiness of the slide on mobile devices *
+    /* http://chrissilich.com/blog/fix-css-animation-slow-or-choppy-in-mobile-browsers/ */
+  }
+
+  /* the icon to the left/right of the menu that allows you to close it */
+  /* moved some of these, consolidated with .close-sprite */
+  .menu-closed .close-icon {
+    display: none;
+  }
+
+  .menu-open .close-icon {
+    display: block;
+  }
+
+  #menu-filter .search-within {
+    margin: 8px 0 0;
+  }
+
+  #menu-filter .search-input .input-container {
+    border-radius: 15px;
+    height: 29px;
+    margin: 0 3px 0 0;
+  }
+
+  #menu-filter .search-input .input-container input {
+    margin-top: 0;
+  }
+
+  #menu-filter .divider {
+    cursor: pointer;
+    padding: 0.6em 10px;
+    line-height: 1.4em;
+  }
+
+  #menu-filter .menu-list a {
+    font-weight: bold;
+  }
+
+  #menu-filter .menu-list ul {
+    background-color: #fff; /* must have override */
+  }
+
+  #menu-filter .menu-list .pick-list-section li a {
+    /* padding makes room for the arrow and checkbox */
+    padding: 8px 25px 8px 38px;
+  }
+
+  #menu-filter .menu-list li a .label {
+    padding: .5em 0;
+  }
+
+  #menu-filter .menu-list .third-level a {
+    font-weight: normal;
+  }
+
+  #menu-filter .menu-list a .count {
+    font-weight: normal;
+  }
+
+  #menu-filter .menu-list .second-level li {
+    line-height: 1.3em;
+    margin: 0;
+  }
+
+  #menu-filter .menu-list .second-level.pick-list-section li {
+    position: relative;
+  }
+
+  #menu-filter .menu-list .second-level li.more,
+  #menu-filter .menu-list .second-level li.alphabet-soup-more {
+    display: none;
+  }
+
+  #menu-filter .pick-list-section:first-of-type li {
+    line-height: 1.4em;
+    position: relative;
+  }
+
+  #menu-filter .menu-list li a input[type="checkbox"] {
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  #menu-filter .pick-list-section:first-of-type li {
+    line-height: 1.4em;
+    position: relative;
+  }
+
+  #menu-filter .menu-list li.inactive a input[type="checkbox"] {
+    cursor: default;
+  }
+  /********* End menu-filter styles for search and stores **********/
+//}/********End AMOS #header/#footer*****/

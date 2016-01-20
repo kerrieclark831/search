@@ -1,0 +1,488 @@
+@import '../modules/index';
+
+/********AMOS #header/#footer*****/
+//#header, #footer {
+  /** sprite images **/
+  .sprite {
+    @include mobile-sprite;
+  }
+
+  .shop .sprite {
+    background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png) no-repeat;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+  }
+
+  .shop .sprite.flag.in.small {
+    display: block;
+    min-width: 26px;
+    width: auto;
+    text-indent: 34px;
+  }
+
+.shop .sprite.flag.global.small {
+  background-position: -974px -770px;
+}
+
+  .shop .sprite.flag.usa.small {
+    background-position: -974px -833px;
+  }
+
+  .shop .sprite.flag.can_fr.small, .shop .sprite.flag.can.small {
+    background-position: -974px -888px;
+  }
+
+  .shop .sprite.flag.mex.small {
+    background-position: -974px -943px;
+  }
+
+  .shop .sprite.flag.gbr.small {
+    background-position: -974px -998px;
+  }
+
+  .shop .sprite.flag.aus.small {
+    background-position: -974px -1053px;
+  }
+
+  .shop .sprite.flag.esp.small {
+    background-position: -974px -1110px;
+  }
+
+  .shop .sprite.flag.twn.small {
+    background-position: -974px -1164px;
+  }
+
+  .shop .sprite.flag.hkg.small {
+    background-position: -974px -1221px;
+  }
+
+  .shop .sprite.flag.sgp.small {
+    background-position: -974px -1275px;
+  }
+
+  .sprite.icon {
+    border-radius: 0;
+    box-shadow: none;
+    //    float: none;
+    width: 35px;
+    height: 30px;
+  }
+
+  .sprite.menu {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-menu-sm.png") no-repeat;
+  }
+
+//  .sprite.search {
+//    background-position: -37px -87px;
+//  }
+
+  .sprite.search.small {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-search-sm.png") no-repeat;
+  }
+
+  .sprite.account {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-myaccount-grey-sm.png") no-repeat;
+  }
+
+  .sprite.loggedin {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-myaccount-green-sm.png") no-repeat;
+  }
+
+  .sprite.anonymous {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-myaccount-sm.png") no-repeat;
+  }
+
+  .sprite.cart {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-cart-sm.png") no-repeat;
+  }
+
+  .sprite.back {
+    background-position: -494px -160px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    height: 12px;
+    width: 10px;
+  }
+
+  .sprite.shipfree-icon.med {
+    background-position: -415px -38px;
+  }
+
+  .sprite.shipfree-icon.sm {
+    background-position: -447px -70px;
+    vertical-align: middle;
+  }
+
+  .sprite.go {
+    background-position: -425px -187px;
+  }
+
+  .sprite.cashback-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3px;
+
+    &.sm {
+      background-position: -66px -47px;
+      height: 15px;
+      width: 20px;
+    }
+
+    &.med {
+      background-position: -38px -47px;
+      height: 16px;
+      width: 21px;
+    }
+
+    &.lg {
+      background-position: 0 -47px;
+      height: 23px;
+      width: 30px;
+    }
+  }
+
+  /*** full shop-sprite used in AMOS mini-cart, needed for the lock-icon ***/
+  .sprite-full {
+    @include full-sprite;
+  }
+
+  .sprite-full.lock-icon {
+    background-position: -275px -832px;
+    height: 28px;
+    width: 25px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /*** end .sprite-full ***/
+
+  /****Social Sprite***/
+  .social-sprite {
+    background: url('//edge.shop.com/ccimg.shop.com/resources/images/social-2015-sprite.png') no-repeat;
+    width: 33px;
+    height: 33px;
+    display: block;
+    position: relative;
+
+    &.email {
+      background-position: 5px 4px;
+    }
+    &.link {
+      background-position: -15px 0;
+    }
+    &.facebook {
+      background-position: -78px 4px;
+    }
+    &.twitter {
+      background-position: -120px 4px;
+    }
+    &.pinterest {
+      background-position: -162px 4px;
+    }
+    &.google {
+      background-position: -202px 4px;
+    }
+    &.instagram {
+      background-position: -246px 4px;
+    }
+    &.linkedin {
+      background-position: -135px 0;
+    }
+    &.plurk {
+      background-position: -328px 4px;
+    }
+    &.youtube {
+      background-position: -368px 4px;
+    }
+    &.mtmobile {
+      background-position: -410px 5px;
+    }
+    &.shopcart {
+      background-position: -452px 4px;
+    }
+    &.blog {
+      background-position: -492px 4px;
+    }
+  }
+
+  /*this is some hack way to override pinterest default CSS, they didn't provide way to custom styles.*/
+  .share-icon.pinterest a {
+    position: relative !important;
+    background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/social-2015-sprite.png) !important;;
+    background-repeat: no-repeat !important;;
+    text-decoration: none !important;;
+    width: 33px !important;
+    height: 33px !important;
+    display: block;
+    z-index: 400;
+    background-color: #888;
+    @include border-radius(50%);
+    background-position: -162px 4px;
+    background-size: auto !important;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #cc2127; /*rgb(204, 33, 39);*/
+    }
+  }
+
+  #social-link li a span {
+    float: left;
+    width: 33px;
+    height: 33px;
+    display: inline-block;
+    background-color: $medGray;
+    @include border-radius(50%);
+  }
+
+  $profiles: (
+          email: $email,
+          facebook: $facebook,
+          google: $google,
+          instagram: $instagram,
+          linkedin: $linkedin,
+          pinterest: $pinterest,
+          twitter: $twitter,
+          youtube: $youtube,
+          plurk: $plurk,
+          mtmobile: $mtmobile,
+          shopcart: $shopcart,
+          blog: $blog
+  );
+  #social-link li a span {
+    @each $profile, $bgcolor in $profiles {
+      &.#{$profile}:focus,
+      &.#{$profile}:hover {
+        background-color: $bgcolor;
+      }
+    }
+  }
+
+  .share ul {
+    margin: 10px 0;
+
+    li {
+      margin: .625em 3px;
+      float: left;
+    }
+
+    .addthis_button_facebookLike_plusone_share {
+      background: url(//edge.shop.com/ccimg.shop.com/resources/images/facebooklike.jpg) no-repeat 1px 3px;
+      float: left;
+      width: 53px;
+      height: 30px;
+      margin: .625em 5px;
+      position: relative;
+    }
+  }
+
+  /** My lists icons **/
+  $mylists: (mylists, add-mylists),
+          (trend, add-trends),
+          (pricealert, add-price-alerts),
+          (egift, add-egifts),
+          (registry, add-gift-registry),
+          (savelater, add-save-for-later),
+          (shopbox, add-shopbox);
+
+  @each $list, $icon in $mylists {
+    .#{$list}.ui-menu-item {
+      background-color: $lightGray;
+      padding: 8px 5px;
+      border-left: $borderStyle;
+      border-right: $borderStyle;
+      border-bottom: $borderStyle;
+
+      &:before {
+        content: "";
+        background: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/#{$icon}.png") no-repeat center;
+        padding: 10px 30px 7px 0px;
+      }
+    }
+  }
+
+  /* Shop Points styles */
+  .shop-points-icon {
+    background: url("//edge.shop.com/ccimg.shop.com/resources/images/shop-tracker-icon.png") no-repeat center center;
+    padding: 4px 10px; // need to use padding instead of height, as it is inline
+    margin: 0 2px 0 5px;
+  }
+
+  .flames {
+    background-color: transparent;
+    background-image: url("//edge.shop.com/ccimg.shop.com/resources/images/hotdeals-flame.png");
+    display: block;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 40px;
+  }
+
+  .download-app-icon {
+    float: left;
+    background: transparent url(//edge.shop.com/ccimg.shop.com/resources/images/download-app-icon.png) no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+    margin: 7px 3px 7px 10px;
+  }
+
+  .banner-close-sprite {
+    // default image is light
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin: 11px 8px 11px 7px;
+    background: transparent url("//edge.shop.com/ccimg.shop.com/resources/images/shell-close.png") no-repeat scroll right 0;
+    cursor: pointer;
+    cursor: hand;
+
+    &.dark {
+      // add dark class for darker image override
+      background-position: 0 0;
+      margin: 11px 9px 11px 7px;
+    }
+  }
+//}/*********#End AMOS #header/#footer ***************/
+
+#header .sprite.search.small {
+  margin: 3px 0 0 4px;
+  height: 24px;
+}
+
+#search, #menu-filter {
+  .sprite.search.small {
+    background-size: 78%;
+    height: 25px;
+    width: 25px;
+    margin: 2px 0 0 3px;
+  }
+}
+
+/**********************Retina displays*********************************/
+@media screen and (-webkit-min-device-pixel-ratio: 1.5),
+screen and (min--moz-device-pixel-ratio: 1.5),
+screen and (min-resolution: 240dpi) {
+
+  .download-app-icon {
+    background: transparent url(//edge.shop.com/ccimg.shop.com/resources/images/download-app-icon@2x.png) no-repeat 0 0;
+    -webkit-background-size: 30px 30px;
+    -moz-background-size: 30px 30px;
+    -o-background-size: 30px 30px;
+    background-size: 30px 30px;
+  }
+  /*********AMOS #header/#footer ***************/
+//  #header, #footer {
+    .sprite.menu {
+      background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-menu-sm@2x.png") no-repeat;
+      -webkit-background-size: 25px 21px;
+      -moz-background-size: 25px 21px;
+      -o-background-size: 25px 21px;
+      background-size: 25px 21px;
+    }
+
+    .sprite.search.small {
+      background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-search-sm@2x.png") no-repeat;
+      margin-top: 3px;
+      -webkit-background-size: 26px 26px;
+      -moz-background-size: 26px 26px;
+      -o-background-size: 26px 26px;
+      background-size: 26px 26px;
+    }
+
+    .sprite.account {
+      background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-myaccount-grey-sm@2x.png") no-repeat;
+      -webkit-background-size: 30px 29px;
+      -moz-background-size: 30px 29px;
+      -o-background-size: 30px 29px;
+      background-size: 30px 29px;
+    }
+
+    .sprite.loggedin {
+      background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-myaccount-green-sm@2x.png") no-repeat;
+      -webkit-background-size: 30px 29px;
+      -moz-background-size: 30px 29px;
+      -o-background-size: 30px 29px;
+      background-size: 30px 29px;
+    }
+
+    .sprite.anonymous {
+      background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-myaccount-sm@2x.png") no-repeat;
+      -webkit-background-size: 30px 29px;
+      -moz-background-size: 30px 29px;
+      -o-background-size: 30px 29px;
+      background-size: 30px 29px;
+    }
+
+    .sprite.cart {
+      background: url("//edge.shop.com/ccimg.shop.com/resources/images/icon-cart-sm@2x.png") no-repeat;
+      -webkit-background-size: 35px 29px;
+      -moz-background-size: 35px 29px;
+      -o-background-size: 35px 29px;
+      background-size: 35px 29px;
+    }
+    .social-sprite {
+      background: url('//edge.shop.com/ccimg.shop.com/resources/images/social-2015-sprite@2x.png') no-repeat;
+      background-size: 550px;
+
+      &.email {
+        background-position: 4px 4px;
+      }
+      &.link {
+        background-position: -15px 0;
+      }
+      &.facebook {
+        background-position: -88px 4px;
+      }
+      &.twitter {
+        background-position: -133px 4px;
+      }
+      &.pinterest {
+        background-position: -180px 4px;
+      }
+      &.google {
+        background-position: -225px 4px;
+      }
+      &.instagram {
+        background-position: -272px 4px;
+      }
+      &.linkedin {
+        background-position: -135px 0;
+      }
+      &.plurk {
+        background-position: -360px 4px;
+      }
+      &.youtube {
+        background-position: -402px 4px;
+      }
+      &.mtmobile {
+        background-position: -443px 4px;
+      }
+      &.shopcart {
+        background-position: -481px 4px;
+      }
+      &.blog {
+        background-position: -518px 4px;
+      }
+    }
+    .flames {
+      background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/hotdeals-flame@2x.png);
+      -webkit-background-size: 26px 40px;
+      -moz-background-size: 26px 40px;
+      -o-background-size: 26px 40px;
+      background-size: 26px 40px;
+    }
+    a.display-by {
+      background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/search-sprite@2x.png);
+      -webkit-background-size: 30px 76px;
+      -moz-background-size: 30px 76px;
+      -o-background-size: 30px 76px;
+      background-size: 30px 76px;
+    }
+  }
+  /*********#End AMOS #header/#footer ***************/
+//}
+
+/********End AMOS #header/#footer*****/
+

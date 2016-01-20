@@ -1,0 +1,1652 @@
+@import "modules/index";
+
+/****A to Z Page******/
+
+/*top of A to Z toggle*/
+.list-toggle {
+  overflow: hidden;
+  color: #4b4c4e;
+  border-bottom: 1px solid #ddd;
+  margin: 5px 0;
+}
+
+.list-toggle p {
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.list-toggle p.store-toggle, .list-toggle p.cashback-toggle, .list-toggle p.shop-points-toggle, .list-toggle p.ibv-toggle {
+  cursor: pointer;
+
+  @include p-el(after, 10px, 10px) {
+    postion: relative;
+    display: inline-block;
+  }
+}
+
+.list-toggle p.store-toggle.asc:after, .list-toggle p.cashback-toggle.asc:after, .list-toggle p.shop-points-toggle.asc:after, .list-toggle p.ibv-toggle.asc:after {
+  background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png) -71px -385px no-repeat;
+}
+
+.list-toggle p.store-toggle.desc:after, .list-toggle p.cashback-toggle.desc:after, .list-toggle p.shop-points-toggle.desc:after, .list-toggle p.ibv-toggle.desc:after {
+  background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png) -71px -420px no-repeat;
+}
+
+.list-toggle p.ibv-toggle{
+  @include p-el(before, null, null) {
+    background: none;
+  }
+}
+
+.list-toggle p a {
+  color: $shopGray;
+  font-weight: bold;
+  font-size: $smallText;
+  text-decoration: none;
+}
+
+.list-toggle p.cashback-toggle a {
+  color: #00834D;
+}
+
+.list-toggle p.ibv-toggle a {
+  color: $shopGray;
+}
+
+.list-toggle div a:hover {
+  color: #777;
+  text-decoration: underline;
+}
+
+/*emulated table layout widths*/
+.store-toggle {
+  width: 40%;
+  float: left;
+}
+
+.hotdeals-toggle {
+  width: 12%;
+  float: right;
+  text-align: left;
+}
+
+.button-toggle {
+  width: 20%;
+  float: right;
+  margin: 10px 0 0 15px;
+}
+
+.cashback-toggle {
+  width: 15%;
+  text-align: left;
+  float: right;
+  font-weight: bold;
+  min-height: 1px;
+}
+
+.shop-points-toggle {
+  width: 16%;
+  text-align: left;
+  float: right;
+  font-weight: bold;
+  min-height: 1px;
+  padding-left: 15px;
+}
+
+.store-info .shop-points-icon {
+  display: none;
+}
+
+.reward-text{
+  display:none;
+}
+
+.ibv-toggle {
+  width: 10%;
+  text-align: left;
+  float: right;
+  font-weight: bold;
+  min-height: 1px;
+
+  &.mobile {
+    display: none;
+  }
+}
+
+/**One Cart/ Special Conditions Tooltip**/
+a.hovertip, .prod-store-offers a.hovertip {
+  position: relative;
+  font-size: $exSmallText;
+  margin: 4px 0;
+  display: inline-block;
+  color: $medGray;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $medGray;
+    text-decoration: none;
+  }
+}
+
+.side .prod-store-offers .onecart-conditions .tooltip {
+  margin-left: -150px;
+
+  @include p-el(before, null, null) {
+    left: 190px;
+  }
+}
+
+.onecart-conditions .tooltip, .special-conditions .tooltip {
+  display: none;
+  background: $white;
+  font-size: $exSmallText;
+  font-weight: normal;
+  border-radius: 5px;
+  margin: 10px 0 0 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-top: solid 40px $shopBlue;
+  border-right: solid 1px $shopBlue;
+  border-left: solid 1px $shopBlue;
+  border-bottom: solid 1px $shopBlue;
+  padding: 8px;
+  width: 240px;
+  color: $shopBlue;
+  z-index: 501;
+
+  @include p-el(before, null, null) {
+    left: 30px;
+    top: -35px;
+    border: solid;
+    border-color: $shopBlue transparent;
+    border-width: 0 6px 6px 6px;
+    z-index: 2000;
+  }
+
+  h3 {
+    margin: -38px 8px 0 0;
+    color: $white;
+  }
+
+  p {
+    padding: 10px 0 0 0;
+    color: $shopBlue;
+    font-size: $smallText;
+    font-weight: normal;
+  }
+}
+
+.onecart-conditions {
+  a.hovertip {
+    padding-left: 17px;
+    padding-top: 1px;
+    margin-bottom: 1px;
+    height: 14px;
+    background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/mobile-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -483px -287px;
+  }
+}
+
+.notification {
+  position: relative;
+  margin: 10px auto;
+  width: 300px;
+  min-height: 150px;
+  background: $white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-top: solid 30px $shopBlue;
+  border-right: solid 1px $shopBlue;
+  border-left: solid 1px $shopBlue;
+  border-bottom: solid 1px $shopBlue;
+  color: $shopBlue;
+  font-weight: bold;
+  text-align: center;
+
+  /* the icon to the left/right of the menu that allows you to close it */
+  .close-notify {
+    position: absolute;
+    display: block;
+    top: -29px;
+    right: -7px;
+    cursor: pointer;
+    background: transparent url(//edge.shop.com/ccimg.shop.com/resources/images/shop-close-single.png) no-repeat scroll 0% 0%;
+    height: 35px;
+    width: 35px;
+    text-indent: -9999px;
+    z-index: 3000;
+  }
+}
+
+/** hover/tool tip**/
+
+#store-results {
+  #utility-bar {
+    display: none;
+  }
+  .store-contest {
+    display: none;
+    float: left;
+    margin: 5px 20px 0 0;
+    padding: 5px;
+  }
+  .store-logo {
+    margin: 0 5px 0 0;
+    padding: 0;
+    width: 100px;
+    height: auto;
+    display: block;
+  }
+  h2 {
+    font-size: $smallHeader;
+    position: relative;
+    margin: 5px 5px 5px 0;
+  }
+  .sprite.cashback.small {
+    background: url(//edge.shop.com/ccimg.shop.com/styleguide-2013/theme-basic.png) no-repeat  -108px -52px;
+    display: inline-block;
+    margin: 0;
+    height: 20px;
+    width: 28px;
+    vertical-align: middle;
+  }
+}
+
+.store-info {
+  width: 100%;
+  height: 100%;
+  clear: left;
+
+  p {
+    font-size: $smallText;
+  }
+  p.cashback {
+    color: $shopGray;
+    font-weight: bold;
+    margin: 7px 0;
+    padding-left: 10px;
+
+    .cashback-icon {
+      display: none;
+    }
+  }
+  p.ibv {
+    padding-left: 15px;
+    margin: 10px 0;
+  }
+  p.staff-picks {
+    background-color: #468C00;
+    border-radius: 5px;
+    color: #ff0;
+    display: inline-block;
+    font-size: 11px;
+    width: 90px;
+    margin: 0 4px 4px 0;
+    padding: 3px 12px;
+    position: relative;
+    text-align: center;
+    line-height: 12px;
+  }
+  span.mobile {
+    display: none;
+  }
+  .ibv-text {
+    display: none;
+  }
+  .badge {
+    display: inline-block;
+    margin: 0;
+    color: $medGray;
+  }
+  .onecart-conditions {
+    display: inline-block;
+  }
+  .special-conditions {
+    display: inline-block;
+  }
+  .store-pickup {
+//    height: 14px; /* test for removing to not cover up special conditions for hovertip for tablets */
+    a.hovertip {
+      margin-bottom: 1px;
+      height: 14px;
+      background: url(//edge.shop.com/ccimg.shop.com/stores/icon-collect-in-store.png) no-repeat;
+    }
+    p {
+      display: inline-block;
+      margin-top: -2px;
+      padding-left: 17px;
+      font-size: $exSmallText;
+      height: 14px;
+      margin-bottom: 0; /* test for adding to not cover up special conditions for hovertip for tablets */
+    }
+  }
+  .hotdeals-toggle {
+    color: #E66500;
+    font-weight: normal;
+    text-align: left;
+    min-height: 1px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .has-hotdeals{
+      @include p-el(before, 22px, 22px) {
+        position:relative;
+        float: left;
+        background: url(//edge.shop.com/ccimg.shop.com/hotdeals/hotdeals-sm.jpg) 0 -2px no-repeat;
+      }
+  }
+  .button {
+    font-size: $smallText;
+  }
+  a.arrow {
+    display: none;
+  }
+}
+
+/*desktop pagination styles A to Z*/
+#store-results .page-count, #store-results .bottom-stripe {
+  display: none;
+}
+
+#store-results .page-nav-bar .page-count {
+  display: inline;
+  width: auto;
+  margin: 0 0 0 5px;
+}
+
+.page-nav-bar.hide {
+  display: none;
+}
+
+.page-nav-bar .page-number {
+  float: right;
+  margin: 15px 0;
+}
+
+.page-nav-bar .page-number input {
+  width: 30px;
+  text-align: center;
+  margin: -4px 0 0 0;
+  padding: 2px;
+}
+
+.page-nav-bar .page-number ul li.page-button {
+  font-size: $exSmallText;
+  font-weight: bold;
+  color: white;
+  padding: 4px 5px;
+  margin-left: 5px;
+  margin-top: -4px;
+  background-color: #01a4c7;
+  background: #01a4c7 linear-gradient(to bottom, #01a4c7, #1ab8d3);
+}
+
+.page-nav-bar .page-number ul li.page-button:hover {
+  background-color: #016e82;
+  background: #016e82 linear-gradient(to bottom, #016e82, #038aa7);
+}
+
+.page-nav-bar div {
+  margin: 0 30px 0 0;
+  *margin-right: 20px;
+}
+
+.page-nav-bar .label {
+  color: #000;
+  font-size: $exSmallText;
+  line-height: 12px;
+  font-weight: bold;
+  float: left;
+}
+
+.page-nav-bar ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+.page-nav-bar ul li {
+  float: left;
+  border-right: 1px solid #ccc;
+  color: #0099C9;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 12px;
+  padding: 0 7px 0 7px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.page-nav-bar ul li:last-child, .page-nav-bar ul li.no-divider {
+  border-right: none;
+  padding-right: 0;
+}
+
+.page-nav-bar ul li.selected {
+  text-decoration: underline;
+}
+
+.page-nav-bar ul li:hover {
+  color: #79d2e8;
+}
+
+.page-nav-bar ul li.label {
+  cursor: auto;
+}
+
+.page-nav-bar ul li.label:hover {
+  color: #000;
+}
+
+.page-nav-bar .sort-by ul li {
+  cursor: auto;
+}
+
+.page-nav-bar .sort-by ul li:hover {
+  color: #00a2c1;
+}
+
+.page-nav-bar ul li.disabled {
+  color: #999;
+  cursor: default;
+}
+
+.page-nav-bar .sort-by ul li input {
+  vertical-align: bottom;
+}
+
+.page-nav-bar .sort-by ul li .text {
+  vertical-align: top;
+}
+
+.button-toggle.all-pdf {
+  a {
+    background: url("//edge.shop.com/ccimg.shop.com/hotdeals/pdf-sm.png") no-repeat 0 21px transparent;
+    height: 30px;
+    margin-top: 11px;
+    padding: 20px;
+    color: #6d6e70;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-decoration: none;
+  }
+}
+
+/****Store A to Z filters and hotdeals****/
+#hotdeals {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+
+  h1 {
+    font-size: 20px;
+    color: #08ACD2;
+  }
+
+  h1.title {
+    float: left;
+    margin-top: 20px;
+  }
+
+  #hero-image {
+    float: right;
+    cursor: pointer;
+  }
+
+  #hero-image img {
+    border: none;
+  }
+
+  #ads-scrolled {
+    background-color: #E0F5FA;
+    padding: 0 0 0 30px;
+    clear: both;
+    position: relative;
+    overflow-y: visible;
+    overflow-x: hidden;
+  }
+
+  .scrollable {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+    padding-bottom: 20px;
+    left: -9px;
+  }
+
+  .scrollable .items {
+    width: 20000em;
+    position: absolute;
+    overflow-y: visible;
+  }
+
+  #ads-scrolled .scrollable .items div, #ads-scrolled .row div {
+    float: left;
+    overflow-y: visible;
+    word-wrap: break-word;
+  }
+
+  #ads-scrolled .scrollable .items div.item {
+    height: 240px;
+  }
+
+  #ads-scrolled .more-ads {
+    display: none;
+  }
+
+  #ads-scrolled .more-ads .row {
+    height: 256px;
+    overflow-y: visible;
+    margin-left: -9px;
+    margin-top: 20px;
+    width: 1000px;
+  }
+
+  .hilite {
+    position: absolute;
+    top: -22px;
+    left: -9px;
+    z-index: 10;
+  }
+
+  .ad {
+    width: 146px;
+    height: 233px;
+    position: relative;
+    z-index: 50;
+    overflow: visible;
+    margin-left: 9px;
+    margin-top: 23px;
+  }
+  .ad.featured {
+    background: url("//edge.shop.com/ccimg.shop.com/hotdeals/featured-store-tall.png") no-repeat scroll 0 0 #E0F5FA;
+    margin: 0 0 0 9px;
+    padding-left: 9px;
+    padding-top: 23px;
+    height: 254px;
+  }
+  .ad .graphic {
+    width: 125px;
+    height: 125px;
+    display: block; /*Remove white space below image */
+  }
+
+  .ad .button {
+    margin-top: 5px;
+    border: none;
+    left: 20px;
+    display: block;
+  }
+
+  .ad .caption {
+    font-size: 10px;
+    color: #FFF;
+    background-color: #008BAA;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+    width: 125px;
+    min-height: 35px;
+  }
+
+  .ad .rollover {
+    display: none;
+    position: absolute;
+    bottom: 75px;
+    left: 9;
+    background-color: #00738E;
+    width: 125px;
+    color: #FFF;
+    font-size: 11px;
+    padding: 5px;
+    line-height: 1.2em;
+    cursor: pointer;
+  }
+
+  .ad.featured .rollover {
+    bottom: 71px;
+  }
+
+  .ad .rollover .caption {
+    font-weight: bold;
+    background-color: #00738E;
+    padding: 0;
+    height: auto;
+    width: 115px;
+  }
+
+  .ad .rollover p {
+    float: none;
+    margin: 0;
+  }
+
+  .ad .get-the-deal {
+    font-size: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    width: auto;
+    padding: 5px 8px 6px 8px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+    background-color: #FF8106;
+    background: #FF8106 linear-gradient(to bottom, #FF8106, #EB5E04);
+  }
+
+  .ad .get-the-deal:hover {
+    background-color: #EB5E04;
+    background: #EB5E04 linear-gradient(to bottom, #EB5E04, #FF8106);
+  }
+
+  .ad .rollover .see-thru {
+    height: 30px;
+    float: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: red;
+  }
+
+  .ad .cashback-wrapper {
+    width: 125px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 0 0 0;
+    color: $shopGray;
+  }
+  // compensate for data non-breaking space in featured stores
+  .ad .sprite.cashback-icon {
+    margin: 0 -1px 0 0;
+  }
+  .ad .shop-points-icon {
+    margin: 0 2px 0 2px;
+  }
+  // end compensate
+  .ad .share-link {
+    width: 125px;
+    font-size: 11px;
+    color: #00A2C1;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .ad .share {
+    opacity: 0;
+    font-size: 11px;
+    color: #666;
+    width: 125px;
+    text-align: center;
+    margin: 2px 0 0;
+    font-weight: normal;
+    background-color: transparent;
+  }
+
+  #more-less {
+    position: relative;
+    margin-top: -50px;
+    left: 400px;
+    cursor: pointer;
+    width: 300px;
+
+    img {
+      width: 19px;
+      height: 19px;
+    }
+
+    .text {
+      font-size: 12px;
+      font-weight: bold;
+      position: relative;
+      left: 0;
+      top: -5px;
+    }
+  }
+
+  .left {
+    position: absolute;
+    top: 50px;
+    left: 3px;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .right {
+    position: absolute;
+    top: 50px;
+    right: 3px;
+    z-index: 100;
+    cursor: pointer;
+  }
+
+  .right img, .left img {
+    width: 41px;
+    height: 46px;
+  }
+
+  #deals {
+    margin: 20px 0 0 0;
+
+    .filter-bar {
+      height: 104px;
+      clear: both;
+      padding-top: 24px;
+    }
+    .filter-left {
+      float: left;
+      background-color: #e5e7e6;
+      width: 600px;
+      height: 70px;
+    }
+
+    .filter-section {
+      float: left;
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .filter-bar .label {
+      text-align: left;
+      color: #333;
+      font-size: 11px;
+      font-weight: bold;
+      margin: 15px 0 4px 3px;
+    }
+
+    .menu {
+      cursor: pointer;
+      display: inline-block;
+      line-height: normal;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .filter-bar .button, .filter-bar .button-no-drop {
+      font-size: 13px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      display: inline-block;
+      float: left;
+      line-height: 18px;
+    }
+
+    .filter-bar .button .selection {
+      font-weight: bold;
+      float: left;
+      width: 130px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 18px;
+    }
+
+    .filter-bar .button img, .filter-bar .button-no-drop img {
+      float: right;
+      width: 14px;
+      height: 15px;
+    }
+
+    .filter-right {
+      float: right;
+      background-color: #e5e7e6;
+      width: 350px;
+      height: 70px;
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .filter-right .label {
+      margin-left: 10px;
+    }
+    #quick-search {
+      padding: 5px 0;
+      width: 350px;
+      margin-left: 5px;
+    }
+
+    .filter-right .drop-down ul {
+      overflow-x: hidden;
+    }
+
+    .filter-bar .drop-down {
+      background-color: #308196;
+      position: absolute;
+      top: 32px;
+      left: 0;
+      width: 175%;
+      display: inline-block;
+      border-top-right-radius: 7px;
+      z-index: 110;
+    }
+
+    .filter-bar .drop-down.small {
+      width: 100%;
+      border-top-right-radius: 0;
+    }
+
+    .filter-bar .drop-down ul {
+      list-style-type: none;
+      list-style-image: none;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      margin-left: 0;
+      margin-right: 5px;
+      padding-top: 0;
+      padding-left: 15px;
+      padding-right: 10px;
+      padding-bottom: 0;
+      max-height: 400px;
+      width: auto;
+      overflow-y: auto;
+    }
+
+    .filter-bar .drop-down li {
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 3.0ex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .filter-bar .drop-down li:hover {
+      color: #C3E1E8;
+      background: transparent;
+    }
+
+    .filter-bar .drop-down li.selected {
+      color: #18D6FF;
+    }
+    .filter-bar .drop-down li.disabled {
+      color: #969e9a;
+    }
+
+    .letters {
+      display: none;
+    }
+
+    .letters .filter {
+      float: left;
+      min-width: 25px;
+      height: 21px;
+      background-color: #e5e7e6;
+      text-align: center;
+      vertical-align: text-bottom;
+      color: #000;
+      font-size: 14px;
+      padding-top: 3px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-left: 7px;
+    }
+
+    .letters div:first-child {
+      margin-left: 0;
+      width: 28px;
+    }
+    .letters .filter.all-pdf {
+      float: right;
+    }
+
+    .letters .hover {
+      color: #969e9a;
+    }
+
+    .letters .selected {
+      background-color: #D5D6D8;
+      cursor: default;
+    }
+
+    .letters .disabled {
+      color: #969e9a;
+      cursor: default;
+    }
+  }
+
+  .deal {
+    background-color: white;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    padding: 8px;
+    height: auto;
+  }
+
+  .alt-deal {
+    background-color: #f8f8f8;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+  }
+
+  .last {
+    border-bottom: 1px solid #dcdcdc;
+  }
+
+  .left-inline-block {
+    display: inline-block;
+    float: left;
+  }
+
+  .store-name, .discount, .ibv, .restrictions {
+    text-align: left;
+    color: #888;
+    font-weight: normal;
+    width: 675px;
+  }
+
+  .store-name a, .discount a {
+    color: #0099C9;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  .store-name a:hover, .discount a:hover, .store-name a:active, .discount a:active {
+    color: #79d2e8;
+  }
+
+  .share img {
+    margin-left: 2px;
+    vertical-align: middle;
+    border: none;
+    cursor: pointer;
+  }
+
+  .share .shop-now {
+    font-size: 13px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    width: auto;
+    padding: 5px 8px 6px 8px;
+    text-align: center;
+    margin-bottom: 8px;
+    background-color: #FF8106;
+    background: #FF8106 linear-gradient(to bottom, #FF8106, #EB5E04);
+  }
+
+  .share .shop-now:hover {
+    background-color: #EB5E04;
+    background: #EB5E04 linear-gradient(to bottom, #EB5E04, #FF8106);
+  }
+
+  a.fb-share:hover, a.email-share:hover {
+    text-decoration: none;
+  }
+
+  .cashback-wrapper {
+    color: $shopGray;
+    text-align: left;
+    font-weight: normal;
+  }
+  .shop-points-container {
+    color: $shopGray;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    width: 125px;
+
+    &:before{
+      float:none;
+    }
+  }
+  .sprite.cashback {
+    top: -2px;
+    position: relative;
+  }
+
+  a.coupon-button {
+    background-color: #ffe787;
+    color: #f73;
+    text-decoration: none;
+    padding: 3px 7px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px dashed #FFAF5D;
+  }
+
+  a.coupon-button:hover, a.coupon-button.active {
+    background-color: #fff3cc;
+    color: #ffa478;
+  }
+
+  .coupon-hover-message, .coupon-click-message {
+    color: #666;
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: normal;
+  }
+
+  .corner {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  }
+
+  .notes {
+    color: white;
+    font-weight: bold;
+    padding: 3px 7px;
+    margin-right: 5px;
+    display: inline-block;
+    background-color: #2494a8;
+    zoom: 1;
+    *display: inline;
+  }
+
+  .restrictions {
+    display: block;
+    clear: left;
+    color: #666;
+  }
+
+  .padding-top {
+    padding-top: 5px;
+  }
+
+  .one-cart {
+    background-color: #2494a8;
+  }
+
+  .in-store {
+    background-color: #dd9565;
+  }
+
+  .special-offer {
+    background-color: #af4e95;
+  }
+
+  .staff-picks {
+    background-color: #3a9e62;
+  }
+
+  .free-shipping {
+    background-color: #125663;
+  }
+
+  #quick-search {
+    background: none;
+  }
+
+  .corner-large {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+  }
+
+  .corner-small {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .corner-top-large {
+    -webkit-top-left-border-radius: 7px;
+    -webkit-top-right-border-radius: 7px;
+    -moz-top-left-border-radius: 7px;
+    -moz-top-right-border-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+
+  .corner-bottom-large {
+    -webkit-bottom-left-border-radius: 7px;
+    -webkit-bottom-right-border-radius: 7px;
+    -moz-bottom-left-border-radius: 7px;
+    -moz-bottom-right-border-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /*.error-message {
+    display: none;
+    z-index: 10000;
+    background-color: #fff;
+    min-height: 150px;
+    width: 300px;
+    border: 2px solid #00A9CC;
+    border-top: 20px solid #00A9CC;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 8px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .error-message .message {
+    color: #00A9CC;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px;
+    text-align: center;
+  }*/
+
+  .close {
+    top: -30px;
+  }
+
+/*  #pageTransitionPreloader {
+    background: url(//edge.shop.com/ccimg.shop.com/checkout_v3/preloader_circ_64.gif) no-repeat scroll center center transparent;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: none;
+  }*/
+
+  .items {
+    padding-top: 1em;
+  }
+
+  .items .ad-dbl {
+    width: 300px;
+    height: 213px;
+    display: inline-block;
+    padding-top: 20px;
+    vertical-align: top;
+  }
+
+  .items.dbl {
+    width: 912px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+  }
+
+  .items .ad-dbl.beginning {
+    background: url("//edge.shop.com/ccimg.shop.com/hotdeals/deal-of-the-day-twn03.png") no-repeat scroll 0 0 #FFF;
+  }
+
+  .ad-dbl .image_container {
+    width: 135px;
+    height: 135px;
+  }
+
+  .ad-dbl .graphic {
+    width: 125px;
+    height: 125px;
+    padding-top: 10px;
+    padding-left: 17px;
+  }
+
+  .ad-dbl .caption {
+    display: none;
+  }
+
+  .ad-dbl a {
+    float: right;
+    color: #000;
+  }
+
+  .ad-dbl .share .share-label {
+    float: left;
+  }
+
+  .ad-dbl .share a {
+    margin-left: 5px;
+    float: left;
+  }
+
+  .ad-dbl .rollover {
+    float: right;
+    position: static;
+    height: 125px;
+    bottom: 40px;
+    left: 0;
+    overflow: hidden;
+    font-weight: normal;
+    line-height: 1.65em;
+    color: #000;
+    width: 125px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-right: 18px;
+  }
+
+  .ad-dbl .rollover .caption {
+    font-weight: bold;
+  }
+
+  .ad-dbl .rollover .caption {
+    display: block;
+  }
+
+  .ad-dbl .rollover .caption p {
+    margin: 2px 0;
+    font-size: 12px;
+  }
+
+  .ad-dbl .get-the-deal {
+    float: right;
+    font-size: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    width: auto;
+    padding: 5px;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    background-color: #FF8106;
+    background: #FF8106 linear-gradient(to bottom, #FF8106, #EB5E04);
+  }
+
+  .ad-dbl a:hover .get-the-deal {
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    background-color: #FD8E0A;
+    background: #FEA624 linear-gradient(to bottom, #FEA624, #FD8E0A);
+    box-shadow: 0 0 18px 2px rgba(253, 167, 0, 0.85);
+  }
+
+  .ad-dbl .cashback-wrapper {
+    width: 125px;
+    font-size: 11px;
+    font-weight: bold;
+    color: $shopGray;
+    text-align: center;
+    padding: 0;
+    white-space: nowrap;
+    margin-top: 6px;
+    margin-left: 10px;
+  }
+
+  .ad-dbl .share-link {
+    width: 115px;
+    font-size: 11px;
+    color: #00A2C1;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .ad-dbl .share {
+    font-size: 11px;
+    color: #666;
+    width: 190px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: normal;
+    padding-left: 24px;
+  }
+}
+
+#type-ahead-store-mobile, #type-ahead-store-desktop {
+  z-index: 1;
+  position: relative;
+}
+
+.search-store-mobile {
+  li.selected {
+    background-color: #EDEDED;
+  }
+  li.disabled .label {
+    color: #bbb;
+  }
+  .button-list li>a{
+    position: relative;
+    &:after {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 10px;
+    }
+  }
+}
+
+.search-store .search-input .search-button {
+  text-indent: 0;
+  p {
+    //    margin: 5px 0 3px 7px;
+    font-size: $smallText;
+  }
+}
+
+/****Store Landing Page******/
+.dashed {
+  border: dashed 3px rgb(221, 221, 221);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  max-width: 45%;
+  width: 45%;
+  height: 10em;
+  margin: 5px;
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  padding: 12px;
+
+  .note {
+    width: 50%;
+  }
+
+  .note .conditions {
+    margin-left: 38px;
+  }
+}
+
+.dashed-orange {
+  border: dashed 3px #fea624;
+  background: #FFFF99;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 3px 5px;
+}
+
+.dashed .title {
+  position: relative;
+  height: 3em; /*exactly two lines*/
+  overflow: hidden;
+}
+
+.dashed .title:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%; /*fades the extended text from view*/
+  height: 1.2em;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
+.dashed .button.primary {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 10px 10px;
+  width: 10em;
+}
+
+@media screen and (max-width: 880px){
+  /******search/ store display*******/
+  #store-results {
+    #hotdeals {
+      width: 100%;
+    }
+    .ads {
+      display: none;
+    }
+    #deals {
+      margin: 0;
+
+      .filter-bar {
+        padding-top: 0;
+
+        .filter-section {
+          margin: 0 8px;
+        }
+
+        .button .selection {
+          width: 100px;
+        }
+
+        .filter-left {
+          width: 68%;
+        }
+        .filter-right {
+          width: 30%;
+        }
+
+        #quick-search {
+          width: 100%;
+        }
+        .search-input .input-container input {
+          padding: .25em 4em 0 1em;
+        }
+      }
+    }
+    #utility-bar {
+      display: block;
+      border-top: $borderStyleLight;
+      border-bottom: $borderStyleLight;
+      .sort-container {
+        display: none;
+      }
+      .right-panel-menu-button {
+        display: none;
+      }
+    }
+    .page-nav-bar {
+      display: none;
+    }
+    .page-count {
+      display: inline-block;
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px 0 10px;
+      max-width: initial;
+
+      .pagination {
+        width: 65%;
+        margin: 1em auto;
+        float: none;
+        text-align: center; /* test for desktop mid-width */
+
+        li {
+          display: inline-block;
+        }
+
+        a {
+          text-decoration: none;
+          padding: .4em;
+        }
+
+        a.current {
+          color: #fff;
+          background-color: #00a8ca;
+          cursor: default;
+        }
+      }
+    }
+    .bottom-stripe {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media screen and (max-width: 660px) {
+  #store-results {
+    h1 {
+      margin-left: 10px;
+    }
+    #hotdeals {
+      display: none;
+    }
+
+    #utility-bar {
+      display: block;
+
+      .sort-container {
+        display: block;
+        float: left;
+      }
+      .right-panel-menu-button {
+        display: block;
+      }
+    }
+    .m-drop-down-list ul {
+      margin: -1px 0 0;
+    }
+    .store-info {
+      .special-conditions {
+        width: 100%;
+      }
+
+      .button {
+        display: none;
+      }
+      a.arrow {
+        background: url(//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow.png) no-repeat;
+        position: relative;
+        background-position: 16px 13px;
+        float: right;
+        width: 8px;
+        height: 13px;
+        padding: 20px;
+        margin-right: 10px;
+        display: block;
+        cursor: pointer;
+      }
+      p.ibv {
+        float: left;
+        padding-left: 0;
+      }
+      .ibv-text {
+        display: inline;
+        margin: .625em 0;
+      }
+      p.cashback {
+        padding-left: 0;
+
+        .cashback-icon {
+          display: inline-block;
+        }
+      }
+      p.staff-picks {
+        display: block;
+      }
+      .badge {
+        display: block;
+      }
+      span.mobile {
+        margin: .625em;
+        display: inline;
+      }
+    }
+    .list-toggle {
+      display: none;
+    }
+    .store-toggle {
+      width: 100%;
+    }
+    .hotdeals-toggle {
+      display: none;
+    }
+    .cashback-toggle {
+      width: auto;
+      text-align: left;
+      float: left;
+      width:50%;
+    }
+    .shop-points-toggle {
+      float: left;
+      margin: 10px 0;
+      padding-left: 0;
+      width:50%;
+    }
+    .store-info .shop-points-icon {
+      display: inline;
+      background-position: left center;
+    }
+
+    .reward-text{
+      display:inline-block;
+    }
+
+    .ibv-toggle {
+      width: auto;
+      text-align: left;
+      float: right;
+      margin: .625em 0 0 0;
+
+      &.mobile {
+        display: block;
+      }
+    }
+
+    .button-list .store-info li {
+      font-size: $mainText;
+      /* was 0.95em */
+      margin: 0;
+      border-bottom: $borderStyle;
+      /* need to put borders on li so that when you hover, the change in bg color doesn't wipe out the rounded corners */
+      border-right: $borderStyle;
+      border-left: $borderStyle;
+      background: #FBFBFB;
+      padding-left: 10px;
+
+      &:first-child {
+        border-top: 1px solid #ccc;
+        -webkit-border-top-left-radius: .6em;
+        -webkit-border-top-right-radius: .6em;
+        -moz-border-radius-topleft: .6em;
+        -moz-border-radius-topright: .6em;
+        border-top-left-radius: .6em;
+        border-top-right-radius: .6em;
+      }
+      &:last-child {
+        -webkit-border-bottom-left-radius: .6em;
+        -webkit-border-bottom-right-radius: .6em;
+        -moz-border-radius-bottomleft: .6em;
+        -moz-border-radius-bottomright: .6em;
+        border-bottom-left-radius: .6em;
+        border-bottom-right-radius: .6em;
+      }
+    }
+    .button-list li {
+      padding-bottom: 0;
+    }
+  }
+
+  .button-list li {
+    a.arrow {
+      @include vertical-align;
+    }
+  }
+  #store-results a.hovertip {
+    display: block;
+  }
+  .onecart-conditions, .special-conditions {
+    display: block;
+
+    .tooltip {
+      margin: 10px 0 0 20px;
+      font-size: $smallText;
+
+        @include p-el(before, null, null) {
+          left: 20px;
+        top: -35px;
+      }
+    }
+  }
+  .page-nav-bar {
+    display: none;
+  }
+  .page-count {
+    display: inline-block;
+  }
+  .bottom-stripe {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .dashed {
+    max-width: 100%;
+    width: 100%;
+    margin: 10px 0;
+    height: auto;
+    float: none;
+    clear: left;
+  }
+}

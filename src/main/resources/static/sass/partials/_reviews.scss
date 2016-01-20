@@ -1,0 +1,270 @@
+@import "modules/index";
+
+.product-reviews {
+  nav, h4, article {
+    @include margin(margin-left);
+    margin-bottom: 5px;
+  }
+  p.small-header {
+    @include margin(margin-both);
+  }
+  p.small-text {
+    font-size: $smallText;
+    margin: 0 0 0 10px;
+  }
+  .shop-consultant {
+    @extend p.small-text;
+    color: $shopBlue;
+    @include p-el(before, 12px, 12px) {
+      content: "S";
+      position: relative;
+      font-weight: bold;
+      border-radius: 50%;
+      color: $shopBlue;
+      border: thin solid $shopBlue;
+      text-align: center;
+      margin: 0 2px 0 0;
+      font-size: 11px;
+      padding: 1px 4px;
+    }
+  }
+  .verified-buyer {
+    @extend p.small-text;
+    color: $orange;
+    @include p-el(before, 12px, 12px) {
+      content: "V";
+      position: relative;
+      font-weight: bold;
+      border-radius: 50%;
+      color: $orange;
+      border: thin solid $orange;
+      text-align: center;
+      margin: 0 2px 0 0;
+      font-size: 11px;
+      padding: 1px 4px;
+    }
+  }
+  .pro-beauty {
+    @extend p.small-text;
+    color: $orange;
+    @include p-el(before, 12px, 12px) {
+      content: "M";
+      position: relative;
+      font-weight: bold;
+      border-radius: 50%;
+      color: $orange;
+      border: thin solid $orange;
+      text-align: center;
+      margin: 0 2px 0 0;
+      font-size: 11px;
+      padding: 1px 4px;
+    }
+  }
+  .button.secondary {
+    @include margin(margin-bottom);
+  }
+  .pagination.page-navigation {
+    display: inline-block;
+  }
+
+  .page-count {
+    float: right;
+    text-align: right;
+    width: 260px;
+    margin: 10px 0 0 0;
+
+    a, a:active, a:hover, a:visited {
+      margin: 0;
+      padding: 0;
+      font-weight: $bold;
+    }
+    ul.pagination {
+      margin: -18px 0 4px;
+      font-size: $smallText;
+      li {
+        margin: 0 2px;
+      }
+    }
+    .pagination li a.current {
+      color: $darkestGray;
+      background-color: $white;
+    }
+    a.button.tertiary, a.button.tertiary:active, a.button.tertiary:hover, a.button.tertiary:visited {
+      margin: 0;
+      padding: 5px 8px;
+      display: inline-block;
+      border: none;
+      background: none;
+      font-size: $smallText;
+    }
+  }
+}
+
+.review-form {
+  a.prod-title {
+    text-decoration: none;
+  }
+  img {
+    float: left;
+    width: $thumbnail;
+    height: auto;
+    height: auto;
+    display: block;
+    margin: 10px 0 0 0;
+  }
+  figcaption {
+    float: left;
+//    width: calc(100% - #{$thumbnail});
+    @include calc(width, "100% - #{$thumbnail}");
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+  p {
+    margin: 0;
+    line-height: $baseLineHeight;
+  }
+  form {
+    clear: both;
+    padding: 15px 0;
+  }
+  form p {
+    font-weight: bold;
+  }
+  label {
+    width: 75%;
+  }
+  sub {
+    font-size: $smallText;
+  }
+  form input.button.primary {
+    float: left;
+    width: auto;
+    margin: 0 10px 0 0;
+  }
+}
+
+.aspectiva-padding-top{
+  clear: left;
+  display: block;
+  font-size: $exSmallText;
+  line-height: 15px;
+  padding-top: 4px;
+}
+
+.review {
+  float: left;
+  display: block;
+  margin-top: 3px;
+  clear: left;
+
+  .count {
+    float: left;
+    display: block;
+    text-align: right;
+    margin: 0px;
+    font-size: $exSmallText;
+    line-height: 15px;
+  }
+
+  .rating-container {
+    float: left;
+    margin: 0 8px 0 0;
+  }
+
+  .rating-unselected {
+    float: left;
+    display: block;
+    width: 83px;
+  }
+
+  .rating-selected {
+    display: block;
+    width: 100%;
+    height: 15px;
+    background: $stars-sm;
+  }
+
+  .rating-average {
+    margin: 0 3px;
+    background: $shopBlue;
+    color: $white;
+    font-size: $smallText;
+    border-radius: 3px;
+    padding: 0 3px;
+    padding: 1px 3px;
+    background-size: 83px 195px;
+    line-height: 1.26em;
+  }
+}
+
+.star-select {
+  position: relative;
+  background: $stars-med;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 0.5em 0 0;
+  width: 112px;
+  cursor: pointer;
+}
+
+.prStar {
+  position: absolute;
+  height: 20px;
+  width: 23px;
+  cursor: pointer;
+}
+
+.prStar.prS2 {
+  left: 23px;
+}
+
+.prStar.prS3 {
+  left: 46px;
+}
+
+.prStar.prS4 {
+  left: 69px;
+}
+
+.prStar.prS5 {
+  left: 92px;
+}
+
+@media screen and (max-width: 660px) {
+  .review-form{
+    padding:0 10px;
+  }
+  .review-form label {
+    width: 100%;
+  }
+  .product-reviews {
+    nav, h4, article{
+      margin-left:0;
+    }
+    .button.secondary {
+      margin-right:0;
+    }
+    nav {
+      @include margin(margin-bottom);
+    }
+    .total-reviews {
+      float: none;
+      text-align: center;
+    }
+    .page-count {
+      float: left;
+      text-align: left;
+      width: 100%;
+
+      .button.tertiary {
+        margin: 0;
+      }
+    }
+    .separator {
+      display: none;
+    }
+    .next {
+      float: right;
+    }
+  }
+}

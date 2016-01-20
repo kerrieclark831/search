@@ -1,0 +1,686 @@
+@import "modules/index";
+@import "modules/extend";
+
+/** Footer stuff */
+#footer {
+  position:relative;
+  display: inline-block;
+  width: 100%;
+  background-color: #00A8CA;
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  clear: both;
+
+  .link-to {
+    background: $darkestBlue;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.85em;
+    height: 53px; /* 38px + 15 */
+  }
+
+  .link-to a {
+    color: $limeGreen;
+    display: inline;
+  }
+
+  .link-to #link-to-page {
+    background: transparent;
+    font-size: 0.85em;
+    font-weight: normal;
+    text-align: left;
+    padding: 7px 0 0 10px;
+    height: auto;
+    margin: 12px;
+    color: #fff;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    float: right;
+    white-space: nowrap;
+  }
+
+  #link-to-page a {
+    white-space: nowrap;
+  }
+
+  .links {
+    width: 70%;
+    float: left;
+    font-weight: bold;
+
+    .left {
+      position: relative;
+      display: inline-block;
+    }
+  }
+
+  hr {
+    border-top: 1px solid $darkBlue;
+    clear: both;
+  }
+
+  .left p, .left p a, .left p a:hover {
+    float: left;
+    display: block;
+    font-size: $smallText;
+    font-weight:bold; /*Needed for AMOS*/
+    line-height: 1.75em;
+    color: $white;
+    text-decoration: none;
+    margin: 0.4em 2px 0.4em 2px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  p a:hover {
+    text-decoration: underline;
+  }
+
+  .left p.single-link:after {
+    content: "";
+    margin: 0 0 0 3px;
+  }
+
+  .left p:after {
+    content: "|"; /*for IE*/
+    color: transparent; /*for IE*/
+    position: relative;
+    top: 5px; /*FAMOS*/
+    border-right: solid thin $darkBlue;
+  }
+
+  .left:last-child p:after {
+    content: "";
+    border-right: none;
+  }
+
+  div p.select-up {
+    .sprite.flag.usa.small {
+      float: right;
+    }
+  }
+
+  p.select-up a:after {
+    content: "";
+    position: relative;
+    background: url(//edge.shop.com/ccimg.shop.com/resources/images/icon-arrow-white.png) no-repeat;
+    top: -2px;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin: 0 3px 0 0px;
+    background-size: 10px;
+    transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+  }
+
+  p.select-up.open {
+    background-color: $lightBlue;
+    border-radius: 0 0 4px 4px;
+    border-bottom: $darkBlue solid 1px;
+    border-left: $darkBlue solid 1px;
+    border-right: $darkBlue solid 1px;
+    padding: 5px 0 0 0px;
+    margin: 0 6px .3em 0;
+
+    &:after {
+      content: "";
+      border: none;
+    }
+
+    a {
+      color: $shopGray;
+    }
+    a:after {
+      position: relative;
+      float: right;
+      top: 3px;
+      width: 15px;
+      height: 15px;
+      //    margin: 5px 0 0 18px;
+      background: url(//edge.shop.com/ccimg.shop.com/resources/images/icon-arrow-grey.png) no-repeat 97% center;
+      background-size: 10px;
+      transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+  }
+
+  .left .fly-up {
+    margin: 0px;
+    border-radius: 4px 4px 4px 0;
+  }
+
+  .fly-up {
+    position: absolute;
+    bottom: 35px;
+    width: auto;
+    min-width: 150px;
+    background-color: $lightBlue;
+    border-top: $darkBlue solid 1px;
+    border-left: $darkBlue solid 1px;
+    border-right: $darkBlue solid 1px;
+    z-index: 10000 !important;
+
+    li {
+      width: 100%;
+      padding: 10px 5px;
+      margin: 0;
+      text-align: left;
+      /*Added for AMOS*/
+      box-sizing: border-box;
+      //    text-indent: 15px;
+    }
+    li:hover {
+      background: $white;
+    }
+    li:first-child:hover {
+      border-radius: 4px 4px 4px 0;
+    }
+    li:last-child:hover {
+      border-radius: 4px 4px 4px 0;
+    }
+    li a {
+      color: $shopGray;
+      width: 100%;
+      font-size: $smallText;
+      font-weight:bold; //necessary for Amos
+      text-decoration: none;
+      margin: 0;
+      line-height: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    img {
+      width: 30px;
+      float: left;
+      margin: 0 5px;
+    }
+    p {
+      margin: 5px 10px;
+      float: left;
+    }
+  }
+
+  #social-link.fly-up {
+    li {
+      padding: 5px 5px 10px 5px;
+      text-indent: 15px;
+    }
+
+    li a {
+      line-height: 30px;
+    }
+
+    li a:after {
+      margin: 10px 5px 0 0;
+    }
+  }
+
+  #DigiCertClickID_2nogUpoD {
+    width: 100px;
+  }
+
+  /* Avoid <a></a> with no text node */
+  > .sprite span {
+    display: none;
+  }
+
+  /* from shop.css */
+
+  /**** email sign up, as seen in the footer and as a module on the home page ***/
+  .sign-up {
+    float: left;
+    position: relative;
+    padding: 15px 10px 0 10px;
+  }
+
+  .sign-up .label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    float: left;
+    margin-right: 15px;
+    padding-top: 7px;
+  }
+
+  .sign-up .form {
+    position: relative;
+    float: left;
+    background-color: $white;
+    border-radius: 6px;
+    height: 25px;
+  }
+
+  .sign-up input {
+    @include border-radius(6px);
+    border: none;
+    width: 35ex; /* requirements state it has to be about 30 characters */
+    height: 25px;
+    font-size: 12px;
+    margin-top: 0; /* moves the input box inside the outer div */
+    padding: 5px;
+    background-color: $white;
+    color: $shopGray; /*required for AMOS*/
+  }
+
+  .sign-up .sign-up-form .button {
+    font-size: 11px;
+    position: relative;
+    float: left;
+    margin-left: -10px; /* to overlap slightly with input box */
+    @include border-radius(0 4px 4px 0);
+    height: 25px;
+    border: none;
+  }
+
+  .email-sign-up-small-print {
+    width: 78px;
+    text-align: left;
+    float: right;
+    margin: 15px 15px 0 0;
+  }
+
+  .email-sign-up-small-print a,
+  .email-sign-up-small-print a:link,
+  .email-sign-up-small-print a:visited,
+  .email-sign-up-small-print a:hover,
+  .email-sign-up-small-print a:active {
+    color: #C6D7DC;
+    text-decoration: underline;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: normal;
+  }
+
+  .email-sign-up-small-print a:hover,
+  .email-sign-up-small-print a:active {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .email-sign-up-small-print a,
+  .email-sign-up-small-print a:link,
+  .email-sign-up-small-print a:visited,
+  .email-sign-up-small-print a:hover,
+  .email-sign-up-small-print a:active {
+    color: #C6D7DC;
+    text-decoration: underline;
+    font-size: 10px;
+    font-weight: bold;
+    white-space: normal;
+  }
+
+  .email-sign-up-small-print a:hover,
+  .email-sign-up-small-print a:active {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  /* overlay for successfully signing up for email deals */
+  #email-sign-up-result {
+    width: 600px;
+    text-align: left;
+    color: $shopGray;
+  }
+
+  #email-sign-up-result -overlay-inner {
+    padding-right: 50px;
+  }
+
+  #email-sign-up-result img{
+    width:199px;
+    height:50px;
+  }
+
+  #email-sign-up-result h2 {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+
+  #sign-up-email-display {
+    font-weight: normal;
+  }
+
+  #email-sign-up-result .button {
+    float: left;
+    font-size: 14px;
+    margin-left: 0;
+  }
+  /**** end of email sign up, as seen in the footer and as a module on the home page ***/
+
+  /*************** link to this page css ********/
+  .sprite.link {
+    background-position: -129px -861px;
+    display: inline-block;
+    min-height: 9px;
+    min-width: 24px;
+  }
+
+  #link-to-page {
+    font: bold 11px Verdana, Geneva, sans-serif;
+    color: #00A5CB;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 15px 8px 12px;
+    margin-top: 12px;
+    border: solid 1px #00A6CB;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    background: #ffffff; /* Old browsers */
+    background: linear-gradient(to bottom, #ffffff 0%, #dedede 100%); /* W3C */
+  }
+
+  #link-to-page .sprite.link {
+    padding: 5px 0 5px 31px;
+    background-image: url('//edge.shop.com/ccimg.shop.com/styleguide-2013/shop-sprite.png');
+    background-repeat: no-repeat;
+    background-position: -129px -861px;
+    display: inline-block;
+    min-height: 9px;
+    min-width: 24px;
+  }
+  /**** end of email sign up, as seen in the footer and as a module on the home page ***/
+  .tooltip {
+    display: none;
+    background: $white;
+    font: 11px verdana, arial, sans-serif;
+    text-align: left;
+    padding: 0;
+    margin: 0 24px 0 0;
+    width: 450px;
+    height: 60px;
+    color: #00A2C9;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index:500;
+  }
+
+  .tooltip input.pageURL_text {
+    border: 1px solid #ddd;
+    font: 11px verdana, arial, sans-serif;
+    display: block;
+    padding: 6px;
+    margin: 5px auto 0 auto;
+    color: #444;
+    width: 400px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+
+  .tooltip .pageURL_arrow {
+    position: absolute;
+    top: 24px;
+    right: -30px;
+    background: none;
+    margin: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 15px solid transparent;
+    border-left: 15px solid #fff;
+    float: right;
+  }
+
+  .tooltip .pageURL_content_container {
+    max-width:450px;
+    background: #FFF;
+    font: 11px verdana, arial, sans-serif;
+    margin: 7px 0;
+    padding: 0px 15px 0 15px;
+    color: #00A2C9;
+    border: 0;
+    float: left;
+  }
+
+  .tooltip .pageURL_heading {
+    font: bold 12px Verdana, Arial, Sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 8px 15px;
+    text-align: left;
+    background: #00A6CB;
+    background: linear-gradient(to bottom, #00A6CB, #0C8AA3);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  /*************** end link to this page css ********/
+
+  /**************social links*****************/
+  .share {
+    float: right;
+    line-height: 32px;
+    margin: 0 5px;
+  }
+
+  .share-label {
+    float: left;
+    padding: 8px 0 0 5px;
+    font-weight: bold;
+    font-size: $smallText;
+    //  margin: 1em .625em 0;
+  }
+
+  .share ul span {
+    float: left;
+    font-size: $mainText;
+    /*Removed for AMOS*/
+    //    padding: 10px;
+  }
+
+  .share ul {
+    display: inline-block;
+    float: right;
+    margin: 0;
+  }
+
+  .share #social-link li {
+    float: left;
+
+    a span, &.share-icon.pinterest a {
+      background-color: $darkestBlue;
+    }
+
+    &.share-icon.pinterest a:hover {
+      background-color: #cc2127; /*rgb(204, 33, 39);*/
+    }
+  }
+
+  /**************end social links*****************/
+  .digicert {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  /**************footer copyright*****************/
+  p.copyright, p.policy {
+    font-size: $exSmallText;
+    color: #BDE7F2;
+    overflow: hidden;
+    //    padding: 1em 0;
+    position: relative;
+    float: left;
+    margin: 0 10px;
+    text-align: left;
+    width: 85%;
+  }
+
+  p.policy a {
+    color: white;
+    font-size: $smallText;
+  }
+  /**************end footer copyright*****************/
+}
+
+/**************media queries*****************/
+@media screen and (max-width: 990px) {
+  #footer {
+    .link-to #link-to-page {
+      width: 100%;
+      height: 48px;
+      background-color: $darkBlue;
+      margin: 5px 0 0;
+      padding: 15px 10px;
+      display: block;
+      clear: both;
+    }
+//    .tooltip {
+//      margin: 5px 0 0 30px;
+//    }
+    .tooltip .pageURL_arrow {
+      left: -30px;
+      right: 100%;
+      border-left: 15px solid transparent;
+      border-right: 15px solid #fff;
+    }
+    .share {
+      float: none;
+      display: inline-block;
+      margin: 0 auto;
+      max-width: 65%;
+      height: 50px;
+    }
+    .share ul {
+      float: left;
+    }
+    .links {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  p.copyright, p.policy {
+    float: none;
+    width: 100%;
+    margin: 0 10px;
+  }
+  .digicert {
+    float: none;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #footer {
+    .link-to {
+      height: 80px;
+    }
+    .sign-up {
+      padding: 10px 10px 0 10px
+    }
+    .sign-up .label {
+      float: none;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .sign-up input {
+      width: 30ex;
+    }
+    #email-sign-up-result{
+      width:90%;
+    }
+    .tooltip{
+      width:95%;
+      height: auto;
+    }
+    .tooltip .pageURL_arrow {
+      left: 0px;
+      top: -20px;
+      transform: rotate(90deg);
+    }
+    .tooltip .pageURL_content_container{
+      width:100%;
+      white-space: normal;
+    }
+    .tooltip input.pageURL_text{
+      width:100%;
+      float:left;
+    }
+    p.copyright, p.policy {
+      float: none;
+      width: 100%;
+      margin: 0 5px;
+    }
+    .digicert {
+      float: none;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    .link-to {
+      height: 100px;
+    }
+    .email-sign-up-small-print {
+      width: 100%;
+      text-align: left;
+      float: left;
+      margin: 0 10px;
+    }
+    .share {
+      float: left;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .links {
+      width: 100%;
+    }
+    .left:not(:nth-child(4n)) .fly-up {
+      margin: 0px;
+      border-radius: 4px 4px 4px 0;
+    }
+    .left:nth-child(4n) .fly-up {
+      right: 0;
+      margin: 0 6px 0 0;
+      border-radius: 4px 4px 0px 4px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #footer {
+    .left:not(:nth-child(3n)) {
+      .fly-up.can, .fly-up.twn {
+        margin: 0px;
+        border-radius: 4px 4px 4px 0;
+        left: 0;
+      }
+    }
+    .left:nth-child(3n){
+      .fly-up.can,.fly-up.twn {
+        right: 0;
+        margin: 0 6px 0 0;
+        border-radius: 4px 4px 0px 4px;
+      }
+    }
+    .left:nth-child(4n) {
+      .fly-up.can, .fly-up.twn, .fly-up.cafr {
+        border-radius: 4px 4px 4px 0;
+        margin: 0px;
+        left: 0;
+      }
+    }
+    .left:nth-child(5n) .fly-up.cafr{
+      right:0;
+      margin: 0 6px 0 0;
+      border-radius: 4px 4px 0px 4px;
+    }
+  }
+}

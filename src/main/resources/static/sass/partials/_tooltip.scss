@@ -1,0 +1,126 @@
+/********************tooltip***************************/
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  font-size: $smallText;
+  line-height: 1.26em;
+  display: block;
+
+  &.top {
+    padding: 5px 0;
+    margin-top: -3px;
+
+    .tooltip-arrow {
+      bottom: 0;
+      left: 50%;
+      margin-left: -5px;
+      border-top-color: #585555;
+      border-width: 5px 5px 0
+    }
+  }
+
+  .tooltip-inner {
+    max-width: 85px;
+    padding: 3px 6px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #585555;
+    border: 2px solid #6e6f71;
+    border-radius: 4px;
+  }
+
+  .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+
+.star-select .tooltip{
+  left:125px;
+  width:300px;
+}
+
+.review-form .tooltip p.startip{
+  font-weight:normal;
+  font-size:$mainText;
+}
+
+/**One Cart/ Special Conditions Tooltip**/
+a.hovertip {
+  position: relative;
+  font-size: $exSmallText;
+  font-weight: normal;
+  margin: 4px 0;
+  display: inline-block;
+  color: $medGray;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $medGray;
+    text-decoration: none;
+  }
+}
+
+.onecart-conditions a.hovertip {
+  @extend a.hovertip;
+  padding-left: 17px;
+  padding-top: 1px;
+  margin-bottom: 1px;
+  height: 14px;
+  background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/mobile-sprite.png);
+  background-repeat: no-repeat;
+  background-position: -483px -287px;
+}
+
+.onecart-conditions .tooltip, .special-conditions .tooltip {
+  display: none;
+  background: $white;
+  font-size: $exSmallText;
+  font-weight: normal;
+  border-radius: 5px;
+  margin: 10px 0 0 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-top: solid 30px $shopBlue;
+  border-right: solid 1px $shopBlue;
+  border-left: solid 1px $shopBlue;
+  border-bottom: solid 1px $shopBlue;
+  padding: 8px;
+  width: 240px;
+  color: $shopBlue;
+  z-index: 501;
+
+  @include p-el(before, null, null) {
+    left: 30px;
+    top: -35px;
+    border: solid;
+    border-color: $shopBlue transparent;
+    border-width: 0 6px 6px 6px;
+    z-index: 2000;
+  }
+
+  h3, .tip-title {
+    color: $white;
+    font-weight: bold;
+    font-size: $smallHeader;
+  }
+  h3 {
+    margin: -28px 8px 0 0;
+  }
+
+  .tip-title {
+    margin: -42px 8px 0 0;
+    padding: 10px 0 0 0;
+  }
+
+  p {
+    color: $shopBlue;
+    font-size: $smallText;
+    font-weight: normal;
+  }
+}

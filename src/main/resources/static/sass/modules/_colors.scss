@@ -1,0 +1,46 @@
+// colors
+$black:#000;
+$darkestGray:#333;
+$shopGray: #6D6E70; //styleguide
+$medGray: #888;
+$medLightGray: #ccc;
+$lightBorderGray: #ddd;
+$gradientLightGray: #ededed;
+$lightGray: #f1f1f1;
+$white: #fff;
+$red: #C55744;
+$lightRed: #fae8e1;
+$orange: #e66500;
+$copperfield: #E2866C; //styleguide
+$gold:#FED40F;
+$lightYellow: #fdf8e6;
+$exLightGreen: #EEFADA;
+$lightGreen: #d3edca;
+$green: #77AC57;
+$mantis: #82BD5F; //styleguide
+$brightGreen: #6fcd36;
+$limeGreen: #C9F81F;
+//$brightGreen: scale-saturation($green, 40%); //7CCD3C
+$darkGreen: #068559;
+$shamrock:#2dccac; //styleguide
+$shopBlue: #00a8ca; //styleguide
+$lightBlue: #e5f9ff; /*rgb(240, 248, 255);*/
+$lightShopBlue: lighten($shopBlue, 54%); /* like above, but more turquoise */
+$darkBlue:darken($shopBlue, 10%); //007E97
+$darkestBlue:darken($shopBlue, 20%); //007E97
+$sapphire:#27439e; //styleguide
+$hover: #8CD2E8;
+
+//social icons
+$email: #972e4b;
+$facebook: #3b5998;
+$google: #dd4b39;
+$instagram: #517fa4;
+$linkedin: #007bb6;
+$pinterest: #cb2027;
+$twitter: #00aced;
+$youtube: #b00;
+$plurk: #cf5a00;
+$mtmobile: $shopBlue;
+$shopcart: $shopBlue;
+$blog: $orange;

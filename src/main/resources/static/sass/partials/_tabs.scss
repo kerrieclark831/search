@@ -1,0 +1,406 @@
+//tabs shared on homepage and search
+
+/* Start | Search Tabs */
+#onecart-vs-all {
+  float: left;
+  margin: 0 0 0 20px;
+}
+
+.onecart-conditions {
+  margin: 2px 0 0 4px;
+  font-size: $exSmallText;
+  display: inline-block;
+  a.hovertip {
+    font-size: $exSmallText;
+    padding-top: 2px;
+  }
+}
+
+.tab-box {
+  /* container for the tabs */
+  border-bottom: 1px solid #CCC;
+  padding: 0.4em 0 0 10px;
+  font-size: 0.8em;
+  margin-top: 8px;
+  position: relative;
+  float: left;
+  width: 100%;
+  &.no-tabs {
+    /* if not showing the all stores/oneCart tabs, move it up */
+    margin-top: 0;
+  }
+  .tabs-container {
+    float: left;
+  }
+  .tabs, .module-tabs {
+    background: #EDEFEC;
+    border: 1px solid #CCC;
+    border-bottom: 0;
+    float: left;
+    padding: 0 0.55em;
+    font-size: $mainText;
+    font-weight: $bold;
+    margin: -3px 0 0 0;
+    display: block;
+
+    .single-tab {
+      border: 1px solid transparent;
+      position: relative;
+      float: left;
+      cursor: pointer;
+      display: block;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+      a, a:link, a:visited {
+        text-decoration: none;
+      }
+      a:hover {
+        color: $hover;
+      }
+
+      &:first-child {
+        border-left-color: transparent;
+      }
+      &.active-style {
+        background: $white;
+        -webkit-border-radius: 0.5em 0.5em 0 0;
+        -moz-border-radius: 0.5em 0.5em 0 0;
+        border-radius: 0.5em 0.5em 0 0;
+        border: $borderStyle;
+        border-bottom: 1px solid #fff;
+        color: #6D6E70;
+        margin-bottom: -3px;
+        margin-top: -4px;
+        padding: 4px 10px 0;
+        top: -2px;
+      }
+      a {
+        padding: 7px 6px 7px 12px;
+        display: block;
+      }
+      &.active-style a {
+        border-bottom: 4px solid $white;
+        color: #6D6E70;
+        cursor: default;
+        padding: 7px 2px;
+      }
+    }
+  }
+
+  /* properties when the oneCart/AllStores tabs are inactive */
+  #active-vs-inactive.inactive .single-tab
+    /*#active-vs-inactive .tab.inactive */
+  {
+    cursor: default;
+  }
+  #active-vs-inactive.inactive .tabs-container .active a,
+  #active-vs-inactive.inactive .tabs-container .active a:hover {
+    color: #cccccc;
+  }
+  #active-vs-inactive.inactive .tabs-container a,
+  #active-vs-inactive.inactive .tabs-container a:hover {
+    color: #a4daeb;
+    cursor: default;
+  }
+  /* End | Search Tabs */
+
+  .whats-this {
+    font-size: 11px;
+    margin-left: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    float: left;
+  }
+  .whats-this:hover {
+    /*color: #79d2e8;*/
+    text-decoration: underline;
+  }
+
+  /* overlay container properties - one cart vs. all stores definition */
+  #active-vs-inactive-def {
+    position: absolute;
+    top: -275px;
+    left: 380px;
+    width: 430px;
+  }
+}
+
+article.modules .tab-box {
+  border-bottom: none;
+}
+
+// tabs shared by product, offer-product, eGift pages, and Shopping Advisor Quickview
+#product, .egifts, #quickview {
+  .tabs {
+    width: 100%;
+    float: left;
+    font-size: $smallText;
+    padding: 5px 5px 0 5px;
+    margin: 0 0 .625em 0;
+    font-size: $smallHeader;
+    list-style-type: none;
+    background-color: $lightGray;
+    overflow: hidden;
+    @include border-radius(6px 6px 0px 0px, 6px 6px 0px 0px);
+
+    li {
+      float: left;
+      height: $navHeight;
+      min-width: 19%;
+      text-align: center;
+
+      &:nth-last-child(1), &:nth-last-child(1) a, &:nth-last-child(1).active {
+        @include border-radius(0px 4px 0px 0px, 4px 4px 0px 0px);
+      }
+      &:first-child, &:first-child a, &:first-child.active {
+        @include border-radius(4px 0px 0px 0px, 4px 4px 0px 0px);
+      }
+
+      &:hover {
+        background-color: $white;
+        @include border-radius(4px 4px 0px 0px, 4px 4px 0px 0px);
+        border: $borderStyle;
+        border-bottom: none;
+      }
+      a {
+        color: $shopGray;
+        text-decoration: none;
+        border: none;
+        display: inline-block;
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+        padding: 6px;
+
+        &:hover {
+          color: $shopGray;
+        }
+      }
+
+      &.active-style {
+        background-color: $white;
+        border-color: transparent;
+        box-shadow: 0px  -1px 5px 0px #ccc;
+        border: $borderStyle;
+        border-style: solid;
+        border-color: #ccc;
+        border-width: 1px;
+        border-bottom: none;
+        @include border-radius(4px 4px 0px 0px, 4px 4px 0px 0px);
+
+        a:hover {
+          background-color: transparent;
+        }
+      }
+      &.dropdown ul li.active-style {
+        background-color: $lightGray;
+        color: $white;
+        border-color: transparent;
+        box-shadow: none;
+        border-style: none;
+        border-width: 0;
+        border-bottom: none;
+        border-radius: 0;
+        &:hover, a:hover {
+          background-color: $lightGray;
+        }
+        &:last-child {
+          @include border-radius(0px 0px 4px 4px, 0px 0px 4px 4px);
+        }
+      }
+
+      &.compare {
+        background-color: $lightGreen;
+        border-left: thin solid $green;
+        text-align: left;
+        line-height: 14px;
+
+        &.active-style {
+          background: #fff;
+          border-left: none;
+          a {
+            padding: 5px 0 0 10px;
+          }
+          a:hover {
+            background-color: white;
+            @include border-radius(6px 6px 0px 0px, 6px 6px 0px 0px);
+          }
+        }
+
+        a:hover {
+          background-color: $lightGreen;
+        }
+
+        span {
+          font-weight: normal;
+          font-size: $smallText;
+          color: $green;
+          margin: -2px 0;
+        }
+        a {
+          color: $shopBlue;
+
+          &:hover {
+            color: $shopBlue;
+          }
+        }
+      }
+      #more {
+        text-align: center;
+        padding: 2px 0 0 0;
+      }
+    }
+  }
+
+  .tabs .dropdown {
+    text-align: center;
+    display: inline-block;
+
+    > a:after {
+      content: "";
+      position: relative;
+      float: right;
+      top: 20%;
+      left: inherit;
+      background-position: top left;
+      background-image: url(//edge.shop.com/ccimg.shop.com/resources/images/menu-arrow-down.png);
+      background-repeat: no-repeat;
+      width: 21px;
+      height: 22px;
+    }
+
+    > li {
+      padding: 5px 10px;
+    }
+
+    ul {
+      display: none;
+    }
+
+    &:hover ul, &.active-style ul {
+      display: block;
+      position: absolute;
+      top: 130px;
+      left: inherit;
+      min-width: 160px;
+      font-size: 0.75rem;
+      color: #6c6d70;
+      background: #fff;
+      border-left: $borderStyle;
+      border-right: $borderStyle;
+      border-bottom: $borderStyle;
+      @include border-radius(0px 0px 4px 4px, 0px 0px 4px 4px);
+      -webkit-border-radius: 0px 0px;
+      -moz-border-radius: 0px 0px 4px 4px / 0px 0px 4px 4px;
+      border-radius: 0px 0px 4px 4px / 0px 0px 4px 4px;
+      margin: 0 0 0 -1px;
+      z-index: 900;
+
+      &.large {
+        min-width: 200px;
+      }
+
+      li:hover:first-child {
+        border: none;
+      }
+
+      li:hover:nth-child(n+2) {
+        border-top: $borderStyle;
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+      }
+
+      li {
+        display: block;
+        overflow: visible;
+        clear: left;
+        width: 100%;
+        text-align: left;
+
+        + li {
+          border-top: $borderStyle;
+        }
+
+        a {
+          padding: 12px 6px;
+        }
+      }
+    }
+  }
+
+  .detail-tab-header {
+    width: 100%;
+    overflow-x: auto;
+
+    ul {
+      height: 31px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      float: left;
+      clear: none;
+      line-height: 24px;
+      margin: 0;
+      padding: 3px 10px;
+      display: inline-block;
+      width: auto;
+      border: 1px solid #B4C9C6;
+      @include border-radius(4px 4px 0px 0px);
+      -webkit-border-radius: 4px 4px;
+      -moz-border-radius: 4px 4px 0px 0px;
+      border-radius: 4px 4px 0px 0px;
+
+      &.tab-nav {
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+      &.tab-nav-action {
+        background-color: #ffffff;
+        border-bottom: 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .detail-tab-body {
+    border-bottom: 1px solid #B4C9C6;
+    border-left: 1px solid #B4C9C6;
+    border-right: 1px solid #B4C9C6;
+    float: left;
+    padding: 15px 10px 10px;
+    width: 100%;
+  }
+}
+
+.logo-module .tab-box {
+  display:inline-block;
+//  width: auto;
+//  margin-top: -7px;
+//  margin-top: -7px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+
+  a {
+    font-size: 15px;
+    font-width: bold;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  #product .tabs {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #product .tabs {
+    display: none;
+  }
+}

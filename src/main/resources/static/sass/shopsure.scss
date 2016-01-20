@@ -1,0 +1,613 @@
+@import "modules/index";
+@import "partials/tabs";
+@import "modules/extend";
+
+/************ Shop Sure ************/
+#shop-sure {
+  margin: 0 auto;
+  max-width: 960px;
+  min-width: 320px;
+  width: 100%;
+
+  h1, h2, h3 {
+    font-weight: normal;
+  }
+
+  p + p {
+    margin-top: 10px;
+  }
+}
+
+#shop-sure nav {
+  @extend %clearfix;
+
+  ul li {
+    color: $shopBlue;
+    background-color: #fff;
+    display: block;
+    float: left;
+    text-align: left;
+    position: relative;
+    white-space: nowrap;
+
+    ul {
+      position: absolute;
+      top: 34px;
+      left: -9999px;
+      z-index: 500;
+    }
+    ul li {
+      float: none;
+      border-top: $borderStyleLight;
+      border-left: $borderStyleLight;
+      border-right: $borderStyleLight;
+      &:last-child {
+        border-bottom: $borderStyleLight;
+      }
+    }
+
+    &:hover {
+      > ul {
+        left: 0;
+      }
+    }
+    a {
+      color: $shopBlue;
+      display: block;
+      font-size: $text-default;
+      padding: 10px;
+
+      &:hover {
+        background: $shopBlue;
+        color: #fff;
+      }
+    }
+  }
+}
+
+#shop-sure .hero {
+  background: #fefefe url(//edge.shop.com/ccimg.shop.com/resources/images/ss-hero.jpg) no-repeat center 0;
+  height: 200px;
+  position: relative;
+  a {
+    display: block;
+    height: 200px;
+  }
+  .title {
+    /* h1 */
+    @include tran(bg, $shopBlue, .85, lighten); /* mixin calls function for alpha AND accurate fallback color */
+    background-size: cover;
+    color: #fff;
+    display: block;
+    float: none;
+    font-size: $text-lg;
+    line-height: 1.1em;
+    max-width: 960px;
+    min-width: 320px;
+    padding: 6px 15px;
+    position: absolute;
+    text-transform: uppercase;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+  }
+}
+/*---- product sections ----*/
+#shop-sure .products {
+  display: block;
+  padding: 15px;
+  @extend %clearfix;
+  h2.products-title {
+    font-size: $text-2xl;
+    line-height: 1.1em;
+    position: relative;
+    margin: 10px 0 0;
+  }
+  ul {
+    .two-col {
+      display: block;
+      float: left;
+      padding: 10px;
+      width: 100%;
+    }
+    .four-col {
+      display: block;
+      float: left;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+  ul.twelve-col {
+    width: 100%;
+    span {
+      width: auto;
+    }
+  }
+  ul.twelve-col li {
+    display: block;
+    float: left;
+    padding: 5px;
+    width: 33%; /* fall-back width; */
+    width: calc(100% / 3);
+    &:last-child {
+      float: none;
+      clear: both;
+      margin: 0 auto;
+    }
+  }
+  .twelve-col figure {
+    box-shadow: 0 0 4px rgba(#444, .15);
+    display: block;
+    width: 100%;
+    a {
+      display: block;
+      &:hover {
+        box-shadow: 0 0 6px rgba($shopBlue, .35);
+      }
+    }
+    img {
+      height: auto;
+      width: 100%
+    }
+    figcaption {
+      background: $shopBlue;
+      color: #fff;
+      font-size: 10px; /* very small and very specific size to fit */
+      line-height: 1em;
+      height: 45px;
+      padding: 10px 5px;
+      text-align: center;
+    }
+  }
+}
+/*---- index product containers ----*/
+#shop-sure .top-product {
+  box-shadow: 0 0 4px rgba(#444, .15);
+  display: block;
+  padding: 0 10px;
+  width: 100%;
+  @extend %clearfix;
+  &.top-01 {
+    background: url(//edge.shop.com/ccimg.shop.com/resources/images/ss-top-prod-appliance.jpg) no-repeat top right;
+    background-size: 46%;
+  }
+  &.top-02 {
+    background: url(//edge.shop.com/ccimg.shop.com/resources/images/ss-top-prod-life-illness.jpg) no-repeat top right;
+    background-size: 46%;
+  }
+  h3 {
+    color: $shopBlue;
+    font-size: $text-lg;
+    margin: 0 0 10px;
+  }
+  h4 {
+    margin: 10px 10px 0;
+  }
+}
+#shop-sure .top-product-details-container {
+  background: #fff; /* needed to block BG img as reduces */
+  padding: 10px 10px 10px 0;
+  width: 54%;
+  position: relative;
+  ul {
+    margin: 10px 0;
+    li {
+      font-size: $text-default;
+      list-style-image: url(//edge.shop.com/ccimg.shop.com/resources/images/ss-checkmark.png);
+      margin-left: 18px;
+      line-height: rem(18);
+    }
+  }
+}
+#shop-sure .product {
+  box-shadow: 0 0 4px rgba(#444, .15);
+  display: block;
+  padding-bottom: 5px;
+  width: 100%;
+  position: relative;
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  img {
+    padding: 12px 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  h3 {
+    background: $shopBlue;
+    color: #fff;
+    height: 50px;
+    line-height: 1.1em;
+    float: none;
+    padding: 10px 10px 10px 40px;
+  }
+  h4 {
+    margin: 10px 10px 0;
+  }
+  p {
+    padding: 0 10px 0;
+  }
+  ul {
+    margin: 10px 0;
+    padding: 0 10px;
+    li {
+      font-size: $text-sm;
+      list-style-image: url(//edge.shop.com/ccimg.shop.com/resources/images/ss-checkmark.png);
+      margin-left: 18px;
+      line-height: rem(18);
+    }
+  }
+  ul ul {
+    margin: 0 0 10px 0;
+    padding: 0;
+    li {
+      list-style: disc none;
+      margin-left: 10px;
+    }
+  }
+}
+#shop-sure .top-product p,
+#shop-sure .top-product-details-container ul li,
+#shop-sure .product p,
+#shop-sure .product li {
+  font-size: $text-sm;
+}
+/*---- End index product containers ----*/
+/****** product detail page ******/
+#shop-sure .product-detail-page {
+  display: block;
+  float: left;
+  padding-right: 15px;
+  width: 100%;
+  @extend %clearfix;
+  .product-detail-title {
+    color: $shopBlue;
+    font-size: $text-2xl;
+    margin-bottom: 15px;
+  }
+  .product-detail-subtitle {
+    font-size: $text-lg;
+    margin: 0 0 15px;
+  }
+  h4 {
+    font-weight: $bold;
+    margin: 15px 0 10px;
+  }
+  ul {
+    margin: 10px 0;
+    li {
+      margin: 0 15px;
+      list-style-type: disc;
+      font-size: $text-default;
+      line-height: rem(18);
+    }
+  }
+  ul ul {
+    margin: 0 0 10px 5px;
+  }
+}
+#shop-sure .product-detail-image {
+  box-shadow: 0 0 4px rgba(#444, .15);
+  display: none;
+  float: left;
+  width: 300px;
+  height: 500px;
+  position: relative;
+  margin-top: 25px;
+  @extend %clearfix;
+  span { /* prevents empty tag, adds meaningful text to BG image for screen readers and also hides it visually */
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+#shop-sure {
+  &.home-buyers .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-homebuyers-page.jpg) no-repeat 0 0;
+  }
+  &.home-emergency .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-emergencies-page.jpg) no-repeat 0 0;
+  }
+  &.home-appliance .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-appliances-page.jpg) no-repeat 0 0;
+  }
+  &.landlords .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-landlord-page.jpg) no-repeat 0 0;
+  }
+  &.buildings-contents .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-buildings-page.jpg) no-repeat 0 0;
+  }
+  &.life-illness .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-life-longterm-page.jpg) no-repeat 0 0;
+  }
+  &.private-medical .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-medical-page.jpg) no-repeat 0 0;
+  }
+  &.income-protection .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-income-page.jpg) no-repeat 0 0;
+  }
+  &.gadget .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-gadget-page.jpg) no-repeat 0 0;
+  }
+  &.pet .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-pets-page.jpg) no-repeat 0 0;
+  }
+  &.breakdown .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-breakdown-page.jpg) no-repeat 0 0;
+  }
+  &.mobility-scooters .product-detail-image {
+    background: #fff url(//edge.shop.com/ccimg.shop.com/resources/images/ss-mobility-scooters-page.jpg) no-repeat 0 0;
+  }
+}
+/****** end product detail page *******/
+/*---- links & buttons ----*/
+#shop-sure {
+  .secondary-link{
+    display: block;
+    text-align: center;
+    font-size: $text-default;
+  }
+  .secondary-link + h4, .button.primary + h4, h4.btn-heading {
+    font-size: $text-default;
+  }
+  .product-detail-page {
+    ul + h4.btn-heading, p + h4.btn-heading {
+      margin: 35px 0 0;
+    }
+    .button.primary + h4.btn-heading {
+      margin: 10px 0 0;
+    }
+  }
+  .button.primary, .button.secondary {
+    margin: 10px auto;
+    width: 90%;
+    max-width: 250px;
+    display: block;
+  }
+  .product-detail-page {
+    ul + .button.primary, ul + .button.secondary, p + .button.primary, p + .button.secondary {
+      margin: 35px 0 0;
+    }
+  }
+  h4 + .button.primary { /* index page */
+    margin-top: 2px;
+  }
+  h4.btn-heading + .button.primary { /* prod detail page */
+    margin: 2px 0 0;
+  }
+}
+/*---- form page ----*/
+#shop-sure .form-page{
+  min-width: 300px;
+  padding-right: 15px;
+  width: 100%;
+  @extend %clearfix;
+  .form-page-title {
+    color: $shopBlue;
+    font-size: $text-2xl;
+    font-weight: 400;
+  }
+  p {
+    margin: 15px 0;
+    br + span {
+      color: #6d6e70;
+    }
+    span {
+      color: $shopBlue;
+    }
+  }
+  form{
+    label, legend {
+      font-size: $text-default;
+      margin: 15px 0 2px;
+      span{
+        color: $shopBlue;
+      }
+    }
+    legend {
+      margin: 15px 0 0;
+    }
+    input[type="text"], input[type="email"] {
+      font-size: $text-default;
+      max-width: 400px;
+    }
+    input[name="phone"], input[name="birthday"] {
+      font-size: $text-default;
+      max-width: 200px;
+    }
+    input[type="date"] {
+      padding: .25em .4em;
+    }
+    input[type="radio"] {
+      display: inline-block;
+      clear: left;
+      margin: 9px 8px 0 0;
+      & + label{
+        margin: 10px 0 0;
+      }
+    }
+    .button.primary {
+      margin: 25px 0 15px;
+    }
+  }
+}
+/********* end form page ********/
+@media screen and (min-width: 420px) {
+  #shop-sure {
+    .products ul .four-col {
+      width: 50%;
+    }
+    .products ul.twelve-col span span {
+      margin: 0 auto;
+      display: block;
+      li:first-child {
+        clear: left;
+        margin-left: 20%;
+        margin-left: calc(100% / 5);
+      }
+    }
+    .products ul.twelve-col li {
+      width: 20%; /* fall-back */
+      width: calc(100% / 5);
+      &:last-child {
+        float: left;
+        clear: none;
+        margin: 0;
+      }
+    }
+    .top-product-details-container {
+      height: 400px;
+    }
+    .product.home {
+      height: 470px;
+      &.one-button {
+        height: 370px;
+      }
+    }
+    .product.lifestyle {
+      height: 370px;
+    }
+    .button-box { /* for aligning buttons vertically-- used on all index product boxes*/
+      position: absolute;
+      width: 100%;
+      margin: 0 auto;
+      bottom: 0;
+    }
+    .top-product .button-box {
+      position: relative;
+      margin: 0;
+    }
+  }
+}
+@media screen and (min-width: 630px){
+  #shop-sure {
+    .form-page {
+      width: 65%; /* fallback */
+      width: calc(100% - 300px);
+    }
+    .contact-us-container {
+      width: 300px;
+    }
+  }
+}
+@media screen and (min-width: 660px) {
+  #shop-sure {
+    .hero .title {
+      font-size: $text-lg;
+      line-height: 1.1em;
+    }
+    .products ul .two-col {
+      max-width: 480px;
+      min-width: 300px;
+      width: 50%;
+    }
+    .products ul .four-col {
+      max-width: 240px;
+      width: 25%;
+    }
+    .products ul.twelve-col {
+      width: 540px;
+      margin: 0 auto;
+      span {
+        width: 455px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+    .products ul.twelve-col span span {
+      li:first-child {
+        clear: none;
+        margin: 0;
+      }
+    }
+    .products ul.twelve-col li {
+      width: 7.6%; /* fall-back to calc */
+      width: calc(100% / 13);
+      width: 70px;
+      &:nth-child(8) {
+        clear: both;
+      }
+    }
+    .product h3 {
+      height: 70;
+      font-size: $text-default;
+    }
+    .product-detail-page {
+      width: 65%; /* fallback */
+      width: calc(100% - 300px);
+    }
+    .product-detail-image {
+      display: block;
+    }
+    .top-product-details-container {
+      height: 470px;
+    }
+    .product.home, .product.home.one-button {
+      height: 540px;
+    }
+    .product.lifestyle {
+      height: 430px;
+    }
+    .top-product .button-box {
+      position: absolute;
+      width: 100%;
+      margin: 0 auto;
+      bottom: 0;
+    }
+  }
+}
+@media screen and (min-width: 800px) {
+  #shop-sure {
+    .product h3 {
+      height: 50;
+      font-size: $text-med;
+    }
+    .top-product-details-container {
+      height: 385px;
+    }
+    .product.home, .product.home.one-button {
+      height: 470px;
+    }
+    .product.lifestyle {
+      height: 370px;
+    }
+  }
+}
+@media screen and (min-width: 960px) {
+  #shop-sure {
+    .hero .title {
+      font-size: $text-xl;
+      padding: 3px 15px;
+    }
+    .top-product-details-container {
+      height: 340px;
+    }
+    .product.home, .product.home.one-button {
+      height: 415px;
+    }
+    .product.lifestyle {
+      height: 320px;
+    }
+  }
+}
+@media screen and (min-width: 975px) {
+  #shop-sure {
+    .products ul.twelve-col {
+      width: 100%;
+      margin: 0 auto;
+      span {
+        width: auto;
+        margin: 0 auto;
+      }
+    }
+    .products ul.twelve-col li {
+      &:nth-child(8) {
+        clear: none;
+      }
+    }
+  }
+}

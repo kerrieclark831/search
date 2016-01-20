@@ -1,0 +1,1055 @@
+@import "modules/index";
+@import "modules/extend";
+
+/****Referenced partials****/
+//@import "modules/searchbar";
+//@import "modules/menu-list";
+//@import "modules/buttons";
+//@import "modules/drop-down";
+//@import "modules/images";
+
+#download-app-banner {
+  width: 100%;
+  background-color: $shopGray;
+  overflow: hidden;
+  text-align: center;
+  p {
+    color: $lightGray;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+}
+
+/* icon message formatting */
+#header .ico, #minimal .ico {
+  width: 100%;
+  background-color: white;
+  clear: both
+}
+
+#header .ico p, #minimal .ico p {
+  margin: 0 10px 0 10px;
+  padding: 5px 0 5px 0;
+}
+
+#header .ico .banner-close-sprite, #minimal .ico .banner-close-sprite {
+  margin: 4px 10px;
+  color:transparent;
+}
+
+/** Header stuff */
+#header {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  /*Added for AMOS*/
+  text-align: left;
+  background: $gradientLightGray;
+  background: linear-gradient(to bottom, $white, $gradientLightGray);
+  border-bottom: $borderStyle;
+
+  .header-menu {
+    float: left;
+    margin: 5px 0;
+  }
+
+  .account {
+    float: right;
+    margin: 5px 0;
+  }
+
+  .header-icon {
+    cursor: pointer;
+  }
+
+  .header-icon.dropped {
+    background: white;
+  }
+
+  .header-icon.dropped:after {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    top: -3px;
+  }
+
+  .header-icon.dropped .menu-list li a {
+    padding: 5px 0 5px 10px;
+  }
+
+  .header-icon.dropped .menu-list li a:hover {
+    padding: 4px 0 4px 10px;
+  }
+
+  .header-icon.inactive {
+    cursor: default;
+  }
+
+  .header-icon.main {
+    text-align: center;
+    min-height: 50px;
+  }
+
+  .icon {
+    float: left;
+  }
+
+  .icon.home {
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .header-icon.left {
+    position: relative;
+    float: left;
+    border-right: $borderStyleLight;
+    padding: 5px 0;
+    margin: 5px 0;
+
+    .icon {
+      margin: 7px 2px 0 12px;
+    }
+
+    p {
+      color: $shopBlue;
+      display: inline-block;
+      font-weight: bold;
+    }
+  }
+
+  .header-icon.right {
+    position: relative; // required to keep mobile cart count-circle contained
+    float: right;
+    cursor: pointer;
+    padding: 5px 0;
+    margin: 5px 0;
+
+    .icon {
+      margin: 7px 7px 0 8px;
+    }
+
+    #loginHeaderWelcome, > p {
+      float: left;
+      width: auto;
+    }
+    #loginHeaderWelcome{
+      margin: 5px 10px 0;
+    }
+    a, p {
+      font-size: $smallText
+    }
+    .menu-list a {
+      float: none;
+      font-size: $mainText;
+    }
+    &.login {
+      border-left: $borderStyle;
+      border-right: $borderStyle;
+    }
+  }
+
+  .header-icon.left.dropped, .header-icon.right.dropped {
+    border-bottom: #fff solid thick;
+    padding: 12px 0;
+    margin: 0 0 -10px 0px;
+  }
+
+  .header-icon.left.dropped {
+    p {
+      margin-top: 8px;
+    }
+    .icon {
+      margin: 5px 2px 0 12px;
+    }
+  }
+
+  .header-icon.right.dropped {
+    > p{
+      margin-top:8px;
+    }
+    #loginHeaderWelcome{
+      margin:3px 10px 0;
+    }
+    p:not(:first-of-type(p)) {
+      margin-top: 3px;
+    }
+    .icon {
+      margin: 5px 7px 0 8px;
+    }
+    .count-circle {
+      top: 9px;
+    }
+  }
+
+  .header-icon.cart.dropped {
+    border-left: $borderStyleLight;
+    margin-left: -1px;
+  }
+
+  .header-icon.right, .header-icon.left {
+    &:after {
+      position: relative;
+      float: right;
+      width: 15px;
+      height: 20px;
+      margin: 10px;
+      background: url(//edge.shop.com/ccimg.shop.com/resources/images/icon-arrow-grey.png) no-repeat 97% center;
+    }
+    .open:after {
+      transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      top: 5px;
+    }
+  }
+
+  .count-circle {
+    color: #ffffff;
+    font-size: 0.7em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #00A8CA;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    height: 18px;
+    width: auto;
+    min-width: 16px;
+    line-height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 30px;
+    padding: 0 5px 4px 5px;
+  }
+
+  .header-icon.main div {
+    position: relative;
+    top: 5px;
+  }
+
+  /******menu-list styles*********/
+  .header-icon.dropped .menu-list {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-weight: bold;
+
+    &:last-child, {
+      margin-bottom: 5px;
+    }
+
+    &:only-of-type {
+      margin: 5px 0;
+    }
+
+    li {
+      font-size: $mainText;
+      color: $white;
+      margin: 0;
+      padding: 0;
+      display: block;
+      background: $white;
+
+      a {
+        color: $shopBlue;
+      }
+    }
+    li a {
+      border-top: solid thin $white;
+      border-bottom: solid thin $white;
+    }
+    li.selected a {
+      color: $darkestGray;
+      background-color: $lightGray;
+    }
+
+    >, .countries {
+      li:hover, li:active {
+        background-color: $lightGray;
+        border-top: $borderStyleLight;
+        border-bottom: $borderStyleLight;
+        color: $darkestGray;
+      }
+      li a:hover, li a:active {
+        color: $darkestGray;
+      }
+    }
+  }
+  /*Added for AMOS*/
+
+  .header-icon.left.dropped .menu-list li .slideout {
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: 100%;
+    background: #fff;
+    min-width: 550px;
+    min-height: 250px;
+    width: 100%;
+    border: $borderStyleLight;
+    padding: 5px 0;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.1);
+
+    ul {
+      display: inline-block;
+      @include calc(width, "100% - #{$bannerad}");
+    }
+
+    li a, li a:hover {
+      font-size: $smallText;
+      border: none;
+      padding: 10px; /*Changed for AMOS*/
+      height: 0;
+      margin: 0;
+    }
+
+    li a:hover {
+      background: none;
+      color: $hover;
+    }
+
+    li a:after {
+      content: none;
+    }
+  }
+
+  .storeads {
+    float: right;
+    width: $bannerad;
+  }
+
+  /*Begin - SHOP.COM logos for all the countries*/
+  #countries-content {
+    .menu-list.countries {
+      margin-top: 0;
+    }
+    .menu-list div.drop-down-list-button, .menu-list div.drop-down-list-button:hover, .menu-list div.drop-down-list-button:active
+    .menu-list .drop-down-list-button .label {
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 15px;
+      font-size: .875rem;
+    }
+    .menu-list .flag {
+      float: left;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      margin: 0 10px;
+    }
+    .menu-list .drop-down-list-button .arrow {
+      margin: 5px 15px 0 6px;
+    }
+    .drop-down-list-button.open .arrow {
+      transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      top: 5px;
+    }
+    .menu-list .drop-down-list {
+      display: none;
+      width: 100%;
+    }
+
+    ul {
+      width: 100%;
+    }
+
+    img {
+      float: left;
+      width: 35px;
+      height: auto;
+      margin: -4px 5px 0 5px;
+    }
+    p {
+      margin: 5px 10px;
+      font-size: $mainText;
+      color: $shopBlue;
+    }
+  }
+
+  /*End - SHOP.COM logos for all the countries*/
+
+  .header-icon.left .drop-down {
+    left: -2px;
+    width: 30%;
+  }
+
+  .header-icon.right .drop-down {
+    right: -1px;
+    width: 250px;
+  }
+
+  .header-dropdown {
+    position: absolute;
+    top: 52px;
+    left: 225px;
+    width: 50%;
+    min-width: 400px;
+    max-width: 900px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 10005;
+  }
+
+  .drop-down {
+    position: absolute;
+    background: white;
+    min-width: 225px;
+    top: 65px;
+    border: $borderStyleLight;
+    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.1);
+    z-index: 10001;
+
+    section {
+      display: inline-block;
+      margin: 10px 10px;
+    }
+    .login section {
+      display: inline-block;
+    }
+    hr {
+      width: auto;
+      margin: 5px 10px;
+    }
+    figure {
+      @extend %clearfix;
+      margin: 10px 0;
+    }
+    p:not(:first-child) {
+      margin: 0;
+    }
+    p:first-child a[href*='consultant'] {
+      white-space: nowrap;
+    }
+    a[href*='cashback-myaccount'] {
+      @include rewards();
+    }
+    a.button.full-width, a.primary.button {
+      margin: 0 0 10px 0;
+    }
+    .points-get {
+      float: left;
+    }
+  }
+
+  .mini-cart-items {
+    img {
+      float: left;
+      width: 40%;
+      margin-right: 5px;
+    }
+    figure div {
+      float: left;
+      display: inline-block;
+      width: 45%;
+    }
+    figure p {
+      font-weight: bold;
+      font-size: 1rem;
+      line-height: 1rem;
+      white-space: normal;
+      margin: 0 0 2px;
+      width: auto;
+      overflow: hidden;
+      position: relative;
+      max-height: 4rem;
+    }
+    figure p:after {
+      content: "\02026";
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      position: absolute;
+      top: 3rem; /* 2.5em is 3 lines */
+      /* product caption line height */
+      right: 0;
+      width: 3em;
+      padding: 0 5px 0 0;
+      text-align: right;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%, #ffffff);
+    }
+    figure p.price {
+      margin: .625em 0 .5em;
+      color: #e66500;
+      line-height: 30px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+/****** sub header styling *******/
+#sub-header {
+  //  float: left;
+  width: 100%;
+}
+
+#sub-header {
+  //  height: 18px;
+  //  margin-top: 10px;
+  //  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+#sub-header p {
+  font-size: $smallText;
+}
+
+#sub-header #consultant {
+  float: left;
+}
+
+#sub-header #cashback {
+  float: right;
+  margin: 10px 5px;
+  font-size: $smallText;
+}
+
+#sub-header {
+  a, a:active, a:hover, a:visited {
+    text-decoration: none;
+  }
+}
+
+#sub-header a[href*='cashback-myaccount'] {
+  /* the green button-like treatment */
+  color: #068559;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 20px;
+  margin-right: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  /* IE9+ */
+  background: #e5f3d0;
+  -moz-box-shadow: inset 0 0 10px #D4ECBC;
+  -webkit-box-shadow: inset 0 0 10px #D4ECBC;
+  box-shadow: inset 0 0 10px #D4ECBC;
+}
+
+#sub-header #cashback a.cashback-button:hover,
+#sub-header #cashback a.cashback-button:active {
+  color: #5FAE76;
+}
+
+/*** Shop Points styles **/
+/* progress bar in header  */
+#header, #sub-header {
+  .progress-wrapper {
+    float: right;
+    //    margin-top: -5px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    float: left;
+    height: 24px;
+    width: 130px;
+    position: relative;
+    background: #D0D0D0;
+    margin: 2px 6px 0 1px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 3px solid #fff;
+    -webkit-box-shadow: 0 0 0 1px #9BD2E8;
+    -moz-box-shadow: 0 0 0 1px #9BD2E8;
+    box-shadow: 0 0 0 1px #9BD2E8;
+    display: inline-block;
+  }
+
+  div.progress-ruler {
+    background: url(//edge.shop.com/ccimg.shop.com/images/UK/points/progress-ruler.png) center no-repeat;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  div.progress-bar > span {
+    display: block;
+    height: 100%;
+    -webkit-border-top-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    -moz-border-radius-bottomright: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: #45B5D0;
+    background: linear-gradient(center to bottom, #45B5D0 37%, #3DDCFF 69%);
+    position: absolute;
+    overflow: hidden;
+  }
+
+  #shop-points .button.primary {
+    padding: 0.6em 1em;
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  .shop-points-value {
+    background-color: #268AA2;
+    padding: 2px 6px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+    margin: 5px 10px 0 0;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+  }
+
+  .progress-wrapper p {
+    font-size: 12px;
+    float: left;
+    margin: 0 10px 0 0;
+  }
+
+  .progress-wrapper p.points-earn {
+    margin-top: 6px;
+  }
+
+  .progress-wrapper p.points-get {
+    margin-top: -1px;
+    float: right;
+  }
+
+  .drop-down .progress-wrapper p.points-get {
+    float: left;
+    width: 100%;
+  }
+
+  .shop-points-intro, .shop-puntos-intro {
+    float: right;
+  }
+}
+
+#sub-header .shop-points-intro, #sub-header .shop-puntos-intro {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+#sub-header .shop-points-intro {
+  background: url(//edge.shop.com/ccimg.shop.com/header2013/cipoints_intro.gif) no-repeat left top;
+  width: 435px;
+  height: 32px;
+}
+
+#sub-header .shop-puntos-intro {
+  background: url(//edge.shop.com/ccimg.shop.com/header2013/cipuntos_intro_esp.gif) no-repeat left top;
+  width: 558px;
+  height: 32px;
+}
+
+#sub-header .rewards-error {
+  /* a red error message */
+  color: #9F6406;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  /* IE9+ */
+  background: #FAE8E0;
+  -moz-box-shadow: inset 0 0 10px #CD8778;
+  -webkit-box-shadow: inset 0 0 10px #CD8778;
+  box-shadow: inset 0 0 10px #CD8778;
+}
+
+#sub-header .rewards-error .error {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+#header, #sub-header {
+  /** points tool tip to show points to go **/
+  #shop-points .points-to-go-tooltip {
+    display: none;
+    position: absolute;
+    background: #00A6CB;
+    background: linear-gradient(to bottom, #00A6CB 50%, #0A718B);
+    border-radius: 8px;
+    box-shadow: -2px 2px 3px 1px rgba(0, 0, 0, 0.25);
+    margin: -20px 0 0 0;
+    z-index: 10;
+  }
+
+  #shop-points .tool-tip-content-wrapper {
+    width: 110px; /* need to add 10px  for 5px padding on either side */
+    height: auto;
+    padding: 5px 5px 10px;
+  }
+
+  #shop-points .points-to-go-tooltip p {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  #shop-points .points-to-go-tooltip .top-arrow {
+    background: none;
+    margin: -20px auto 0 auto;
+    border-top: 12px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 12px solid #00A6CB;
+    border-right: 20px solid transparent;
+    padding: 0;
+    width: 0;
+  }
+}
+
+/****Horizontal Menu***/
+#horiz-menu {
+  display: none;
+}
+
+@media screen and (min-width: 1050px) {
+  #horiz-menu {
+    position: relative;
+    width: 100%;
+    background: $gradientLightGray;
+    background: linear-gradient(to bottom, $white, $gradientLightGray);
+    border-bottom: $borderStyle;
+    display: block;
+
+    .search-wrapper{
+      display:inline-block;
+    }
+
+    li {
+      float: left;
+      padding: 5px 5px;
+      white-space: nowrap;
+      list-style: none;
+
+      &:first-child {
+        padding-left: 10px;
+      }
+
+      &:not(:last-child) a:after {
+        content: "";
+        border-right: $borderStyle;
+        color: $medLightGray;
+        margin: 0 0 0 10px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: $smallText;
+      font-weight: bold;
+    }
+    a:hover {
+      color: $shopGray
+    }
+  }
+}
+
+/****** sub header styling - NOT ON AMOS *******/
+#sub-header {
+  //  float: left;
+  width: 100%;
+}
+
+#sub-header {
+  //  height: 18px;
+  //  margin-top: 10px;
+  //  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+#sub-header p {
+  font-size: $smallText;
+}
+
+#sub-header #consultant {
+  float: left;
+}
+
+#sub-header #cashback {
+  float: right;
+  margin: 10px 5px;
+  font-size: $smallText;
+}
+
+#sub-header {
+  a, a:active, a:hover, a:visited {
+    text-decoration: none;
+  }
+}
+
+#sub-header a[href*='cashback-myaccount'] {
+  /* the green button-like treatment */
+  color: #068559;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px 20px;
+  margin-right: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  /* IE9+ */
+  background: #e5f3d0;
+  -moz-box-shadow: inset 0 0 10px #D4ECBC;
+  -webkit-box-shadow: inset 0 0 10px #D4ECBC;
+  box-shadow: inset 0 0 10px #D4ECBC;
+}
+
+#sub-header #cashback a.cashback-button:hover,
+#sub-header #cashback a.cashback-button:active {
+  color: #5FAE76;
+}
+
+#sub-header .shop-points-intro, #sub-header .shop-puntos-intro {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+#sub-header .shop-points-intro {
+  background: url(//edge.shop.com/ccimg.shop.com/header2013/cipoints_intro.gif) no-repeat left top;
+  width: 435px;
+  height: 32px;
+}
+
+#sub-header .shop-puntos-intro {
+  background: url(//edge.shop.com/ccimg.shop.com/header2013/cipuntos_intro_esp.gif) no-repeat left top;
+  width: 558px;
+  height: 32px;
+}
+
+#sub-header .rewards-error {
+  /* a red error message */
+  color: #9F6406;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  /* IE9+ */
+  background: #FAE8E0;
+  -moz-box-shadow: inset 0 0 10px #CD8778;
+  -webkit-box-shadow: inset 0 0 10px #CD8778;
+  box-shadow: inset 0 0 10px #CD8778;
+}
+
+#sub-header .rewards-error .error {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+/***************end of generic content stuff *******/
+
+/********** Media queries ***********/
+@media screen and (min-width: 660px) {
+  #header {
+    .header-icon.login > p {
+      max-width: 100px;
+      max-height: 35px;
+      overflow: hidden;
+      text-overflow: ellipsis;;
+    }
+    .header-icon.login, .header-icon.left.open-menu, .header-icon.login.dropped, .header-icon.left.dropped {
+      p {
+        display: inline-block;
+        font-weight: bold;
+      }
+      figure p {
+        display: block;
+      }
+    }
+
+    .header-icon.login, .header-icon.cart, .header-icon.left.open-menu, .header-icon.login.dropped, .header-icon.cart.dropped, .header-icon.left.dropped {
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  #header {
+    .header-icon.main {
+      float: right;
+      margin: 0 10px;
+    }
+    .search-input .input-container {
+      //    width: 45%;
+      margin: 18px auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  #header #quick-search {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #header {
+    display: inline-block;
+
+    .header-icon.main img {
+      margin-left: 10px;
+      width: 200px;
+    }
+    #quick-search {
+      width: auto;
+    }
+    .search-input .input-container {
+      float: left;
+      width: 70%;
+      margin-left: -6%;
+      padding-bottom: 4px;
+    }
+    .header-icon.left {
+      top: 5px;
+      padding: 2px 0;
+      margin: 3px 0;
+    }
+    .header-icon.left.dropped {
+      margin: 3px 0 -2px 0;
+      padding: 2px 0;
+    }
+    .header-icon.left.dropped .icon {
+      margin: 7px 2px 0 12px;
+    }
+    .header-icon.left.dropped p {
+      margin-top: 10px;
+    }
+    .header-icon.left .drop-down {
+      top: 47px;
+    }
+  }
+}
+
+//@media screen and (max-width: 900px) {
+//  #header .search-input .input-container {
+//    margin-left: -8%;
+//  }
+//}
+
+@media screen and (max-width: 750px) {
+  #header {
+    .header-menu /*#header .account */                                        {
+      width: auto;
+    }
+
+    .account {
+      margin: 5px 0;
+    }
+
+    .header-icon.main {
+      text-align: left;
+      float: right;
+      width: auto;
+    }
+    .header-icon.left {
+      top: 0;
+    }
+    .header-icon.left .icon {
+      margin: 12px 2px 0 12px;
+    }
+    .header-icon.left:after {
+      top: 3px;
+    }
+    .header-icon.left.dropped:after {
+      top: -5px;
+    }
+    .header-icon.left p {
+      margin-top: 15px;
+    }
+    .header-icon.left.dropped p {
+      margin-top: 8px;
+    }
+    .search-input .input-container {
+      margin-left: auto;
+      width: 97%;
+      margin-right: auto;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .header-icon.left.dropped {
+      top: 0;
+      margin: 0 0 -12px 0px;
+      padding: 12px 0;
+    }
+    .header-icon.left.dropped .icon {
+      margin: 5px 2px 0 12px;
+    }
+    .header-icon.left .drop-down {
+      top: 66px;
+    }
+  }
+  #sub-header .progress-wrapper {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #header {
+    .header-icon.main div {
+      top: 7px;
+    }
+    .search-input .ui-selectmenu-button {
+      display: none;
+    }
+    .search-input .search-button {
+      position: absolute;
+      top: 3px;
+    }
+    .suggestions-container {
+      width: 95%;
+    }
+    .header-icon.right, .header-icon.left {
+      > p {
+        display: none;
+      }
+    }
+    .drop-down, .header-icon.left .drop-down {
+      top: 62px;
+    }
+  }
+  #sub-header #cashback, #sub-header .shop-pointss-intro {
+    float: left;
+    margin: 0 0 5px 0;
+  }
+  #sub-header .progress-wrapper p.points-get {
+    float: left;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #header .header-icon.main img {
+    width: 150px;
+  }
+}
+
